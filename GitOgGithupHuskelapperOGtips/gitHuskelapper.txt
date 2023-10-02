@@ -1,0 +1,19 @@
+Start Git bash og tast inn:
+cd "C:\Users\jokane\Dropbox\JornGit2023"
+
+Eller høyreklikk og lim det inn
+
+Du kan også finne mappa i filutforsker, høyreklikk og velg Git Bash here!
+
+om du adder alle filene med git add . kan du ikke skjule dem med .gitignore etterpå...
+
+Staging:
+Når du har valgt git add minfil.py så er den fila staged
+Commiting:
+Når du velger git commit -m så lagrer vi en save av fila slik den er akkurat nå. Husk å ta med beskrivelse også
+git commit -m "Dette er første versjon av programmet, kun hello world nå"
+
+VS-code: Om du åpner ei fil fra repo kan du velge å åpne hele mappa
+
+
+
