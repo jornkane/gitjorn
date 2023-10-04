@@ -7,3 +7,28 @@ body {
 a {
     color: rgb(134, 134, 207);
 }
+.button1 {
+    background-image:url(buttext.png);
+    border: 1px solid dimgray;
+    border-radius: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 12px;}
+
+.button1:hover {
+    background-image:url(butthov.png);
+    border: 2px solid #3dcdf0;
+    border: 1px solid #3c7fb1;
+    border-radius: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 12px;}
+
+.button1:active {
+    background-image:url(buttact.png);
+    border: 2px solid #3dcdf0;
+    border: 1px solid #3c7fb1;
+    border-radius: 3px;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 12px;}
