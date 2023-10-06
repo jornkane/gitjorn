@@ -1,20 +1,27 @@
 
 body {
-    background-color: #00715e;
-    color: #dfdfdf;
+    background-color: #00735c;
+    color: #dfffd1;
     font-family: "Roboto";
+}
+h1 {
+    font-family: fantasy, Geneva, Tahoma, sans-serif, comic sans MS;
+    /*font-weight: lighter;*/
+    font-style: normal;
+    font-weight: 100;
 }
 
 #meny {
     background-color: black;
+    font-family: fantasy;
 }
 
 a {
-    color: rgb(162, 247, 178);
+    color: #ffffff;
     font-size: 14pt;
 }
 a:hover {
-    color: rgb(252, 183, 44);
+    color: rgb(34, 255, 0);
     text-decoration: double;
   }
 
