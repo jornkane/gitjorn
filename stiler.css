@@ -5,8 +5,10 @@
 */
 body {
     background-color: #00735c;
-    color: #dfffd1;
+    color: #ffffe6;
     font-family: "Roboto";
+    font-size: 12pt;
+
 }
 h1 {
     font-family: fantasy, Geneva, Tahoma, sans-serif, comic sans MS;
@@ -14,14 +16,12 @@ h1 {
     font-style: normal;
     font-weight: 100;
 }
-
 #meny {
     background-color: black;
     font-family: fantasy;
 }
-
 a {
-    color: #ffffff;
+    color: #ffffe6;
     font-size: 14pt;
 }
 a:hover {
