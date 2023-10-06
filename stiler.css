@@ -11,9 +11,11 @@ body {
 
 a {
     color: rgb(162, 247, 178);
+    font-size: 14pt;
 }
 a:hover {
     color: rgb(252, 183, 44);
+    text-decoration: double;
   }
 
 .button1 {
