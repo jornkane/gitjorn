@@ -1,12 +1,21 @@
+
 body {
-    background-color: #1f1f1f;
+    background-color: #00715e;
     color: #dfdfdf;
     font-family: "Roboto";
 }
 
-a {
-    color: rgb(134, 134, 207);
+#meny {
+    background-color: black;
 }
+
+a {
+    color: rgb(162, 247, 178);
+}
+a:hover {
+    color: rgb(252, 183, 44);
+  }
+
 .button1 {
     background-image:url(buttext.png);
     border: 1px solid dimgray;
