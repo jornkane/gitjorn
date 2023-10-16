@@ -6,19 +6,20 @@
 body {
     background-color: #00735c;
     color: #ffffe6;
-    font-family: "Roboto";
-    font-size: 12pt;
-
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    font-size: 14pt;
+}
+h2{
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
 }
 h1 {
-    font-family: fantasy, Geneva, Tahoma, sans-serif, comic sans MS;
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     /*font-weight: lighter;*/
-    font-style: normal;
-    font-weight: 100;
+
 }
 #meny {
     background-color: black;
-    font-family: fantasy;
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
 }
 
 .ulcircle {
@@ -30,6 +31,7 @@ h1 {
 }
 
 a {
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     color: #ffffe6;
     font-size: 14pt;
 }
