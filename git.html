@@ -9,12 +9,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>
-        Dette startsiden, her finner du litt tips om Git <br>
-        I tillegg har vi en meny med lenker til de andre sidene
-    </p>
-    
     <h1>Denne siden og denne mappen er beregnet på GIT-øvelser</h1>
+
     <div id="brodtekst">Her har jeg tenkt å skrive litt om Git og Github <br>
     Huskelapper for gitkommandoer vi bruker ofte også. <br>
     Vkitige Git-kommandoer: <br>
@@ -29,7 +25,66 @@
     <br>kan jeg angre etter å stage den med git add . ?
     <br>Ja det er bare å skrive git restore --staged index.html 
     <br>
+    <hr>
+    Noen nyttige/unyttige Git og vs tips (lista lager jeg med shortcuten li*5):<br>
+    <ul class="ulcircle">
+    <li>git diff navnpåfil.noe, som viser hva som er blitt forandret i filen.</li>
+    <li>vscode extension: GitLens som viser når du har commita ting (på linja du befinner deg)</li>
+    <li>vscode hold alt og bruk piltast for å flytte linjer opp og ned</li>
+    <li> <a href=" "></a> </li>
+    <li></li>
+</ul>
+<ul class="ulnone"> <!-- liste uten noe foran husk: li*10 -->
+    <li>En måte skrive tekst i html uten å bruke p eller br for linjeskift</li>
+    <li>er å lage en ul med list-style-type:none; </li>
+    <li>hver linje er da pakket inn i li og /li tagger. </li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<hr>
+
+<pre>
+    Start Git bash og tast inn:
+cd "C:\Users\jokane\Dropbox\JornGit2023"
+
+Eller høyreklikk og lim det inn
+
+Du kan også finne mappa i filutforsker, høyreklikk og velg Git Bash here!
+
+om du adder alle filene med git add . kan du ikke skjule dem med .gitignore etterpå...
+
+Staging:
+Når du har valgt git add minfil.py så er den fila staged
+Commiting:
+Når du velger git commit -m så lagrer vi en save av fila slik den er akkurat nå. 
+Husk å ta med beskrivelse også
+git commit -m "Dette er første versjon av programmet, kun hello world nå"
+
+VS-code: Om du åpner ei fil fra repo kan du velge å åpne hele mappa
+
+Slette repository fra Github
+On GitHub.com, navigate to the main page of the repository. Under your repository name, 
+click Settings. If you cannot see the "Settings" tab, select the dropdown menu, then click Settings. 
+In the "Danger Zone" section, click Delete this repository.
+
+</pre>
+<br>
+For å fylle på med mer tekst finnes det snarveier i VScode:
+<br>3 avsnitt med lorem ipsum generert med en kommando!
+<br> Du skriver bare p*3>lorem10 og får tre avsnitt med 10 ord!:
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, reiciendis?</p>
+<p>Aut, impedit repellendus? Facilis et odit itaque minus ipsa porro?</p>
+<p>Qui laboriosam ullam eaque aut reiciendis sequi tempore distinctio nisi?</p>
+
+
     </div>
+
+
     <div id="linker"><br>
         For å komme igang med GIT og Github har jeg benyttet meg av mange hjelpevideoer på Youtube<br>
         Aller først brukte jeg denne og den anbefales til oppstart:
