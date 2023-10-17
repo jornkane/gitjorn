@@ -9,6 +9,11 @@ body {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     font-size: 14pt;
 }
+.myeTekst {
+    width: 50%;
+    text-shadow: gold 0 0 5px;  
+}
+
 h2{
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
 }
@@ -17,9 +22,20 @@ h1 {
     /*font-weight: lighter;*/
 
 }
+
+#brodtekst {
+    max-width: 600px;
+    text-shadow: gold 0 0 5px;  
+}
+
 #meny {
     background-color: black;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+}
+
+#bgbilde {
+    background-image: url("bilder/robotFifties.jpg");
+    background-repeat: no-repeat;
 }
 
 .ulcircle {
