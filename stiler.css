@@ -3,25 +3,43 @@
     background-color: #00735c;
     color: #dfffd1;
 */
-body {
+body { /* body på index har inline css med bakgrunnsfarge svart */
     background-color: #00735c;
     color: #ffffe6;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     font-size: 14pt;
 }
 
-.myeTekst {
-    width: 50%;
-    text-shadow: gold 0 0 5px;  
+#ramma { /*ubrukt id */
+    background-color: antiquewhite;
+    margin:0px;
+    padding:3px;
+    overflow:visible;
 }
 
-h2{
+#bildetekst {
+    width: 50%;
+    color: black;
+    font-weight: bold;
+    padding-left: 10px;
+    text-shadow: gold 0 0 10px;  
+}
+
+h3 {
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+}
+
+h2 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
 }
 
 h1 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     /*font-weight: lighter;*/
+}
+
+#linker {
+    max-width: 600px;
 }
 
 #brodtekst {
@@ -32,17 +50,18 @@ h1 {
 #meny {
     background-color: black;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    padding-bottom: 0px;
 }
+
 
 #bgbilde {
     background-image: url("bilder/robotFifties.jpg");
     background-repeat: no-repeat;
 }
 
-.ulcircle {
+.ulcircle { /* styling av lister og tegn foran hvert li element */
     list-style-type:circle;
 }
-
 .ulnone {
     list-style-type:none;
 }
@@ -56,6 +75,8 @@ a:hover {
     color: rgb(34, 255, 0);
     text-decoration: double;
   }
+
+
 
 .button1 {
     background-image:url(buttext.png);
