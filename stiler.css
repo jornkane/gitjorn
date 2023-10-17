@@ -9,6 +9,7 @@ body {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     font-size: 14pt;
 }
+
 .myeTekst {
     width: 50%;
     text-shadow: gold 0 0 5px;  
@@ -17,10 +18,10 @@ body {
 h2{
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
 }
+
 h1 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     /*font-weight: lighter;*/
-
 }
 
 #brodtekst {
