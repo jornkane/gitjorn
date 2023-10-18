@@ -59,10 +59,11 @@ h1 {
     background-repeat: no-repeat;
 }
 
+/* lister er greit å bruke i stedet for bare br og ul uten noen class lager hul sirkel, mens circle lager fylt sirkel */
 .ulcircle { /* styling av lister og tegn foran hvert li element */
     list-style-type:circle;
 }
-.ulnone {
+.ulnone { /* denne deler inn teksten i linjer etter li, men uten markør foran */
     list-style-type:none;
 }
 
