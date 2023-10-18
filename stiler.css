@@ -18,7 +18,7 @@ body { /* body på index har inline css med bakgrunnsfarge svart */
 }
 
 #bildetekst {
-    width: 50%;
+    width: 60%;
     color: black;
     font-weight: bold;
     padding-left: 10px;
@@ -39,11 +39,11 @@ h1 {
 }
 
 #linker {
-    max-width: 600px;
+    max-width: 700px;
 }
 
 #brodtekst {
-    max-width: 600px;
+    max-width: 700px;
     text-shadow: gold 0 0 5px;  
 }
 
@@ -59,13 +59,21 @@ h1 {
     background-repeat: no-repeat;
 }
 
+
+
 /* lister er greit å bruke i stedet for bare br og ul uten noen class lager hul sirkel, mens circle lager fylt sirkel */
-.ulcircle { /* styling av lister og tegn foran hvert li element */
-    list-style-type:circle;
+.ulsquare { /* styling av lister og tegn foran hvert li element */
+    list-style-type:square;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 20px;
 }
 .ulnone { /* denne deler inn teksten i linjer etter li, men uten markør foran */
     list-style-type:none;
 }
+
+
 
 a {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
