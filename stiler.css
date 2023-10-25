@@ -4,25 +4,10 @@
     color: #dfffd1;
 */
 body { /* body på index har inline css med bakgrunnsfarge svart */
-    background-color: #00735c;
-    color: #ffffe6;
+    background-color:#7dc26d; 
+    color: #211031;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     font-size: 14pt;
-}
-
-#ramma { /*ubrukt id */
-    background-color: antiquewhite;
-    margin:0px;
-    padding:3px;
-    overflow:visible;
-}
-
-#bildetekst {
-    width: 60%;
-    color: black;
-    font-weight: bold;
-    padding-left: 10px;
-    text-shadow: gold 0 0 10px;  
 }
 
 h3 {
@@ -35,7 +20,37 @@ h2 {
 
 h1 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
-    /*font-weight: lighter;*/
+}
+
+/* linker er under her. a visted har jeg ikke med for jeg vil at de skal se likeens ut etter at de er brukt */
+a {
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    color: #ffffe6;
+    font-size: 14pt;
+}
+a:hover {
+    color: rgb(34, 255, 0);
+    text-decoration: double;
+  }
+
+
+/* ID er samlet under her: */
+#ramma { /*ubrukt id */
+    background-color: antiquewhite;
+    margin:0px;
+    padding:3px;
+    overflow:visible;
+}
+
+#bildetekst {
+    background-color:#7dc26d; 
+    color: #211031;
+    width: 400px;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin: 20px; /*virker mot venstre....*/
+    margin-top: 20px; /* denne gjør ingenting */
 }
 
 #linker {
@@ -53,13 +68,13 @@ h1 {
     padding-bottom: 0px;
 }
 
-
 #bgbilde {
     background-image: url("bilder/robotFifties.jpg");
     background-repeat: no-repeat;
 }
 
 
+/* KLASSER er samlet under her */
 
 /* lister er greit å bruke i stedet for bare br og ul uten noen class lager hul sirkel, mens circle lager fylt sirkel */
 .ulsquare { /* styling av lister og tegn foran hvert li element */
@@ -75,17 +90,11 @@ h1 {
 
 
 
-a {
-    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
-    color: #ffffe6;
-    font-size: 14pt;
-}
-a:hover {
-    color: rgb(34, 255, 0);
-    text-decoration: double;
-  }
 
 
+
+
+/* buttons er ubrukte, men jeg har dem her likevel ....
 
 .button1 {
     background-image:url(buttext.png);
@@ -112,3 +121,5 @@ a:hover {
     padding-left: 12px;
     padding-right: 12px;
     font-size: 12px;}
+
+*/
