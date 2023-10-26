@@ -9,11 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!--Link til disse id: divGit divVs nyRepo sletteRepo   -->
     <h1>Denne siden og denne mappen er beregnet på GIT-øvelser</h1>
+    <h3>Gå direkte til: <a href="#divGit">diverse om git</a>-
+        <a href="#divVs">diverse om VsCode</a>-
+        <a href="#nyRepo">lage ny repository</a>-
+        <a href="#sletteRepo">slette repository </a>-
+    </h3>
 
     <div id="brodtekst">Her har jeg tenkt å skrive litt om Git og Github <br>
     <h3>Viktige Git-kommandoer:</h3>
-<ul class="ulsquare"> <!-- liste uten noe foran husk: li*10 -->
+<ul id="divGit" class="ulsquare"> <!-- liste uten noe foran husk: li*10 -->
     <li>For å laste opp til Github: git push orign master
     men det kan hende at ikke mappene stemmer overens, da er det
     git <b>pull</b> origin master, før jeg tar git <b>push </b>origin master</li>
@@ -24,7 +30,7 @@
     <br>Ja det er bare å skrive git restore --staged index.html 
 </ul>
 <hr>
-    <h3>Noen nyttige/unyttige tips for Git i VSCode (lista lager jeg med shortcuten li*5):</h3>
+    <h3 id="divVs" >Noen nyttige/unyttige tips for Git i VSCode (lista lager jeg med shortcuten li*5):</h3>
     <ul class="ulsquare">
     <li>git diff navnpåfil.noe, som viser hva som er blitt forandret i filen.</li>
     <li>Last ned vscode extension: GitLens som viser når du har commita ting (på linja du befinner deg)</li>
@@ -34,8 +40,8 @@
     </ul>
 <hr>
 
-<h3>Ny repository og første commits: </h3>
-<ul class="ulsquare">
+<h3 id="nyRepo">Ny repository og første commits: </h3>
+<ul  class="ulsquare">
 <li>Start Git bash og tast inn: cd "C:\Users\jokane\Dropbox\JornGit2023" <br>
 Eller høyreklikk og lim det inn
 </li><li>
@@ -51,7 +57,7 @@ Husk å ta med beskrivelse også
 git commit -m "Dette er første versjon av programmet, kun hello world nå"
 </ul>
 <hr>
-<h3>Slette repository fra Github</h3>
+<h3 id="sletteRepo">Slette repository fra Github</h3>
 On GitHub.com, navigate to the main page of the repository. Under your repository name, 
 click Settings. If you cannot see the "Settings" tab, select the dropdown menu, then click Settings. 
 In the "Danger Zone" section, click Delete this repository.
