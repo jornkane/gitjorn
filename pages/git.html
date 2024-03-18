@@ -74,6 +74,24 @@ In the "Danger Zone" section, click Delete this repository.
 <br> Du skriver bare p*3>lorem10 og får tre avsnitt med 10 ord!:
 </ul>
 <a href="#toppen">Tilbake til toppen</a>
+<hr>
+<h3 id="sletteRepo">Fikse problemer med SSH-sertifikat</h3>
+    Litt hjelp fra computer.com for å fikse problem med SSH-sertifikat:<br>
+    It seems like you are encountering an SSL certificate issue when trying to push to your GitHub repository. This error typically occurs when there is a problem with the SSL certificate chain. To resolve this, you can try the following steps:
+
+<br>1. **Update Git Configuration**: You can set Git to not verify the SSL certificate by running the following command:
+   
+   ```
+   git config --global http.sslVerify false
+   ```
+
+<br>2. **Add GitHub's SSL Certificate**: You can also try adding GitHub's SSL certificate to your trusted certificates. You can find GitHub's SSL certificate by visiting [https://github.com](https://github.com) and then save it to a file.
+
+<br>3. **Use SSH**: Another option is to use SSH instead of HTTPS for your GitHub repository. This can be done by changing the remote URL to the SSH URL. You can find the SSH URL in your GitHub repository.
+
+<br>Try these steps and see if they help you resolve the SSL certificate issue when pushing to GitHub. Let me know if you need further assistance!
+<br>
+<a href="#toppen">Tilbake til toppen</a>
 </div>
 
 <div id="linker">
