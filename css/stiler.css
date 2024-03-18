@@ -19,11 +19,20 @@ body { /* body på index har inline css med bakgrunnsfarge svart */
 
 #bildetekst {
     width: 60%;
-    color: black;
+    color: rgb(255, 255, 255);
     font-weight: bold;
     padding-left: 10px;
-    text-shadow: gold 0 0 10px;  
+    text-shadow: rgb(0, 0, 0) 2px 3px 3px;  
+    text-shadow: darkviolet;
 }
+
+div.fixed {  /* brukes med taggen: div class="fixed" */
+    position: fixed;
+    top: 1%;
+    left: 5%;
+    width: 90%;
+    border: 3px solid #73AD21;
+  }
 
 h3 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
