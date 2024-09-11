@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta
+      name="keywords"
+      content="Informasjonsteknologi og medieproduksjon Kristiansund videregående skole Jørn Kanestrøm 
+      jørndatamaskinist html css på opplæring javascript tilpasset elever på videregående skole"
+    />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Webdesign på Kristiansund videregående skole. Klasse 1IM1 og 2IT1. Lærer Jørn Kanestrøm"
+    />
+    <meta name="author" content="Jørn Kanestrøm" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- mer om head her https://www.w3schools.com/html/html_head.asp -->
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+
+    <link rel="stylesheet" href="../css/stiler.css">
+    <title>JavaScript ObjectOrientedProgramming</title>
+</head>
+
+<body>
+
+    <h1>JavaScript uke 38, 39 og 40</h1>
+    <h2>og ObjectOrientedProgramming</h2>
+    <a href="../index.html">Hjem / tilbake</a>
+
+    <h3>Vi skal lage en egen klasse med underklasse i samarbeid</h3>
+    Google Chrome: FN+F12 åpner konsoll der vi kan kjøre JavaScript
+    <br>Med Opera GX: CTRL+SHIFT+C
+    
+<script>
+
+
+
+
+
+
+
+class Animal {
+  constructor (art, slekt, familie, orden, klasse, rekke, rike ) {
+    this.art = art;
+    this.familie = familie;
+    this.klasse = klasse;
+    this.rike = "dyreriket"
+  }
+  klassifisering() {
+        console.log(`${this.art} tilhører riket ${this.rike} i klassen ${this.klasse} i familen ${this.familie} `);
+    }
+}
+
+// underklasse kan være høne, hund, katt, ku osv. 
+
+class Dog extends Animal {
+    constructor(art, slekt, familie, orden, klasse, rekke, rike, navn ) {
+        super(art, slekt, familie, orden, klasse, rekke, rike ); // Kaller konstruktøren til superklassen (Animal)
+        this.navn = navn;
+    }
+    getName() {
+        console.log(`${this.name} sjø.`);
+    }
+}
+
+const dog1 = new Dog('hund','hundeslekt','famile','orden','klasse','rekke','rike','Buddy');
+
+console.log(getName)
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
