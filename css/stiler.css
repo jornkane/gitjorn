@@ -8,6 +8,7 @@ body { /* body på index har inline css med bakgrunnsfarge svart */
     color: #ffffe6;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     font-size: 14pt;
+    margin-left: 12pt;
 }
 
 #ramma { /*ubrukt id */
@@ -57,7 +58,7 @@ h1 {
 }
 
 #brodtekst {
-    max-width: 700px;
+    max-width: 600px;
     text-shadow: gold 0 0 5px;  
 }
 
@@ -65,15 +66,22 @@ h1 {
     background-color: black;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     padding-bottom: 0px;
+    word-spacing: 1rem; /* em rem er sikkert samme som em - relativ til fontstørrelse */
 }
 
 
 #bgbilde {
     background-image: url("../img/futuristiskSteamPunkByStreetview.jfif");
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-
+/* film er for youtube i skjerm i iframe, den fungerer også til trinket for python prog. som også har iframe når de emeddes */
+#film {
+    width: 90%;
+    height: 27em; /* em er "In CSS (Cascading Style Sheets), em is a unit of measurement which indicates size relative to the size of the font. 1em means "equal to the current font size" Blackbaud.com */
+    border: 4px solid rgb(234, 207, 0); /*rgb(215, 255, 225)*/
+  }
 
 /* lister er greit å bruke i stedet for bare br og ul uten noen class lager hul sirkel, mens circle lager fylt sirkel */
 .ulsquare { /* styling av lister og tegn foran hvert li element */
@@ -126,3 +134,5 @@ a:hover {
     padding-left: 12px;
     padding-right: 12px;
     font-size: 12px;}
+
+
