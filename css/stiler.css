@@ -44,10 +44,12 @@ div.fixed {  /* brukes med taggen: div class="fixed" */
 
 h3 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    margin-bottom: 0%;
 }
 
 h2 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    
 }
 
 h1 {
