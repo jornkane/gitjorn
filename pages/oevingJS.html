@@ -33,15 +33,27 @@
     <br>FN+F12 åpner konsoll der vi kan kjøre JavaScript
     <br><b>Opera GX: </b>
     <br>CTRL+SHIFT+C
+
+
+
+<!-- inline med getElementById og henvis til den taggen som har samme ID-->
+    <p id="demo"></p>
+    <script>
+    let text = "Her bruker vi JavaScript for å lse oppgaven 276/2 * 0,5 = " + toCelsius(0.5) + ".";
+    document.getElementById("demo").innerHTML = text;
+    function toCelsius(etTall) {
+      return (276/2) * (etTall);
+    } 
+    </script>
     
+<br>
+<a href="./æ e i a æ å!.txt" target="_blank">Klikk på linken for å laste ned fil med feil navn</a>
+<br> 
+<br>
+<a href="./aeEiAaeAa.txt" target="_blank">Klikk på linken for å laste ned fil med riktigere navn</a>
+<br> 
+
 <script>
-
-
-
-
-
-
-
 class Animal {
   constructor (art, slekt, familie, orden, klasse, rekke, rike ) {
     this.art = art;
@@ -53,9 +65,7 @@ class Animal {
         console.log(`${this.art} tilhører riket ${this.rike} i klassen ${this.klasse} i familen ${this.familie} `);
     }
 }
-
 // underklasse kan være høne, hund, katt, ku osv. 
-
 class Dog extends Animal {
     constructor(art, slekt, familie, orden, klasse, rekke, rike, navn ) {
         super(art, slekt, familie, orden, klasse, rekke, rike ); // Kaller konstruktøren til superklassen (Animal)
@@ -65,9 +75,7 @@ class Dog extends Animal {
         console.log(`${this.name} sjø.`);
     }
 }
-
 const dog1 = new Dog('hund','hundeslekt','famile','orden','klasse','rekke','rike','Buddy');
-
 console.log(getName)
 
 
