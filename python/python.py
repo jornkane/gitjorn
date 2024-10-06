@@ -6,6 +6,7 @@ Created: 12.sept.24
 # omgjøringstabell for lengdeenheter
 
 print()
+print('Omgjøring av lengde, areal og volum:')
 tall = float(input('Skriv inn tallet du skal omgjøre (punktum for komma): '))
 mm = 0
 dimensjon = int(input('Tast 1 for lengde, 2 for areal, eller 3 for volum: ')) # lengde = 1, areal = 2 og volum = 3
