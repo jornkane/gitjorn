@@ -10,3 +10,5 @@ Hvis vi oversetter til grein kan man komme til å tenke på en grein fra et vanl
 
 Her er linken til selve hjemmesia for prosjektet:
 https://jornkane.github.io/gitjorn/
+
+husk aktivering av ssl: "git config --global http.sslVerify true"

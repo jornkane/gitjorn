@@ -4,6 +4,7 @@ import numpy as np
 
 x = np.linspace(-2, 2, 1000)
 y = x**2
+print('Funksjonen er y = x^2')
 
 plt.plot(x, y, color="red") # lager grafen og endrer farge
 plt.xlabel("x") # aksetittel langs x-aksen
