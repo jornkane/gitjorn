@@ -1,2 +1,6 @@
 # ignorer alle tekstfiler med ekstension .txt
 hemmeligeNotater.txt
+python/randomTrekke.py # ignorer python/randomTrekke.py
+
+
+

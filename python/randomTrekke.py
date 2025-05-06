@@ -1,4 +1,4 @@
-import random
+import random # burde kanskje importert spesifikke funksjoner istedenfor hele modulen
 
 def legg_til_navn():
     while True:
@@ -10,7 +10,7 @@ def legg_til_navn():
             fil.write(navn + '\n')
     print("Navnene er lagret i filen!")
 
-def trekk_tilfeldig():
+def trekk_tilfeldig(): 
     try:
         with open('randomListe.txt', 'r') as fil:
             navn_liste = fil.read().splitlines()

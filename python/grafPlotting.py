@@ -16,3 +16,5 @@ plt.xlim(-2, 2) # begrenser x-verdiene vi vil vise
 plt.ylim(-1, 4) # begrenser y-verdiene vi vil vise
 plt.show() # viser grafen
 
+print('Ny fil')
+
