@@ -88,6 +88,7 @@ h1 {
     border: 4px solid rgb(234, 207, 0); /*rgb(215, 255, 225)*/
   }
 
+
 /* lister er greit å bruke i stedet for bare br og ul uten noen class lager hul sirkel, mens circle lager fylt sirkel */
 .ulsquare { /* styling av lister og tegn foran hvert li element */
     list-style-type:square;
