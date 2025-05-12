@@ -70,7 +70,7 @@ h1 {
     background-color: black;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     padding-bottom: 0px;
-    word-spacing: 1rem; /* em rem er sikkert samme som em - relativ til fontstørrelse */
+    word-spacing: 0.5rem; /* em rem er sikkert samme som em - relativ til fontstørrelse */
 }
 
 
