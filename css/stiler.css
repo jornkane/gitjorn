@@ -101,7 +101,11 @@ h1 {
     list-style-type:none;
 }
 
+.bilde {
+    width: 60%;
+    height: auto;
 
+}
 
 a {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
