@@ -47,4 +47,4 @@ def primtall ():
 
 
 
-slutt = input('Tast enter for å avslutte: ')
+# slutt = input('Tast enter for å avslutte: ')

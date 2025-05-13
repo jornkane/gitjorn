@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from python import primtall, enheter
+from pyth import primtall, enheter
 
 print('Velkommen')
 
@@ -11,6 +11,4 @@ elif valg == (2):
     enheter()
 else:
     print('Takk for nå')
-
-DF
 
