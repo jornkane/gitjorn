@@ -60,6 +60,16 @@ h1 {
     max-width: 700px;
 }
 
+#nynorsk {
+    display: none;
+}
+#dialekt {
+    display: none;
+}
+#bandnavn {
+    display: none;
+}
+
 #brodtekst {
     max-width: 600px;
     text-shadow: gold 0 0 5px;  

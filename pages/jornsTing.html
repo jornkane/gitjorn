@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorn links</title>
+    <link rel="stylesheet" href="../css/stiler.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<br>
+<h1>Nyttig informasjon...eller ikke</h1>
+<div id="linker">
+
+<button onclick="myFunction()">Klikk for nynorsk-ordliste</button>
+    <div id="nynorsk">
+        Alt i dette div-elementet vises når du trykker på knappen <br>
+    Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
+    <pre>
+    Usemje - uenighet
+    Rørslehemma - bevegelseshemmet
+    Korkje - verken
+    Einskild - enkelt
+    Råka - truffet
+    Førebels - foreløpig
+    Handsame - håndtere
+    Syte for - sørge for
+    Truverd - troverdighet
+    Andlete - ansikt
+    Kryskap - stolthet
+    Vit - vett
+    Avdi - fordi(?)
+    Avgjersla - avgjørelsen
+    Lauspengeangrep - løsepengeandrep(?)
+    Heider - Heider
+    Svevn - søvn
+    Draum - drøm
+    Skodespelar - skuespiller
+    Audmjuk - ydmyk
+    Draum - drøm
+    Allereie - allerede
+    Plar - pleier
+    Føreseieleg - forutsigbart
+    Sal - salg
+    Sonen - sønnen
+    Ope - åpent
+    </pre>
+    </div>
+<br><br>
+          <button onclick="myFunction2()">Klikk for tips til bandnavn</button>
+<div id="bandnavn">
+    Alt i dette div-elementet vises når du trykker på knappen <br>
+    Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
+    <pre>
+    Conspirality
+    JarnØskje
+    Mærschkre
+    GraveMachine
+    Gasskammeratene
+    Klimatoris
+    Ejakulosaurus
+    Marching korps
+    Skoog
+    SplitterNakja
+    PilsnerOL
+    Diktansamling
+    Prosopometamorphosia (demonlidelse)
+    Hexakosioihexekontahexafobi (666fobi)
+    Væpna evolusjon
+    Rakettetterforskning
+    Skuldmenn
+    Carpe Ødem
+    daREDevil
+    Viskelærer
+    Pukemon
+    Rullex
+    Voksengrøt
+    Ås-skam
+    Crimeinality
+    </pre>
+    </div>
+<br><br>
+
+  <button onclick="myFunction3()">Snedige ord på dialekt</button>
+<div id="dialekt">
+    Alt i dette div-elementet vises når du trykker på knappen <br>
+Mæstpartn tå orda og vendinganj e frå Straumsnes, <br>
+men innkvainnj innslaja frå andre dialækte å :) <br>
+<pre>
+    Innkvart - noe, litt
+    Dikje - gjørme
+    Mennjanj - morgenene
+    Spæi - balltre
+    Attlægå - åker
+    Talgjøs - stearilys
+    Dærståkkjen - dørterskelen
+    Sykjest - ønske sterkt
+    Sneddje - praktisk
+    Øskje - eske, boks, skrin 
+    Armæst - streve
+    Eling - regn
+    Håsså - sokker
+    Labba - sokker
+    Svoltinj - sulten
+    Karravorrinj - macho, breial
+    Ilt - vondt
+    Gællinj - sint 
+    Færreåt - før, på forhånd
+    Besætt - voldsomt
+    Helsnekje - kaldt
+    Obsternasig - tverr, vanskelig 
+    Svettebrøt - svetteanfall(?)
+    Trele - vanskelig
+    Braddj - skråning
+    Tærgaddj - tørr vedkubbe
+    Kålv - velte
+    Skor opp mot vejjen - sette opp mot veggen
+    Enkjemannjstarschjen - en nerve i albuen
+    Rakkel - gå tregt / rusle
+    Shælv, ha skålve - skjelve, har skjulvet(?)
+    Blokkflæt - blokkfløyte
+    Kvætmmjøl - hvetemel
+    Tikkkje - tatt
+    Krongelkjærr - piggete busker
+    Vassbøtt - vannbøtte
+    Bellet i ram - bilde i ramme
+    Del - sikle
+    Håkk - hake
+    Ævv - øye
+    Hauvv - hode
+    Dråk - jente
+    drekern - jentene
+    Tæs - jente
+    Jevver - gevær
+    Nætt - nøtt
+    Per - pære
+    Æppel - eple
+    Æppelshin - appelsin
+    Ber - bær
+</pre>
+</div>
+<br><br>
+
+
+
+
+    <script>
+    function myFunction() {
+      var x = document.getElementById("nynorsk");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+    
+    <script>
+    function myFunction2() {
+      var x = document.getElementById("bandnavn");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+
+<script>
+    function myFunction3() {
+      var x = document.getElementById("dialekt");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
+
+
+
+<div class="fixed" style="padding-left: 10px;">
+    <b>Note:</b> The element will not take up any space when the display property 
+    is set to "none".<br>
+Kilde: <a href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp" target="_blank">
+    w3schools</a>
+</div>
+
+</div>
+</body>
+</html>
+
+
