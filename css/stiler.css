@@ -155,4 +155,27 @@ a:hover {
     padding-right: 12px;
     font-size: 12px;}
 
+/* Styling for alle buttons */
+button {
+    background-color: #00735c;
+    color: #ffffe6;
+    padding: 10px 20px;
+    border: 2px solid #ffffe6;
+    border-radius: 5px;
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    font-size: 14pt;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #ffffe6;
+    color: #00735c;
+    border-color: #00735c;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
 
