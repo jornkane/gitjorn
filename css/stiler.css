@@ -32,7 +32,8 @@ div.fixed {  /* brukes med taggen: div class="fixed" */
     position: fixed;
     top: 0pt;
     left: 1pt;
-    width: 60%;
+    padding-right: 5px;
+    width: 96%;
     border: 3px solid #73AD21;
   }
 
