@@ -158,13 +158,11 @@ men innkvainnj innslaja frå andre dialækte å :) <br>
 </div>
 <br><br>
 
-
-
-
+<!-- opprinnelig js i if display kommandoen er beregenet på inline js: if (x.style.display === "none") { -->
     <script>
     function myFunction() {
       var x = document.getElementById("nynorsk");
-      if (x.style.display === "none") {
+      if (window.getComputedStyle(x).display === "none") {
         x.style.display = "block";
       } else {
         x.style.display = "none";
@@ -175,7 +173,7 @@ men innkvainnj innslaja frå andre dialækte å :) <br>
     <script>
     function myFunction2() {
       var x = document.getElementById("bandnavn");
-      if (x.style.display === "none") {
+      if (window.getComputedStyle(x).display === "none") {
         x.style.display = "block";
       } else {
         x.style.display = "none";
@@ -183,10 +181,10 @@ men innkvainnj innslaja frå andre dialækte å :) <br>
     }
     </script>
 
-<script>
+    <script>
     function myFunction3() {
       var x = document.getElementById("dialekt");
-      if (x.style.display === "none") {
+      if (window.getComputedStyle(x).display === "none") {
         x.style.display = "block";
       } else {
         x.style.display = "none";
