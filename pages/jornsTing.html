@@ -5,10 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-    <title>Jorn links</title>
+    <title>Jørns ting og tang og tull</title>
     <link rel="stylesheet" href="../css/stiler.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-</head>
+
+    <style>
+      /* Popup container - can be anything you want */
+      .popup {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        text-decoration: dotted;
+        text-decoration-line: underline;
+        border-color: black;
+      }
+      
+      /* The actual popup */
+      .popup .popuptext {
+        visibility: hidden;
+        width: 300px;
+        background-color: #86ff86;
+        color: #3b0000;
+        text-align: center;
+        border-radius: 6px;
+        border: 2px solid black;
+        box-shadow: 2px 4px 16px rgba(0,0,0,0.25);
+        padding: 8px 0;
+        position: absolute;
+        z-index: 4;
+        bottom: 125%;
+        left: 50%;
+        margin-left: -80px;
+      }
+      
+      /* Toggle this class - hide and show the popup */
+      .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+      }
+      
+      /* Add animation (fade in the popup) */
+      @-webkit-keyframes fadeIn {
+        from {opacity: 0;} 
+        to {opacity: 1;}
+      }
+      
+      @keyframes fadeIn {
+        from {opacity: 0;}
+        to {opacity:1 ;}
+      }
+      </style>
+
+
+  </head>
 
 <body>
 
@@ -21,14 +75,15 @@
 <h1>Nyttig informasjon...eller ikke..</h1>
 Aller først - svar på denne spørreundersøkelsen, og legg merke til at du må klikke <br>
 next et par ganger for å få muligheten til å legge igjen en kommentar:
-
 <br>
+
 <iframe class="qp_iframe" src="https://poll-maker.com/frame5496499x996e448c-163" seamless="seamless" frameborder="no" style="border:0; background:transparent; width:500px; height:550px;"></iframe>
 
 <div id='qp_foot5496499' style='width:100%; max-width: 600px; padding:2px;'>
   Created with <a href='https://www.supersurvey.com'>SuperSurvey</a></div>
   <STYLE></STYLE>
 <br>
+
 
 <div id="linker">
 <button onclick="myFunction()">Klikk for nynorsk-ordliste</button>
@@ -107,7 +162,7 @@ next et par ganger for å få muligheten til å legge igjen en kommentar:
 <div id="dialekt">
     Alt i dette div-elementet vises når du trykker på knappen <br>
 Mæstpartn tå orda og vendinganj e frå Straumsnes, <br>
-men innkvainnj innslaja frå andre dialækte å :) <br>
+men innkvainnj innslaja frå andre dialækte å  <br>
 <pre>
     Innkvart - noe, litt
     Brok - bukse, jeans
@@ -180,16 +235,6 @@ men innkvainnj innslaja frå andre dialækte å :) <br>
     }
     </script>
     
-    <script>
-    function myFunction2() {
-      var x = document.getElementById("bandnavn");
-      if (window.getComputedStyle(x).display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    </script>
 
     <script>
     function myFunction3() {
@@ -202,14 +247,33 @@ men innkvainnj innslaja frå andre dialækte å :) <br>
     }
     </script>
 
+<script>
+  function myFunction4() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+  }
+  </script>
 
 
-
-
+<!-- Popup eksempel start -->
+<div class="popup" onclick="myFunction4()">Ordforklaring (klikk for å veksle)
+  <span class="popuptext" id="myPopup">Dette er en popup laget med javascript <br>
+  </span>
 </div>
+<!-- Popup eksempel slutt -->
+</div>
+Kilde (popup): <a href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp" target="_blank"> w3schools</a>
 
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>
 

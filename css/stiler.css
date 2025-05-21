@@ -12,6 +12,7 @@ body { /* body på index har inline css med bakgrunnsfarge svart */
     overflow-x: hidden; /* dette gjør at det ikke er horisontale scrollbar */
 }
 
+
 #ramma { /* det er angitt som navn for iframen i index og undersidene har det som target */
     background-color: antiquewhite;
     margin:0px;
@@ -55,12 +56,20 @@ h3 {
 
 h2 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
-    
+    margin-top: 2px;
 }
 
 h1 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    margin-bottom: 0px;
     /*font-weight: lighter;*/
+}
+
+h4 {
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    font-size: 20pt;
+    text-decoration: double;
+    margin-top: 2px;
 }
 
 #linker {
@@ -126,7 +135,7 @@ h1 {
 a {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     color: #ffffe6;
-    font-size: 14pt;
+    /*font-size: 14pt;*/
 }
 a:hover {
     color: rgb(34, 255, 0);
