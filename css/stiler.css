@@ -100,7 +100,7 @@ h4 {
 
 
 #bgbilde {
-    background-image: linear-gradient(rgba(107, 251, 4, 0.5), rgba(177, 245, 6, 0.5)), url("../img/futuristiskSteamPunkByStreetview.jfif");
+    background-image: linear-gradient( #00735c, rgba(177, 245, 6, 0.5)), url("../img/futuristiskSteamPunkByStreetview.jfif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin-top: 0%;
@@ -134,14 +134,25 @@ h4 {
 
 a {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
-    color: #ffffe6;
+    color: gold;
+    font-weight: bold;
+    text-decoration: underline;
+    text-decoration: dotted;
     /*font-size: 14pt;*/
 }
+
+  a:visited{
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    color: goldenrod;
+    text-decoration: underline;
+    text-decoration: wavy;
+    /*font-size: 14pt;*/
+}
+
 a:hover {
     color: rgb(34, 255, 0);
     text-decoration: double;
   }
-
 
 
 .button1 {
