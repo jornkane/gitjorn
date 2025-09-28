@@ -6,12 +6,11 @@ body { /* body på index har inline css med bakgrunnsfarge svart */
     background-color: #00735c;
     color: #ffffe6;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
-    font-size: 14pt;
+    font-size: 12pt;
     margin-left: 12pt;
     margin-top: 0%;
     overflow-x: hidden; /* dette gjør at det ikke er horisontale scrollbar */
 }
-
 
 #ramma { /* det er angitt som navn for iframen i index og undersidene har det som target */
     background-color: antiquewhite;
@@ -49,27 +48,33 @@ pre {
     word-break: break-word;
   }
 
-h3 {
-    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
-    margin-bottom: 0%;
-}
-
-h2 {
-    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
-    margin-top: 2px;
-}
-
+/* Alle overskrifter */
 h1 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    margin-top: 6px;
     margin-bottom: 0px;
-    /*font-weight: lighter;*/
 }
-
+h2 {
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    margin-top: 6px;
+    margin-bottom: 0px;
+}
+h3 {
+    Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
+    font-size: 1.5rem;
+    margin-top: 6px;
+    margin-bottom: 0px;
+}
 h4 {
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     font-size: 20pt;
     text-decoration: double;
     margin-top: 2px;
+    margin-bottom: 0px;
+}
+.brodtekst {
+    max-width: 60%;
+    text-shadow: gold 0 0 5px;  
 }
 
 #linker {
@@ -86,10 +91,7 @@ h4 {
     display: none;
 }
 
-#brodtekst {
-    max-width: 600px;
-    text-shadow: gold 0 0 5px;  
-}
+
 
 #meny {
     background-color: black;

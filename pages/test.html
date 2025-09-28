@@ -12,31 +12,38 @@
             background-repeat: no-repeat;
         }
         img {
-            z-index: 1;
+            z-index: 1; /* høyde - over eller under andre elementer */
             display: block;
             margin: auto;
             opacity: 0.5;
-            width: 50%;
+            width: 60%;
         }
         marquee {
             z-index: 2;
             position: absolute;
             margin-top: 100px; /* denne styrer hvor langt teksten skal nå opp */
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            left: 10%;
+            right: 10%;
+            bottom: 20%; /* prosent nedenfra og opp */
             overflow: hidden;
             color: yellow;
             font-size: 2em;
+
         }
         .topFront {
             z-index: 3;
             background-color: black;
             width: 100%;
             height: 100px;
-    
-
+            text-align: center;
+        }
+        p {
+            padding-top: 10pt;
+            padding-bottom: 10pt;
+            text-align: center;
+            background-color: black;
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -47,16 +54,16 @@
     <img src="../img/sw4.jpg" alt="Star Wars IV">
 </div>
 
-<marquee scrollamount=5 direction="up">  
-Viktig beskjed til 1IM1: <br>
+<marquee scrollamount=5 direction="up"> 
+<p> 
+<b>Viktig beskjed til 1IM1: </b><br>
 Jeg vil bare ta av meg hatten og si at jeg er veldig imponert <br>
 over det dere har fått til i løpet av dette året. <br>
 Nå sist med NEAS-prosjektet og alle gruppene som presenterte - imponerende! <br>
 Det er fortsatt noen uker igjen før standpunkt og etter det er det <br>
-to uker til med skole, men tida går fort :) <br>
+to uker til med skole, men tida går fort  <br>
 ...
-
-
+</p>
 </marquee>
 
 </body>

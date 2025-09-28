@@ -9,58 +9,6 @@
     <link rel="stylesheet" href="../css/stiler.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-    <style>
-      /* Popup container - can be anything you want */
-      .popup {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        text-decoration: dotted;
-        text-decoration-line: underline;
-        border-color: black;
-      }
-      
-      /* The actual popup */
-      .popup .popuptext {
-        visibility: hidden;
-        width: 300px;
-        background-color: #86ff86;
-        color: #3b0000;
-        text-align: center;
-        border-radius: 6px;
-        border: 2px solid black;
-        box-shadow: 2px 4px 16px rgba(0,0,0,0.25);
-        padding: 8px 0;
-        position: absolute;
-        z-index: 4;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -80px;
-      }
-      
-      /* Toggle this class - hide and show the popup */
-      .popup .show {
-        visibility: visible;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s;
-      }
-      
-      /* Add animation (fade in the popup) */
-      @-webkit-keyframes fadeIn {
-        from {opacity: 0;} 
-        to {opacity: 1;}
-      }
-      
-      @keyframes fadeIn {
-        from {opacity: 0;}
-        to {opacity:1 ;}
-      }
-      </style>
-
 
   </head>
 
@@ -71,209 +19,42 @@
   Kilde: <a href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp" target="_blank"> w3schools</a>
   </div>
 <br>
-
-<h1>Nyttig informasjon...eller ikke..</h1>
-Aller først - svar på denne spørreundersøkelsen, og legg merke til at du må klikke <br>
-next et par ganger for å få muligheten til å legge igjen en kommentar:
 <br>
 
-<iframe class="qp_iframe" src="https://poll-maker.com/frame5496499x996e448c-163" seamless="seamless" frameborder="no" style="border:0; background:transparent; width:500px; height:550px;"></iframe>
+<div class="brodtekst">
+<h1>Kultur er viktig!</h1>
+<h2>Her får du tips til musikk, film/serier og spill</h2>
+Dette er det de engelsktalene kaller "the finer things in life", på norsk er det vel noe sånt som "livets gleder". 
+<h3>Film/serier</h3>
 
-<div id='qp_foot5496499' style='width:100%; max-width: 600px; padding:2px;'>
-  Created with <a href='https://www.supersurvey.com'>SuperSurvey</a></div>
-  <STYLE></STYLE>
-<br>
+Uke 39/40. Topp 3:<br>
+Peacemaker på HBO. Gjennomført bra serie, humor, action, superhelter, dimensjonsportaler, eagly osv. 
+<br>Alien Earth på HBO. Filmene er bra de, men serien er mye bedre! 
+<br>The Las of Us på HBO. Tok for meg det beste på HBO denne gangen og The last of us må sjølsagt værra med. Dem serien trenger vel ikke noe mer introduksjon...
+<br> Må også nevne Twisted Metal på Amazon Prime. Postapokalypse, humor og glavold. 
 
-
-<div id="linker">
-<button onclick="myFunction()">Klikk for nynorsk-ordliste</button>
-    <div id="nynorsk">
-        Alt i dette div-elementet vises når du trykker på knappen <br>
-    Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
-    <pre>
-    Usemje - uenighet
-    vonbroten - skuffet, desillusjonert (NB! <a href="https://naob.no/ordbok/vonbroten" target="_blank"> vonbroten er faktisk tillatt på bokmål)</a>
-    Rørslehemma - bevegelseshemmet
-    Korkje - verken
-    Einskild - enkelt
-    Råka - truffet
-    Førebels - foreløpig
-    Handsame - håndtere
-    Syte for - sørge for
-    Truverd - troverdighet
-    Andlete - ansikt
-    Kryskap - stolthet
-    Vit - vett
-    Avdi - fordi(?)
-    Avgjersla - avgjørelsen
-    Lauspengeangrep - løsepengeandrep(?)
-    Heider - Heider
-    Svevn - søvn
-    Draum - drøm
-    Skodespelar - skuespiller
-    Audmjuk - ydmyk
-    Draum - drøm
-    Allereie - allerede
-    Plar - pleier
-    Føreseieleg - forutsigbart
-    Sal - salg
-    Sonen - sønnen
-    Ope - åpent
-    </pre>
-    </div>
-<br><br>
-
-<!--
-          <button onclick="myFunction2()">Klikk for tips til bandnavn</button>
-<div id="bandnavn">
-    Alt i dette div-elementet vises når du trykker på knappen <br>
-    Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
-    <pre>
-    Conspirality
-    JarnØskje
-    Mærschkre
-    GraveMachine
-    Gasskammeratene
-    Klimatoris
-    Ejakulosaurus
-    Marching korps
-    Skoog
-    SplitterNakja
-    PilsnerOL
-    Diktansamling
-    Prosopometamorphosia (demonlidelse)
-    Hexakosioihexekontahexafobi (666fobi)
-    Væpna evolusjon
-    Rakettetterforskning
-    Skuldmenn
-    Carpe Ødem
-    daREDevil
-    Viskelærer
-    Pukemon
-    Rullex
-    Voksengrøt
-    Ås-skam
-    Crimeinality
-    </pre>
-    </div>
-<br><br>
--->
-  <button onclick="myFunction3()">Snedige ord på dialekt</button>
-<div id="dialekt">
-    Alt i dette div-elementet vises når du trykker på knappen <br>
-Mæstpartn tå orda og vendinganj e frå Straumsnes, <br>
-men innkvainnj innslaja frå andre dialækte å  <br>
-<pre>
-    Innkvart - noe, litt
-    Brok - bukse, jeans
-    Olabrok - jeans, dongeribukse
-    Punnjbrok - truse
-    Dikje - gjørme
-    Mennjanj - morgenene
-    Spæi - balltre
-    Attlægå - åker
-    Talgjøs - stearilys
-    Dærståkkjen - dørterskelen
-    Sykjest - ønske sterkt
-    Sneddje - praktisk
-    Øskje - eske, boks, skrin 
-    Armæst - streve
-    Eling - regn
-    Håsså - sokker
-    Labba - sokker
-    Svoltinj - sulten
-    Karravorrinj - macho, breial
-    Ilt - vondt
-    Gællinj - sint 
-    Færreåt - før, på forhånd
-    Besætt - voldsomt
-    Helsnekje - kaldt
-    Obsternasig - tverr, vanskelig 
-    Svettebrøt - svetteanfall(?)
-    Trele - vanskelig
-    Braddj - skråning
-    Tærgaddj - tørr vedkubbe
-    Kålv - velte
-    Skor opp mot vejjen - sette opp mot veggen
-    Enkjemannjstarschjen - en nerve i albuen
-    Rakkel - gå tregt / rusle
-    Shælv, ha skålve - skjelve, har skjulvet(?)
-    Blokkflæt - blokkfløyte
-    Kvætmmjøl - hvetemel
-    Tikkkje - tatt
-    Krongelkjærr - piggete busker
-    Vassbøtt - vannbøtte
-    Bellet i ram - bilde i ramme
-    Del - sikle
-    Håkk - hake
-    Ævv - øye
-    Hauvv - hode
-    Dråk - jente
-    drekern - jentene
-    Tæs - jente
-    Jevver - gevær
-    Nætt - nøtt
-    Per - pære
-    Æppel - eple
-    Æppelshin - appelsin
-    Ber - bær
-</pre>
 </div>
-<br><br>
+<div class="brodtekst">
 
-
-
-<!-- opprinnelig js i if display kommandoen er beregenet på inline js: if (x.style.display === "none") { -->
-    <script>
-    function myFunction() {
-      var x = document.getElementById("nynorsk");
-      if (window.getComputedStyle(x).display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    </script>
-    
-
-    <script>
-    function myFunction3() {
-      var x = document.getElementById("dialekt");
-      if (window.getComputedStyle(x).display === "none") {
-        x.style.display = "block";
-      } else {
-        x.style.display = "none";
-      }
-    }
-    </script>
-
-<script>
-  function myFunction4() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-  }
-  </script>
-
-
-<!-- Popup eksempel start -->
-<div class="popup" onclick="myFunction4()">Ordforklaring (klikk for å veksle)
-  <span class="popuptext" id="myPopup">Dette er en popup laget med javascript <br>
-  </span>
-</div>
-<!-- Popup eksempel slutt -->
-</div>
-Kilde (popup): <a href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp" target="_blank"> w3schools</a>
-
-
-
+  <h3>Musikk</h3>
+  Uke 39/40. Topp 3:<br>
+  The Peach Kings har mye bra: <br>
+  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7iXR11NaUdhfbAl9Aux0vP?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <br>
+  Silversun Pickups<br>
+  <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0zAe7oUseLPmS8EP8Yqfy2?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+PJ Harvey. Klassiker, men må høres med jevne mellomrom<br>
+<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4J4wU1a0MqhrBMBN2RzFUw?utm_source=generator" width="50%" height="100" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+
+
+
+
+
+  </div>
+
+
 </body>
 </html>
 

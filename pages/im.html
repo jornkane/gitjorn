@@ -4,18 +4,277 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
     <title>Jorn im</title>
     <link rel="stylesheet" href="../css/stiler.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <style>
+        /* Popup container - can be anything you want */
+        .popup {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          text-decoration: dotted;
+          text-decoration-line: underline;
+          border-color: black;
+        }
+        
+        /* The actual popup */
+        .popup .popuptext {
+          visibility: hidden;
+          width: 300px;
+          background-color: #86ff86;
+          color: #3b0000;
+          text-align: center;
+          border-radius: 6px;
+          border: 2px solid black;
+          box-shadow: 2px 4px 16px rgba(0,0,0,0.25);
+          padding: 8px 0;
+          position: absolute;
+          z-index: 4;
+          bottom: 125%;
+          left: 50%;
+          margin-left: -80px;
+        }
+        
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+          visibility: visible;
+          -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+        }
+        
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+          from {opacity: 0;} 
+          to {opacity: 1;}
+        }
+        
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity:1 ;}
+        }
+        </style>
+  
+  
+
 </head>
 <body>
     <h1>VG1 IM</h1>
     <h2>Inspirasjon 😎:</h2>
     <img src="/img/Slide4.jpg" width="400" alt="Bilde av Vinjar 😎 ">
-    <img src="../img/Slide4.jpg" width="400" alt="Bilde av Vinjar nytt forsøk ">
+
+
+
+    <br><br>
+    Svar på denne spørreundersøkelsen, og legg merke til at du må klikke <br>
+    next et par ganger for å få muligheten til å legge igjen en kommentar:
+    <br>
+    <!-- spørreundersøkelse -->
+    <iframe class="qp_iframe" src="https://poll-maker.com/frame5496499x996e448c-163" seamless="seamless" frameborder="no" style="border:0; background:transparent; width:500px; height:550px;"></iframe>
+    <div id='qp_foot5496499' style='width:100%; max-width: 600px; padding:2px;'>
+      Created with <a href='https://www.supersurvey.com'>SuperSurvey</a></div>
+      <STYLE></STYLE>
+    <br>
     
-<h2>Konseptutvikling og programmering:</h2>
-<div id="brodtekst">Fra uke 9 til 19 har 1IM1 jobbet med et stort oppdrag fra NEAS. 
+    <!-- Skjul / vis -knapper -->
+    <div id="linker">
+    <button onclick="myFunction()">Klikk for nynorsk-ordliste</button>
+        <div id="nynorsk">
+            Alt i dette div-elementet vises når du trykker på knappen <br>
+        Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
+        <pre>
+        Usemje - uenighet
+        vonbroten - skuffet, desillusjonert (NB! <a href="https://naob.no/ordbok/vonbroten" target="_blank"> vonbroten er faktisk tillatt på bokmål)</a>
+        Rørslehemma - bevegelseshemmet
+        Korkje - verken
+        Einskild - enkelt
+        Råka - truffet
+        Førebels - foreløpig
+        Handsame - håndtere
+        Syte for - sørge for
+        Truverd - troverdighet
+        Andlete - ansikt
+        Kryskap - stolthet
+        Vit - vett
+        Avdi - fordi(?)
+        Avgjersla - avgjørelsen
+        Lauspengeangrep - løsepengeandrep(?)
+        Heider - Heider
+        Svevn - søvn
+        Draum - drøm
+        Skodespelar - skuespiller
+        Audmjuk - ydmyk
+        Draum - drøm
+        Allereie - allerede
+        Plar - pleier
+        Føreseieleg - forutsigbart
+        Sal - salg
+        Sonen - sønnen
+        Ope - åpent
+        </pre>
+        </div>
+    <br><br>
+    
+    <!--
+              <button onclick="myFunction2()">Klikk for tips til bandnavn</button>
+    <div id="bandnavn">
+        Alt i dette div-elementet vises når du trykker på knappen <br>
+        Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
+        <pre>
+        Conspirality
+        JarnØskje
+        Mærschkre
+        GraveMachine
+        Gasskammeratene
+        Klimatoris
+        Ejakulosaurus
+        Marching korps
+        Skoog
+        SplitterNakja
+        PilsnerOL
+        Diktansamling
+        Prosopometamorphosia (demonlidelse)
+        Hexakosioihexekontahexafobi (666fobi)
+        Væpna evolusjon
+        Rakettetterforskning
+        Skuldmenn
+        Carpe Ødem
+        daREDevil
+        Viskelærer
+        Pukemon
+        Rullex
+        Voksengrøt
+        Ås-skam
+        Crimeinality
+        </pre>
+        </div>
+    <br><br>
+    -->
+      <button onclick="myFunction3()">Snedige ord på dialekt</button>
+    <div id="dialekt">
+        Alt i dette div-elementet vises når du trykker på knappen <br>
+    Mæstpartn tå orda og vendinganj e frå Straumsnes, <br>
+    men innkvainnj innslaja frå andre dialækte å  <br>
+    <pre>
+        Innkvart - noe, litt
+        Brok - bukse, jeans
+        Olabrok - jeans, dongeribukse
+        Punnjbrok - truse
+        Dikje - gjørme
+        Mennjanj - morgenene
+        Spæi - balltre
+        Attlægå - åker
+        Talgjøs - stearilys
+        Dærståkkjen - dørterskelen
+        Sykjest - ønske sterkt
+        Sneddje - praktisk
+        Øskje - eske, boks, skrin 
+        Armæst - streve
+        Eling - regn
+        Håsså - sokker
+        Labba - sokker
+        Svoltinj - sulten
+        Karravorrinj - macho, breial
+        Ilt - vondt
+        Gællinj - sint 
+        Færreåt - før, på forhånd
+        Besætt - voldsomt
+        Helsnekje - kaldt
+        Obsternasig - tverr, vanskelig 
+        Svettebrøt - svetteanfall(?)
+        Trele - vanskelig
+        Braddj - skråning
+        Tærgaddj - tørr vedkubbe
+        Kålv - velte
+        Skor opp mot vejjen - sette opp mot veggen
+        Enkjemannjstarschjen - en nerve i albuen
+        Rakkel - gå tregt / rusle
+        Shælv, ha skålve - skjelve, har skjulvet(?)
+        Blokkflæt - blokkfløyte
+        Kvætmmjøl - hvetemel
+        Tikkkje - tatt
+        Krongelkjærr - piggete busker
+        Vassbøtt - vannbøtte
+        Bellet i ram - bilde i ramme
+        Del - sikle
+        Håkk - hake
+        Ævv - øye
+        Hauvv - hode
+        Dråk - jente
+        drekern - jentene
+        Tæs - jente
+        Jevver - gevær
+        Nætt - nøtt
+        Per - pære
+        Æppel - eple
+        Æppelshin - appelsin
+        Ber - bær
+    </pre>
+    </div>
+    <br><br>
+    
+    
+    
+    <!-- opprinnelig js i if display kommandoen er beregenet på inline js: if (x.style.display === "none") { -->
+        <script>
+        function myFunction() {
+          var x = document.getElementById("nynorsk");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
+        
+    
+        <script>
+        function myFunction3() {
+          var x = document.getElementById("dialekt");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
+    
+    <script>
+      function myFunction4() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+      </script>
+    
+    
+    <!-- Popup eksempel start -->
+    <div class="popup" onclick="myFunction4()">Ordforklaring (klikk for å veksle)
+      <span class="popuptext" id="myPopup">Dette er en popup laget med javascript <br>
+      </span>
+    </div>
+    <!-- Popup eksempel slutt -->
+    </div>
+    Kilde (popup): <a href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp" target="_blank"> w3schools</a>
+    
+    
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>    
+    
+<h2>Arkiv</h2>
+<div id="brodtekst">Fra uke 9 til 19 (2025) har 1IM1 jobbet med et stort oppdrag fra NEAS. 
      gikk ut på å lage nettbutikk.
     Klassen har jobbet en del med webutvikling ved bruk at HTML, CSS og (litt)JavaScript.
     Men med nettbutikk kom det behov for database og kobling mellom nettsted og database
@@ -50,57 +309,10 @@ Noen korte filmklipp ser du når du har scrollet helt ned<br><br> </div>
 
 
 <br>
-<br>
-<br>
-<br>
-<br>
-
-    
-<br>
-<br>
-<h2>vg 1 IM arkiv:</h2>
-<h3><a href="https://www.loom.com/share/c7fe372af6a946ddac0de4b9d2be1d5c?sid=35a050c2-3999-4327-bcaf-4d08a4ff6692" target="_blank">Klikk her for ukas læringsvideo <br>
+<h3><a href="https://www.loom.com/share/c7fe372af6a946ddac0de4b9d2be1d5c?sid=35a050c2-3999-4327-bcaf-4d08a4ff6692" target="_blank">Klikk her for ukas læringsvideo. </h3>
+    HTML og CSS<br>
 <img src="../img/video.JPG" width="220" > </a> </h3>
 Kilde / videoverktøy: <a href="https://www.loom.com/" target="_blank">LOOM</a>
-
-<div id="brodtekst">
-<h3>Arkiv. IKM1003 23/24:</h3>
-<ul class="ulsquare">
-        <li>Uke 36: Hjemmeside: Vi fortsetter med å lage egen hjemmeside. Torsdag: Prøv å legge inn bilder og bakgrunnsbilde</li>
-        <li>Uke 37: Tirsdag: Presenter for lærer det du har gjort med hjemmesiden så langt og hva din plan er videre.</li>
-        <li>Uke 38 og 39:
-        <br>Uke 38: Gjør ferdig hjemmesiden. Sjekk at linker og alt fungerer, husk alle kilder, se over og lever. 
-        <br>Uke 39: Presentasjon av hjemmesiden for de som vil. Kanskje starter vi opp med nytt tema i løpet av uken. </li>
-        <li>Uke 40 og 42:
-        <br>Uke 40: Nytt tema: Programmering med Python </li>
-<br><br>
-
-    <li>Uke 44: Hjemmeside-Git-prosjekt ferdigstilles denne uken. Bruk tiden godt - disponer tiden slik at du blir ferdig med det du har tenkt å gjøre. Får du for lite tid har du kanskje gapt over litt for mye, har du mye tid til overs så bør du ha med flere elementer i prosjektet. Forbered en liten presentasjon av hjemmesiden ( det skal ikke være en lang presentasjon, kanskje 4-5 min) og forbered deg på spørsmål etter presentasjonen. Stå på og gjør ditt beste! Hilsen Jørn</li>
-<li>Uke 45: Oppstart programmering. Vi skal bruke noen uker på å lære mye om Python! </li>
-    <li>Matematikk:<br>Nytt kapittel: 3 Innsamling og presentasjon av data.<br>
-    Uke 44: kapittel 3.1 og 3.2. Gjør oppgavene til delkapitlene. <br>
-    Uke 45: kapittel 3.2 og 3.3. Gjør oppgavene til delkapitlene.<br>
-    Legg merke til at 3.2 går igjen begge ukene. Dette er for at vi skal få god nok tid. </li>
-    <br>
-    <li>Uke 39 og de første ukene etter høstferien:
-    <br>Git og Github </li>
-<li>Uke 42: 
-    <br>Oppstart prosjekt hjemmeside om Git. Huskelapper og tips finner du under "LINKS". Hele oppgaveteksten ligger i Teams, men dette er det viktigste:
-    <ul>
-    <li>Lag index.html med Git-tips </li>
-        <li>Ha med bildeutklipp av dine: git add . og git commit -m "info om hva du har forandra akkurat nå"</li>
-        <li>Lag logg.html der du beskriver hva du har gjort hver time</li>
-        <li>Hver enkelt passer på at dere får gjort dette og at dere får dokumentert det  </li>   
-    </ul>
-     <li>Uke 43: 
-        <br>Jobb videre med prosjektet. <b>Innleveringsfrist torsdag 26:10 kl 23:00.</b></li>
-
-    <li><b>Matematikk</b> <br>Uke 42:<br>
-Kapittel 2.3 - de siste oppgavene (bit / byte). Oppstart kapittel 2.4, binært tallsystem (totallsystemet)
-    </li> <li>uke 43:<br>
-Oppsummering målenheter og måling. <b>Kapitteltest</b></li>
-</ul>
-</div>
 
 </div>
 </body>

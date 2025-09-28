@@ -2,6 +2,8 @@
 cd er change directory
 rm er remove og
 rm -rf .git er remove recursive force mappa kobler det til github .git
+Fjerne fil i annen mappe:
+rm pages/oop.js
 
 
 
@@ -26,6 +28,8 @@ Etter det trykker vi bare enter og hele mappa vår blir pusha til gh
 Alle tidligere commits vises nå i github også...
 
 Kilde: [Dave Gray](https://www.youtube.com/watch?v=CvUiKWv2-C0)
+
+
 
 
 
