@@ -13,24 +13,14 @@
 
     <h1>VG2 IT</h1>
 <a href="oevingJS.html">Øving JavaScript oop ligger her</a>
-    <ul class="ulsquare"></ul>
+<div class="brodtekst">
 
-    <li>Uke 36 og framover<br>
-    Nå setter vi igang med versjonskontrollsystemet Git og GitHub. 
-    <br>Vi skal bruke dette til å lagre og dele kode.
-    <br>Aller først starter vi med kurs i Git på: <a href="https://www.w3schools.com/git/git_intro.asp?remote=github" target="_blank">
-      wcschools </a>
-    </li>
-
+    Vi har jobbet med målet: "vurdere fordeler og ulemper ved ulike programmeringsspråk og velge og anvende relevante programmeringsspråk og algoritmer i eget arbeid"
     <br>
-    <li>uke 35:
-        <br>
-        Vi har jobbet med målet: "vurdere fordeler og ulemper ved ulike programmeringsspråk og velge og anvende relevante programmeringsspråk og algoritmer i eget arbeid"
-        <br>
-        Og derfor har vi nå holdt på med litt mer avansert programmering, nærmere bestemt objektorientert programmering (oop). Og først er det JavaScript vi undersøker. Link til<a href="https://www.youtube.com/watch?v=GEuS0tfLfEY" target="_blank">videoen vi har brukt her</a> 
-        <br>Og her er kode jeg har skrevet samtidig som jeg har gått gjennom videoen (legg alt i body-taggen i html-dokumentet ditt og åpne konsoll i browser (med Chrome: fn+f12, Opera: ctrl+shift+c):
-        <pre>
-
+    Og derfor har vi nå holdt på med litt mer avansert programmering, nærmere bestemt objektorientert programmering (oop). Og først er det JavaScript vi undersøker. Link til<a href="https://www.youtube.com/watch?v=GEuS0tfLfEY" target="_blank"> videoen vi har brukt her</a> 
+    <br>Og her er kode jeg har skrevet samtidig som jeg har gått gjennom videoen (legg alt i body-taggen i html-dokumentet ditt og åpne konsoll i browser (med Chrome: fn+f12, Opera: ctrl+shift+c):
+</div>
+    <pre>
 script:
 
 class Person {
@@ -71,7 +61,8 @@ class House {
 let Jornis = new Person("Jornis",40);
 let Balt = new Person("Balthazar",80);
 
-let house = new House("husnavn",2500000, [Jornis, Balt]) // oppretter hus med jornis og baltazar som residenst
+// oppretter hus med jornis og baltazar som residenst
+let house = new House("husnavn",2500000, [Jornis, Balt]) 
 
 let Margot = new Person("Margot",37); // ny person i person-klassen
 Jornis.setJob("Programmeringsekspert")
@@ -99,7 +90,8 @@ class Programmer extends Person {
   this.language = language;
 }
 sayHi = () => {
-console.log(`Hello, I am a programmer! My name is ${this.getName()} I work for ${this.company}`); //her må vi bruke backtic ` istedet for "
+  //her må vi bruke backtic ` istedet for "
+console.log(`Hello, I am a programmer! My name is ${this.getName()} I work for ${this.company}`); 
 };
 }
 
@@ -108,30 +100,8 @@ programmer.sayHi();
 
 /script
 </pre>
-    </li>
 
 
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div id="brodtekst">
-    <h2>arkiv</h2>
-    <ul class="ulsquare">
-    <li>Uke 42: 
-        <br>Forberedelse til hospitering. Alle har fått oppdrag. Si ifra til læreren om du er ferdig med oppdraget ditt eller ikke har noe å gjøre i timen. Vi må prøve å kjøre noen commits med Git, det er mulig vi ser på det allerede uke 43...  
-        </li><br>
-            <li>Uke 43: 
-            <br>Nå begynner de fleste å bli ferdige med det dere skal vise hospiteringselevene. Derfor kjører vi på med Git. Jeg vil at dere skal lage et lite Python-program og bruke Git som versjonskontrollsystem. <br></li>
-        <br>
-        <li>Uke 44:<br>
-        Gjør ferdig programmet og vis meg Git-loggen din. Vi ser også om vi får til å pushe til en samarbeids-repository. Dersom dette fungerer som planlagt fortsetter vi en uke til med samme tema. 
-    </li>
-    </ul>
-
-</div>
 
 
 </body>
