@@ -46,7 +46,7 @@ h4 {
 
 /* klasser */
 .brodtekst {
-    max-width: 70%;
+    max-width: 90%;
     text-shadow: rgb(0, 0, 0) 2px 2px 3px;  /* den 3. gir blur effekt */
 }
 
