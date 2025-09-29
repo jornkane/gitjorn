@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-    <meta charset="UTF-8" />
     <meta
       name="keywords"
       content="Informasjonsteknologi og medieproduksjon Kristiansund videregående skole Jørn Kanestrøm 
@@ -12,41 +11,59 @@
       name="description"
       content="Webdesign på Kristiansund videregående skole. Klasse 1IM1 og 2IT1. Lærer Jørn Kanestrøm"
     />
-    <meta name="keywords" content="Jørn Kanestrøm, skolehjemmeside, informasjonsteknologi, medieproduksjon, webutvikling, programmering, HTML, CSS, JavaScript, Python, SQL, Kristiansund videregående skole, tutorials, vg1, vg2">
     <meta name="author" content="Jørn Kanestrøm" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- mer om head her https://www.w3schools.com/html/html_head.asp -->
-
     <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-    
-    <title>Jørns GithubHjemmeside</title>
-    <link rel="stylesheet" href="./css/stiler.css">
 
+    <title>gitJorn</title>
+
+    <link rel="stylesheet" href="./css/stiler.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="keywords" content="Jørn Kanestrøm, skolehjemmeside, informasjonsteknologi, medieproduksjon, webutvikling, programmering, HTML, CSS, JavaScript, Python, SQL, Kristiansund videregående skole, tutorials, vg1, vg2">
 </head>
 
-<body style="background-color: rgb(0,0,0);"> <!-- lokal style brukes kun på index.html -->
-    <div id="meny">
-    <a href="./pages/im.html" target="ramma"> VG1-IM</a> | 
-    <a href="./pages/it.html" target="ramma">VG2-IT</a> | 
-    <a href="./pages/python_grafer.html" target="ramma">mathplot</a> | 
-    <a href="./pages/links.html" target="ramma">Links</a> | 
-    <a href="./pages/1AO8.html" target="ramma">AO8-IM</a> | 
-    <br> 
-    <a href="./pages/webutvikling.html" target="ramma"> Webutv.</a> | 
-    <a href="./pages/git.html" target="ramma">Git</a> | 
-    <a href="./pages/python.html" target="ramma">Python</a> |
-    <a href="./pages/kultur.html" target="ramma">Kultur</a> |
-    <a href="startIframe.html" target="ramma">Hjem</a> 
-    <!--     <a href="./pages/tp.html" target="ramma">TP-matte</a> | 
-    <a href="./pages/vo.html" target="ramma">VO-matte</a> | -->
-    </div>   
-    
-    <iframe src="startIframe.html" frameborder="0" framemargin="0" style="overflow:hidden;overflow-x:hidden; overflow-y:hidden; height: 87%; width: 100%; position:absolute; top:6rem;left:0px; right:0px; bottom:0px" height="100%" width="100%" name="ramma">
-    Your browser does not support iframes.
-    </iframe>
-    
-    <!-- for å få iframen til å dekke hele høyden måtte jeg fra hjelp herfra: https://stackoverflow.com/questions/5867985/full-screen-iframe-with-a-height-of-100 
-    annen teksttype:     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> -->
+
+<body id="bgbilde">
+
+<div id="meny"></div>
+<script>
+  fetch('meny.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('meny').innerHTML = data;
+    });
+</script>
+
+
+    <div > 
+        <h1>Velkommen til Jørn Kanestrøms Skolehjemmeside</h1>
+        <div class="brodtekst">Velg klasse og fag i menyen over og se om du finner det du leter etter
+            <br>Tips og linker til tutorials som inngår i faget utvikling på vg1 og vg2 informasjonsteknologi og medieproduksjon blir å finne her. 
+            <br>Programmering og webutvikling:
+            <br>Web: Html, css og litt JavaScript. Programmering: først og fremst Python, en del JavaScript og eventuelt C# eller C++. 
+            <br>Det kan hende det kommer litt stoff om databaser også -> SQL og MsAccess
+            <br>Siden oppdateres etter behov (eller når Jørn tester ut ting)
+            <br>Sist oppdatert:
+            <h3>28.09.25</h3>
+            Jeg  ønsker å ha hvit tekst, og skygge på teksten slik at den vises mot bakgrunnen, men bakgrunnsbildet (selv om det er fint) ble for fremtredende. Derfor har jeg nå endret koden til å bruke en linear-gradient med RGBA verdier som legger et halvgjennomsiktig hvitt lag over bakgrunnsbildet. Dette vil kun påvirke bakgrunnsbildet og ikke teksten i elementet.
+            Hvis du ønsker en annen type gjennomsiktighet eller farge, kan vi justere RGBA-verdiene. For eksempel:<br>
+            For mørkere overlay: rgba(0, 0, 0, 0.5)<br>
+            For lysere overlay: rgba(255, 255, 255, 0.5)<br>
+            For mer eller mindre gjennomsiktighet, juster den siste verdien (0.5) opp eller ned (0 er helt gjennomsiktig, 1 er helt ugjennomsiktig) <br>
+
+            <ul class="uliste">
+            <li>Bakgrunnsbilde er Ai-generert. Futuristisk steam punk by, laget med bildeskaper i Bing, levert av Dall E 3</li>
+            <li><a href="https://www.bing.com/images/create?FORM=IRPGEN" target="_blank">Bildeskaper</a></li></ul>
+        </div>
+
+    </div>
+
+<footer>
+    <p>
+        Copyright 2025 Jørn Kanestrøm, Kane Computing. Alle rettigheter reservert.
+    </p>
+</footer>
 
 </body>
 </html>

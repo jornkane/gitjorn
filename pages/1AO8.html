@@ -11,7 +11,17 @@
 </head>
 
 <body>
-<br>
+    
+<div id="meny"></div>
+<script>
+  fetch('../meny.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('meny').innerHTML = data;
+    });
+</script>
+
+
 <h1>1AO8 - Informasjonsteknologi og medieproduksjon</h1>
 <br>
 <div class="brodtekst">
@@ -21,10 +31,7 @@
 <div>
 
 <br>
-<div class="fixed" style="padding-left: 10px;">For å låse et element (tekst og linker for eksempel) til en 
-    bestemt plass på siden kan man bruke position fixed: <a href="webutvikling.html" target="ramma">
-        Flere tips om webutvikling</a>
-</div>
+
 <br>
 <br>
 

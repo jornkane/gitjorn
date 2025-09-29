@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="meny"></div>
+<script>
+fetch('../meny.html')
+.then(response => response.text())
+.then(data => {
+    document.getElementById('meny').innerHTML = data;
+});
+</script>
     <h1>VG1 TP</h1>
 
 

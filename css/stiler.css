@@ -82,6 +82,15 @@ h4 {
 }
 
 /* ID */
+/* meny er på toppen av alle sider og henter opp siden meny.html */
+#meny {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 45px;
+
+}
+
+/* denne er kanskje utgått og erstattet med js meny */
 #ramma { /* det er angitt som navn for iframen i index og undersidene har det som target */
     background-color: antiquewhite;
     margin:0px;
