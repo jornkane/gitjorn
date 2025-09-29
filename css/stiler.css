@@ -3,7 +3,11 @@
     color: #dfffd1;
 */
 body { /* body på index har inline css med bakgrunnsfarge svart */
-    background-color: #00735c;
+    background-image:linear-gradient(90deg, #00735c, rgba(177, 245, 6, 0.5)); /*tidligere #00735c; */
+/* deg er grader og funker slik: 0deg = fra topp til bunn
+90deg = fra venstre mot høyre
+180deg = fra bunn til topp
+135deg = diagonalt fra øverst til venstre mot nederst til høyre */
     color: #ffffff;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     font-size: 14pt;
