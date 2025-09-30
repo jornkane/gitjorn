@@ -28,63 +28,68 @@
         <a href="#sletteRepo">slette repository </a>-
     </h3>
 
+
+
     <div id="brodtekst">Her har jeg tenkt å skrive litt om Git og Github <br>
+    <h3>Siste git-kommandoer: </h3>
+    # Lage en tag:<br>
+git tag -a v2.0 -m "Version 2.0 release"
+<br>
+# Slette feil tag lokalt og på GitHub:<br>
+git tag -d v1.0<br>
+git push origin :refs/tags/v1.0<br>
+# Pushe riktig tag til GitHub:<br>
+git push origin v2.0<br>
     <h3>Viktige Git-kommandoer:</h3>
-<ul id="divGit" class="ulsquare"> <!-- liste uten noe foran husk: li*10 -->
-    <li>For å laste opp til Github: git push orign master
+    <br>For å laste opp til Github: git push orign master
     men det kan hende at ikke mappene stemmer overens, da er det
-    git <b>pull</b> origin master, før jeg tar git <b>push </b>origin master</li>
-    <li>Log i Git bør gjøres med oneline, slik: git log --oneline
-    hvis ikke kan den bli fryktelig lang og jeg måtte avslutte VsCode for å bruke Git i terminal igjen...</li>
-    <li>Når vi angrer noe vi har adda, eller får feilmelding/advarsel ved addding <a href="https://www.freecodecamp.org/news/undo-git-add-how-to-remove-added-files-in-git/" target="_blank"> har vi to valg: git reset som tar vekk filene fra staging eller git rm som fjerner den fra både staging og sletter den fra mappa</a></li>
+    git <b>pull</b> origin master, før jeg tar git <b>push </b>origin master<br>
+    <br>Log i Git bør gjøres med oneline, slik: git log --oneline
+    hvis ikke kan den bli fryktelig lang og jeg måtte avslutte VsCode for å bruke Git i terminal igjen...<br>
+    <br>Når vi angrer noe vi har adda, eller får feilmelding/advarsel ved addding <a href="https://www.freecodecamp.org/news/undo-git-add-how-to-remove-added-files-in-git/" target="_blank"> har vi to valg: git reset som tar vekk filene fra staging eller git rm som fjerner den fra både staging og sletter den fra mappa</a>
     <br>kan jeg angre etter å stage den med git add . ?
     <br>Ja det er bare å skrive git restore --staged index.html 
-    <li>Når du har et git repository kan du for eksempel jobbe med samme hjemmeside både på jobb-pc og privat-pc</li>
-</ul>
+<br>Når du har et git repository kan du for eksempel jobbe med samme hjemmeside både på jobb-pc og privat-pc<br>
 <a href="#toppen">Tilbake til toppen</a>
 <hr>
     <h3 id="divVs" >Noen nyttige/unyttige tips for Git i VSCode (lista lager jeg med shortcuten li*5):</h3>
-    <ul class="ulsquare">
-    <li>git diff navnpåfil.noe, som viser hva som er blitt forandret i filen.</li>
-    <li>Last ned vscode extension: GitLens som viser når du har commita ting (på linja du befinner deg)</li>
-    <li>Hold alt og bruk piltast for å flytte linjer opp og ned</li>
-    <li>Vis git-mappa i din repository/folder i VS-Code:<br>
-        ctrl+, for å åpne settings, skriv exclude i søkefeltet, kryss bort git**</li>
-    </ul>
+<br>git diff navnpåfil.noe, som viser hva som er blitt forandret i filen.
+ <br>Last ned vscode extension: GitLens som viser når du har commita ting på linja du 
+<br>Hold alt og bruk piltast for å flytte linjer opp og ned<br>
+Vis git-mappa i din repository/folder i VS-Code:<br>
+        ctrl+, for å åpne settings, skriv exclude i søkefeltet, kryss bort git**
+<br>
     <a href="#toppen">Tilbake til toppen</a>
 <hr>
 
 <h3 id="nyRepo">Ny repository og første commits: </h3>
-<ul  class="ulsquare">
-<li>Start Git bash og tast inn: cd "C:\Users\jokane\Dropbox\JornGit2023" <br>
+Start Git bash og tast inn: cd "C:\Users\jokane\Dropbox\JornGit2023" <br>
 Eller høyreklikk og lim det inn
-</li><li>
+<br>
 Du kan også finne mappa i filutforsker, høyreklikk og velg Git Bash here!
-</li><li>
+<br>
 om du adder alle filene med git add . kan du ikke skjule dem med .gitignore etterpå...
-</li><li>
-Staging:
+<br>
+Staging:<br>
 Når du har valgt git add minfil.py så er den fila staged
-Commiting:
+Commiting:<br>
 Når du velger git commit -m så lagrer vi en save av fila slik den er akkurat nå. 
-Husk å ta med beskrivelse også
+Husk å ta med beskrivelse også<br>
 git commit -m "Dette er første versjon av programmet, kun hello world nå"
-</ul>
 <a href="#toppen">Tilbake til toppen</a>
 <hr>
 <h3 id="sletteRepo">Slette repository fra Github</h3>
 On GitHub.com, navigate to the main page of the repository. Under your repository name, 
 click Settings. If you cannot see the "Settings" tab, select the dropdown menu, then click Settings. 
-In the "Danger Zone" section, click Delete this repository.
+<br>In the "Danger Zone" section, click Delete this repository.
 <br>
-<ul class="ulnone"> <!-- liste uten noe foran husk: li*10 -->
-    <li>En måte skrive tekst i html uten å bruke p eller br for linjeskift</li>
-    <li>er å lage en ul med list-style-type:none; </li>
-    <li>hver linje er da pakket inn i li og /li tagger. </li>
-    For å fylle på med mer tekst finnes det snarveier i VScode:
+<br>En måte skrive tekst i html uten å bruke p eller br for linjeskift
+<br>er å lage en ul med list-style-type:none; 
+<br>hver linje er da pakket inn i li og /li tagger.
+ <br>   For å fylle på med mer tekst finnes det snarveier i VScode:
 <br>3 avsnitt med lorem ipsum generert med en kommando!
 <br> Du skriver bare p*3>lorem10 og får tre avsnitt med 10 ord!:
-</ul>
+
 <a href="#toppen">Tilbake til toppen</a>
 <hr>
 <h3 id="sletteRepo">Fikse problemer med SSH-sertifikat</h3>
@@ -92,11 +97,13 @@ In the "Danger Zone" section, click Delete this repository.
     It seems like you are encountering an SSL certificate issue when trying to push to your GitHub repository. This error typically occurs when there is a problem with the SSL certificate chain. To resolve this, you can try the following steps:
 
 <br>1. **Update Git Configuration**: You can set Git to not verify the SSL certificate by running the following command:
+<pre>
    
    ```
    git config --global http.sslVerify false
    ```
-
+</pre>
+<br>
 <br>2. **Add GitHub's SSL Certificate**: You can also try adding GitHub's SSL certificate to your trusted certificates. You can find GitHub's SSL certificate by visiting [https://github.com](https://github.com) and then save it to a file.
 
 <br>3. **Use SSH**: Another option is to use SSH instead of HTTPS for your GitHub repository. This can be done by changing the remote URL to the SSH URL. You can find the SSH URL in your GitHub repository.
@@ -104,19 +111,16 @@ In the "Danger Zone" section, click Delete this repository.
 <br>Try these steps and see if they help you resolve the SSL certificate issue when pushing to GitHub. Let me know if you need further assistance!
 <br>
 <a href="#toppen">Tilbake til toppen</a>
-</div>
-
-<div id="linker">
     <hr>
     <h3> Git-tutorials:</h3>
     For å komme igang med GIT og Github har jeg benyttet meg av mange hjelpevideoer på Youtube<br>
     Aller først brukte jeg denne og den anbefales til oppstart:
     <br><a href="https://youtu.be/CvUiKWv2-C0?si=TvZfXoyXlSh0qzPY" target="_blank">Git tutorial for absolute beginners. Dave Gray</a>
     <br><a href="https://youtu.be/EGooeHH3hDY?si=wUiQj66d68gHK" target="_blank">Git tutorial: How to undo git commits osv. Dave Gray</a>  
-</div>
 <a href="#toppen">Tilbake til toppen</a>
-<p></p>
 <br>
+<br>
+</div>
 </body>
 </html>
 
