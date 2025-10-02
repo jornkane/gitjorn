@@ -54,6 +54,15 @@ h4 {
     text-shadow: rgb(0, 0, 0) 2px 2px 3px;  /* den 3. gir blur effekt */
 }
 
+/* mindre tekst for kilder og bildetekster */
+.kilde {
+    font-size: 10pt;
+    font-style: italic;
+    margin-top: 0px;
+    max-width: 80%;
+    text-shadow: rgb(0, 0, 0) 1px 1px 2px;  /* den 3. gir blur effekt */
+}
+
 /* lister er greit å bruke i stedet for bare br og ul uten noen class lager hul sirkel, mens circle lager fylt sirkel */
 .ulsquare { /* styling av lister og tegn foran hvert li element */
     list-style-type:square;
@@ -91,6 +100,15 @@ h4 {
     padding-top: 5px;
     padding-left: 10px;
     padding-bottom: 45px;
+
+}
+
+/* for kommentar feltet */
+#comment-container {
+    padding-left: 5px;
+    width: 50%;
+    min-width: 350px;
+    border: white 2px solid;
 
 }
 
