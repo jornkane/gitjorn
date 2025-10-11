@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+  <title>Jorn im</title>
+  <link rel="stylesheet" href="../css/stiler.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div id="meny"></div>
+<script>
+fetch('../meny.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('meny').innerHTML = data;
+  });
+</script>
+
+  <h1>Ordlister og ordtak</h1>
+
+<img src="../img/futurama.jpg" alt="Futurama av Matt Groening" width="50%">
+<br>bildekilde: <a href="https://me.ign.com/en/futurama-season-12/223005/review/futurama-season-12-review" target="_blank">ign.com</a>
+
+
+  <br><br>
+  <div class="brodtekst">
+  Her har vi noen artige ordlister både nynorsk og dialekt <br>
+  Det hadde vært artig med tips til flere gode ord, men jeg får ikke ordna skikkelig tilbakemeldingsskjema. <br>
+  Om du har noen gode tips kan du klike deg inn på skjemaet på "kultur"siden, ellers så funker det på messenger også. Kanskje noen har tips til hvordan jeg kan lage et profft tilbakemeldingsskjema her? Jeg trur det er litt begrenset med sånne servermuligheter pga at jeg hoster siden gratis via github...
+  </div>
+  <br>
+
+
+<br>
+<!-- Skjul / vis -knapper -->
+<div id="linker">
+
+Alt i disse "div-elementene" vises når du trykker på knappen <br>
+Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
+<button onclick="myFunction()">Klikk for nynorsk-ordliste</button>
+  <div id="nynorsk">
+  <pre>
+  Usemje - uenighet
+  vonbroten - skuffet, desillusjonert (NB! <a href="https://naob.no/ordbok/vonbroten" target="_blank"> vonbroten er faktisk tillatt på bokmål)</a>
+  Rørslehemma - bevegelseshemmet
+  Korkje - verken
+  Einskild - enkelt
+  Råka - truffet
+  Førebels - foreløpig
+  Handsame - håndtere
+  Syte for - sørge for
+  Truverd - troverdighet
+  Andlete - ansikt
+  Kryskap - stolthet
+  Vit - vett
+  Avdi - fordi(?)
+  Avgjersla - avgjørelsen
+  Lauspengeangrep - løsepengeandrep(?)
+  Heider - Heider
+  Svevn - søvn
+  Draum - drøm
+  Skodespelar - skuespiller
+  Audmjuk - ydmyk
+  Draum - drøm
+  Allereie - allerede
+  Plar - pleier
+  Føreseieleg - forutsigbart
+  Sal - salg
+  Sonen - sønnen
+  Ope - åpent
+  </pre>
+  </div>
+
+
+  <br><br>
+Mæstpartn tå orda og vendinganj e frå Straumsnes, <br>
+men innkvainnj innslaja frå andre dialækte å  <br>
+  <button onclick="myFunction3()">Snedige ord på dialekt</button>
+<div id="dialekt">
+<pre>
+    Innkvart - noe, litt
+    Brok - bukse, jeans
+    Olabrok - jeans, dongeribukse
+    Punnjbrok - truse
+    Dikje - gjørme
+    Mennjanj - morgenene
+    Spæi - balltre
+    Attlægå - åker
+    Talgjøs - stearilys
+    Dærståkkjen - dørterskelen
+    Sykjest - ønske sterkt
+    Sneddje - praktisk
+    Øskje - eske, boks, skrin 
+    Armæst - streve
+    Eling - regn
+    Håsså - sokker
+    Labba - sokker
+    Svoltinj - sulten
+    Karravorrinj - macho, breial
+    Ilt - vondt
+    Gællinj - sint 
+    Færreåt - før, på forhånd
+    Besætt - voldsomt
+    Helsnekje - kaldt
+    Obsternasig - tverr, vanskelig 
+    Svettebrøt - svetteanfall(?)
+    Trele - vanskelig
+    Braddj - skråning
+    Tærgaddj - tørr vedkubbe
+    Kålv - velte
+    Skor opp mot vejjen - sette opp mot veggen
+    Enkjemannjstarschjen - en nerve i albuen
+    Rakkel - gå tregt / rusle
+    Shælv, ha skålve - skjelve, har skjulvet(?)
+    Blokkflæt - blokkfløyte
+    Kvætmmjøl - hvetemel
+    Tikkkje - tatt
+    Krongelkjærr - piggete busker
+    Vassbøtt - vannbøtte
+    Bellet i ram - bilde i ramme
+    Del - sikle
+    Håkk - hake
+    Ævv - øye
+    Hauvv - hode
+    Dråk - jente
+    drekern - jentene
+    Tæs - jente
+    Jevver - gevær
+    Nætt - nøtt
+    Per - pære
+    Æppel - eple
+    Æppelshin - appelsin
+    Ber - bær
+</pre>
+</div>
+</div>
+
+  <br>
+  Oversikt over gamle og nye ordtak - husk: I mørket er alle katter grå<br>
+
+
+<button onclick="myFunction4()">oversikt over kjente og ukjente ordtak</button>
+<div id="ordtak">
+<pre>
+  Ordtak og evt forklaring:
+    Gå ikke over bekken etter vann 
+</pre>
+</div>
+
+
+  <br>
+  
+  
+  
+  <!-- opprinnelig js i if display kommandoen er beregenet på inline js: if (x.style.display === "none") { -->
+   <!-- husk at alle id-ene står i css-dokumentet med display none -->
+      <script>
+      function myFunction() {
+        var x = document.getElementById("nynorsk");
+        if (window.getComputedStyle(x).display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      </script>
+      
+  
+      <script>
+      function myFunction3() {
+        var x = document.getElementById("dialekt");
+        if (window.getComputedStyle(x).display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
+      }
+      </script>
+
+      <script>
+        function myFunction4() {
+          var x = document.getElementById("ordtak");
+          if (window.getComputedStyle(x).display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+        </script>
+  
+
+  
+
+
+  <br><br>
+</body>
+</html>
+

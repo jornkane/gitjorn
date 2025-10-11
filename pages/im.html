@@ -1,254 +1,247 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
-  <title>Jorn im</title>
-  <link rel="stylesheet" href="../css/stiler.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <title>Jorn web</title>
+    <link rel="stylesheet" href="../css/stiler.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 
-  <style>
-      /* Popup container - can be anything you want */
-      .popup {
-        position: relative;
-        display: inline-block;
-        cursor: pointer;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        text-decoration: dotted;
-        text-decoration-line: underline;
-        border-color: black;
-      }
-      
-      /* The actual popup */
-      .popup .popuptext {
-        visibility: hidden;
-        width: 300px;
-        background-color: #86ff86;
-        color: #3b0000;
-        text-align: center;
-        border-radius: 6px;
-        border: 2px solid black;
-        box-shadow: 2px 4px 16px rgba(0,0,0,0.25);
-        padding: 8px 0;
-        position: absolute;
-        z-index: 4;
-        bottom: 125%;
-        left: 50%;
-        margin-left: -80px;
-      }
-      
-      /* Toggle this class - hide and show the popup */
-      .popup .show {
-        visibility: visible;
-        -webkit-animation: fadeIn 1s;
-        animation: fadeIn 1s;
-      }
-      
-      /* Add animation (fade in the popup) */
-      @-webkit-keyframes fadeIn {
-        from {opacity: 0;} 
-        to {opacity: 1;}
-      }
-      
-      @keyframes fadeIn {
-        from {opacity: 0;}
-        to {opacity:1 ;}
-      }
-      </style>
+
+
+    <style>
+        /* Popup container - can be anything you want */
+        /* Dette er foreløpig kun for ordforklaringen nederst på siden */
+        .popup {
+          position: relative;
+          display: inline-block;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          text-decoration: dotted;
+          text-decoration-line: underline;
+          border-color: black;
+        }
+        
+        /* The actual popup */
+        .popup .popuptext {
+          visibility: hidden;
+          width: 300px;
+          background-color: #86ff86;
+          color: #3b0000;
+          text-align: center;
+          border-radius: 6px;
+          border: 2px solid black;
+          box-shadow: 2px 4px 16px rgba(0,0,0,0.25);
+          padding: 8px 0;
+          position: absolute;
+          z-index: 4;
+          bottom: 125%;
+          left: 50%;
+          margin-left: -80px;
+        }
+        
+        /* Toggle this class - hide and show the popup */
+        .popup .show {
+          visibility: visible;
+          -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+        }
+        
+        /* Add animation (fade in the popup) */
+        @-webkit-keyframes fadeIn {
+          from {opacity: 0;} 
+          to {opacity: 1;}
+        }
+        
+        @keyframes fadeIn {
+          from {opacity: 0;}
+          to {opacity:1 ;}
+        }
+        </style>
+
+
+
 
 
 
 </head>
 <body>
-
+    
 <div id="meny"></div>
 <script>
 fetch('../meny.html')
-  .then(response => response.text())
-  .then(data => {
+.then(response => response.text())
+.then(data => {
     document.getElementById('meny').innerHTML = data;
-  });
+});
 </script>
 
-  <h1>VG1 IM</h1>
+<h1>1IM</h1>
+<img src="../img/matrix.jpg" width="40%" alt="Grønne bokstaver skrevet vertikalt fra filmen the Matrix.">
+<br>Bildekilde: <a href="https://www.indiewire.com/features/general/the-matrix-code-digital-rain-meaning-1201891684/" target="_blank">indieWire</a>
+<h2>HTML:</h2>
 
-<img src="../img/futurama.jpg" alt="Futurama av Matt Groening" width="50%">
-<br>bildekilde: <a href="https://me.ign.com/en/futurama-season-12/223005/review/futurama-season-12-review" target="_blank">ign.com</a>
+
+<div class="brodtekst">
+        HTML-filen (index.html) Inneholder strukturen til nettsiden din.
+        <br>Vi bruker <link>-taggen for å koble til det eksterne CSS-dokumentet (styles.css).
+        <br>CSS-filen (styles.css) inneholder stilene som brukes for å formatere HTML-elementene.
+        <br>Definerer farger, skrifttyper, marginer, padding, og andre stilrelaterte egenskaper.
+        <br>Du kan tilpasse innholdet og stilene etter dine egne preferanser. 
+        <br>Lykke til med nettsiden din! 🚀 Hvis du har flere spørsmål eller trenger mer hjelp, bare si ifra!
+        <br>Kilde: <a href="https://copilot.microsoft.com/)" target="_blank">copilot</a>
+
+    <br>
 
 
-  <br><br>
-  <div class="brodtekst">
-  Svar på denne spørreundersøkelsen, og legg merke til at du må klikke <br>
-  next et par ganger for å få muligheten til å legge igjen en kommentar: </div>
-  <br>
-  <!-- spørreundersøkelse -->
-  <iframe class="qp_iframe" src="https://poll-maker.com/frame5496499x996e448c-163" seamless="seamless" frameborder="no" style="border:0; background:transparent; max-width: 500px;; height:550px;"></iframe>
-  <div id='qp_foot5496499' style='width:100%; max-width: 600px; padding:2px;'>
-    Created with <a href='https://www.supersurvey.com'>SuperSurvey</a></div>
 
-  <br>
-  <!-- Skjul / vis -knapper -->
-  <div id="linker">
-  <button onclick="myFunction()">Klikk for nynorsk-ordliste</button>
-      <div id="nynorsk">
-          Alt i dette div-elementet vises når du trykker på knappen <br>
-      Her er min liste over rare nynorskord (listen utvides etter neste krim på NRK):<br>
-      <pre>
-      Usemje - uenighet
-      vonbroten - skuffet, desillusjonert (NB! <a href="https://naob.no/ordbok/vonbroten" target="_blank"> vonbroten er faktisk tillatt på bokmål)</a>
-      Rørslehemma - bevegelseshemmet
-      Korkje - verken
-      Einskild - enkelt
-      Råka - truffet
-      Førebels - foreløpig
-      Handsame - håndtere
-      Syte for - sørge for
-      Truverd - troverdighet
-      Andlete - ansikt
-      Kryskap - stolthet
-      Vit - vett
-      Avdi - fordi(?)
-      Avgjersla - avgjørelsen
-      Lauspengeangrep - løsepengeandrep(?)
-      Heider - Heider
-      Svevn - søvn
-      Draum - drøm
-      Skodespelar - skuespiller
-      Audmjuk - ydmyk
-      Draum - drøm
-      Allereie - allerede
-      Plar - pleier
-      Føreseieleg - forutsigbart
-      Sal - salg
-      Sonen - sønnen
-      Ope - åpent
-      </pre>
-      </div>
-  <br><br>
-  
-    <button onclick="myFunction3()">Snedige ord på dialekt</button>
-  <div id="dialekt">
-      Alt i dette div-elementet vises når du trykker på knappen <br>
-  Mæstpartn tå orda og vendinganj e frå Straumsnes, <br>
-  men innkvainnj innslaja frå andre dialækte å  <br>
-  <pre>
-      Innkvart - noe, litt
-      Brok - bukse, jeans
-      Olabrok - jeans, dongeribukse
-      Punnjbrok - truse
-      Dikje - gjørme
-      Mennjanj - morgenene
-      Spæi - balltre
-      Attlægå - åker
-      Talgjøs - stearilys
-      Dærståkkjen - dørterskelen
-      Sykjest - ønske sterkt
-      Sneddje - praktisk
-      Øskje - eske, boks, skrin 
-      Armæst - streve
-      Eling - regn
-      Håsså - sokker
-      Labba - sokker
-      Svoltinj - sulten
-      Karravorrinj - macho, breial
-      Ilt - vondt
-      Gællinj - sint 
-      Færreåt - før, på forhånd
-      Besætt - voldsomt
-      Helsnekje - kaldt
-      Obsternasig - tverr, vanskelig 
-      Svettebrøt - svetteanfall(?)
-      Trele - vanskelig
-      Braddj - skråning
-      Tærgaddj - tørr vedkubbe
-      Kålv - velte
-      Skor opp mot vejjen - sette opp mot veggen
-      Enkjemannjstarschjen - en nerve i albuen
-      Rakkel - gå tregt / rusle
-      Shælv, ha skålve - skjelve, har skjulvet(?)
-      Blokkflæt - blokkfløyte
-      Kvætmmjøl - hvetemel
-      Tikkkje - tatt
-      Krongelkjærr - piggete busker
-      Vassbøtt - vannbøtte
-      Bellet i ram - bilde i ramme
-      Del - sikle
-      Håkk - hake
-      Ævv - øye
-      Hauvv - hode
-      Dråk - jente
-      drekern - jentene
-      Tæs - jente
-      Jevver - gevær
-      Nætt - nøtt
-      Per - pære
-      Æppel - eple
-      Æppelshin - appelsin
-      Ber - bær
-  </pre>
-  </div>
-  <br><br>
-  
-  
-  
-  <!-- opprinnelig js i if display kommandoen er beregenet på inline js: if (x.style.display === "none") { -->
-      <script>
-      function myFunction() {
-        var x = document.getElementById("nynorsk");
-        if (window.getComputedStyle(x).display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
+
+
+
+
+
+
+
+        <script>
+            function myFunction5() {
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+            }
+            </script>
+
+        Svar på denne spørreundersøkelsen, og legg merke til at du må klikke <br>
+        next et par ganger for å få muligheten til å legge igjen en kommentar: 
+
+        <br>
+        <!-- spørreundersøkelse -->
+        <iframe class="qp_iframe" src="https://poll-maker.com/frame5496499x996e448c-163" seamless="seamless" frameborder="no" style="border:0; background:transparent; max-width: 500px;; height:550px;"></iframe>
+
+<div id='qp_foot5496499' style='width:100%; max-width: 600px; padding:2px;'>
+        Created with <a href='https://www.supersurvey.com'>SuperSurvey</a>
+</div>
+    
+        <br><br>
+    
+        <!-- Popup eksempel start -->
+<div class="popup" onclick="myFunction5()">Ordforklaring (klikk for å veksle)
+        <span class="popuptext" id="myPopup">Dette er en popup laget med javascript <br>
+        </span>
+</div>
+        <!-- Popup eksempel slutt -->
+        Kilde (popup): <a href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp" target="_blank"> w3schools</a>
+        <br>
+        <br>
+    <br>
+    <h3><a href="https://www.loom.com/share/c7fe372af6a946ddac0de4b9d2be1d5c?sid=35a050c2-3999-4327-bcaf-4d08a4ff6692" target="_blank">Klikk her for ukas læringsvideo. </h3>
+        HTML og CSS<br>
+    <img src="../img/video.JPG" width="220" > </a> </h3>
+    Kilde / videoverktøy: <a href="https://www.loom.com/" target="_blank">LOOM</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Her er eksempler på css-kode du kan bruke:
+        <br>
+        I menyen på denne websiten har jeg brukt bl.a. word-spacing: 1rem; 
+        <br>(rem - relativ til gjeldende fontstørrelse. 1 er samme, 2 blir da dobbelt osv.)
+        <br>"the rem unit is only relative to the document's root element, 
+        <br>while the em unit is only relative to the immediate parent of the targeted element"
+    <br>
+    <br>
+
+    Her har vi eksempel på html-kode for å sette opp en hjemmeside:<br>
+    <img src="../img/htmlkode.JPG" style="width: 60%;"> 
+    <br> (det er mulig å vise html-kode som tekst på en html-side, men det er litt mye arbeid)
+    <br><br>
+    <pre>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-      }
-      </script>
-      
-  
-      <script>
-      function myFunction3() {
-        var x = document.getElementById("dialekt");
-        if (window.getComputedStyle(x).display === "none") {
-          x.style.display = "block";
-        } else {
-          x.style.display = "none";
+        
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
         }
+        
+        main {
+            padding: 2em;
+        }
+        
+        h1, h2 {
+            color: #333;
+        }
+        
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        li {
+            background-color: #fff;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            border: 1px solid #ddd;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </pre>
+        Slik kan du feste et element på sida med nøyaktige "koordinater": 
+        <pre>
+        div.fixed {  /* brukes med taggen: div class="fixed" */
+        position: fixed;
+        top: 1pt;
+        left: 1pt;
+        width: 60%;
+        border: 3px solid #73AD21;
       }
-      </script>
-  
-  <script>
-    function myFunction4() {
-      var popup = document.getElementById("myPopup");
-      popup.classList.toggle("show");
-    }
-    </script>
-  
-  
-  <!-- Popup eksempel start -->
-  <div class="popup" onclick="myFunction4()">Ordforklaring (klikk for å veksle)
-    <span class="popuptext" id="myPopup">Dette er en popup laget med javascript <br>
-    </span>
-  </div>
-  <!-- Popup eksempel slutt -->
-  </div>
-  Kilde (popup): <a href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp" target="_blank"> w3schools</a>
-  
-  <br>
-  <br>
-  <br>
-
-
-<br>
-<h3><a href="https://www.loom.com/share/c7fe372af6a946ddac0de4b9d2be1d5c?sid=35a050c2-3999-4327-bcaf-4d08a4ff6692" target="_blank">Klikk her for ukas læringsvideo. </h3>
-  HTML og CSS<br>
-<img src="../img/video.JPG" width="220" > </a> </h3>
-Kilde / videoverktøy: <a href="https://www.loom.com/" target="_blank">LOOM</a>
-
+    </pre>
+Klikk her for <br>
+        <a href="https://stackoverflow.com/questions/46463820/visual-studio-code-disable-auto-closing-tags" target="_blank">
+        forklaring på hvordan du fjerner auto closing tags i VSCode</a>
+        <br>
 </div>
 </body>
 </html>
+
 
