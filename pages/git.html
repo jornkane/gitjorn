@@ -31,6 +31,7 @@
         <a href="#log">Status og log</a> - 
         <a href="#divGit">Tags</a> - 
         <a href="#tutorials">Git tutorials</a> - 
+        <a href="#main">Master/Main</a>
     </div>
 
 
@@ -90,7 +91,28 @@ Kan jeg angre etter å stage den med git add . ?
 <br>
 <a href="#toppen">Tilbake til toppen</a>
 <br>
+
+<h3 id="main">Sett default branch til main i Git:
+</h3>
+git branch -M main  
 <br>
+git remote add origin
+<br>
+git push -u origin main
+<br>
+Dersom du har en gammel repo med master branch kan du endre navn på den slik:
+<br>git branch -m master main
+<br><br>
+Jeg hadde en gammel repo med master branch og måtte gjøre dette for å pushe til GitHub:
+<br>git branch -m main 
+<br>git push -u origin main
+<br>Siden master fortsatt er standardgrein på github må jeg endre det før jeg går videre
+<br>Gå til repo på github.com, velg settings - General - Default branch - 
+<br>switch to another branch - velg main
+Nå kan du gå tilbake til VSCode og slette master greina lokalt:
+<br>git push origin --delete master 
+<br>
+<a href="#toppen">Tilbake til toppen</a>
 
 <h3 id="sletteRepo">Slette en repository:
 </h3>
