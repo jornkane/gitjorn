@@ -24,7 +24,8 @@
 
         <a href="#divVs">innstillinger VsCode</a> - 
         <a href="#nyRepo">Ny repository</a> - 
-        <a href="#daglig">Det du gjør oftest (staging committing)</a> -
+        <a href="#daglig">Staging / committing</a> - 
+        <a href="#branch">Branches</a> - 
         <br>
         <a href="#sletteRepo">Slette repository </a>
         <a href="#feilretting">Angre staging</a> - 
@@ -76,6 +77,31 @@ Når du har gjort endringer i filene dine, må du først legge dem til
 P.S. om du adder alle filene med git add . kan du ikke skjule dem med .gitignore etterpå...
 <br>
 <a href="#toppen">Tilbake til toppen</a>
+
+
+<h3 id="branch">Branches i Git:
+</h3>
+Dette er en meget nyttig funksjon i Git som gjør at du kan jobbe med flere
+<br>varianter av prosjektet ditt samtidig uten å påvirke hovedgreina (main).
+<br>For å lage en ny branch skriver du: 
+<br>git branch nybranch
+<br>For å bytte til den nye greina skriver du:
+<br>git switch nybranch
+<br>For å se hvilke greiner du har og hvilken du er på skriver du:
+<br>git branch (det vises også nederst til venstre i VSCode)
+<br>
+<br>Når du er ferdig med å jobbe på den nye greina og vil slå den sammen med main,
+<br>må du sjekke at det ikke er noen endringer som ikke er committa på den nye greina.
+<br>Deretter bytter du tilbake til main:   
+<br>git switch main
+<br>Deretter slår du sammen den nye greina med main:
+<br>git merge nybranch
+<br>N.B! merk at den greina du er ferdig med fortsatt eksisterer etter merge,
+<br>og du kan slette den med: git branch -d nybranch
+<br>eller gi den nytt navn med: git branch -m nyttnavn
+<br>
+<a href="#toppen">Tilbake til toppen</a>
+
 
 
 <h3 id="feilretting">Angre staging (git add):
