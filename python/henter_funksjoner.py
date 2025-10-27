@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from pyth import primtall, enheter
+from funksjoner import primtall, enheter
 
 print('Velkommen')
 
