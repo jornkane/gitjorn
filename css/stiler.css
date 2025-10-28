@@ -49,6 +49,8 @@ h4 {
 }
 
 /* klasser */
+
+
 .brodtekst {
     max-width: 80%;
     text-shadow: rgb(0, 0, 0) 2px 2px 3px;  /* den 3. gir blur effekt */
@@ -124,13 +126,7 @@ h4 {
 }
 
 /* ID */
-/* meny er på toppen av alle sider og henter opp siden meny.html */
-#meny {
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-bottom: 45px;
 
-}
 
 /* for kommentar feltet */
 #comment-container {
@@ -170,18 +166,24 @@ h4 {
     display: none;
 }
 
+/* meny er på toppen av alle sider og henter opp siden meny.html */
 #meny {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 45px;
     background-color: black;
     Font-family: Candara, Calibri, Segoe, Segoe UI, Optima, sans-serif;
     padding-bottom: 0px;
     word-spacing: 0.5rem; /* em rem er sikkert samme som em - relativ til fontstørrelse */
 }
+
 #bgbilde {
     background-image: linear-gradient( #00735c, rgba(177, 245, 6, 0.5)), url("../img/futuristiskSteamPunkByStreetview.jfif");
     background-repeat: no-repeat;
     background-attachment: fixed;
     margin-top: 0%;
 }
+
 /* film er for youtube i skjerm i iframe, den fungerer også til trinket for python prog. som også har iframe når de emeddes */
 #film {
     width: 100%;

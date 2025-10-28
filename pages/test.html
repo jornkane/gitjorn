@@ -1,106 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kane Computing - test</title>
-    <style>
-        body {
-            background-color: black;
-            color: yellow;
-            font-family: Arial, sans-serif;
-            background-repeat: no-repeat;
-        }
-        img {
-            z-index: 1; /* høyde - over eller under andre elementer */
-            display: block;
-            margin: auto;
-            opacity: 0.5;
-            position: fixed;
-        }
-        marquee {
-            z-index: 2;
-            position: absolute;
-            margin-top: 100px; /* denne styrer hvor langt teksten skal nå opp */
-            top: 0;
-            left: 10%;
-            right: 10%;
-            bottom: 20%; /* prosent nedenfra og opp */
-            overflow: hidden;
-            color: yellow;
-            font-size: 2em;
-
-        }
-        .topFront {
-            z-index: 3;
-            background-color: black;
-            width: 100%;
-            height: 100px;
-            text-align: center;
-        }
-        p {
-            padding-top: 10pt;
-            padding-bottom: 10pt;
-            text-align: center;
-            background-color: black;
-            opacity: 0.6;
-        }
-    </style>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico">
+    <link rel="stylesheet" href="../css/testpage.css">
+    <title>Kane Computing – test</title>
 </head>
 
-<body>
+<body class="testpage">
 
+    <!-- Henter inn menyen fra ekstern HTML -->
+    <div id="meny"></div>
+    <script>
+    fetch('../meny.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('meny').innerHTML = data;
+    });
+    </script>
 
+    <div class="topFront">
+        <h1>Opprørsalliansen melder:</h1>
 
+        <marquee scrollamount="5" direction="up">
+            Hei, IM og IT!<br>
+            Vi er langt inne i skoleåret 25/26, men først nå<br>
+            har jeg oppdatert teksten her.<br><br>
+            Nytt av året er en omfattende gjennomgang av <strong>git.html</strong><br>
+            med en mer oversiktlig og kronologisk liste<br>
+            over kommandoer til bruk ved oppstart og daglig arbeid med Git.
+        </marquee>
+    </div>
 
-<div id="meny"></div>
-<script>
-fetch('../meny.html')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('meny').innerHTML = data;
-});
-</script>
-
-
-
-
-
-<div class="topFront">
-    <h1>Opprørsalliansen melder:</h1>
-    <img src="../img/sw4.jpg" alt="Star Wars IV">
-</div>
-
-<marquee scrollamount=5 direction="up"> 
-
-<h3>Hei, IM og IT!</h3>
-Vi er langt inne i skoleåret 25/26, men først nå<br>
-har jeg oppdatert teksten her<br>
-</marquee>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
 </body>
 </html>
