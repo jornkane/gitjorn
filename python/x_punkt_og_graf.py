@@ -5,7 +5,8 @@ import os
 os.system('cls' if os.name == 'nt' else 'clear')
 
 # x-verdier som kan brukes i begge funksjonene
-x = np.arange(0, 20, 1)
+xrange = 30 # x verdiger går opp til det tallet
+x = np.arange(5, xrange, 1)
 
 def y (eks):
     return 40-eks
@@ -13,10 +14,14 @@ def y2 (eks):
     return (125-5*eks)/2
 
 print("x\t y(x)\t y2(x)") # \t brukes for tabulator
-for xi in x: # løkke som går gjennom alle x-verdiene
-    print(f"{xi}\t {y(xi)}\t {y2(xi)}") # printer ut x, y(x) og y2(x) med tabulator mellom
+for i in x: # løkke som går gjennom alle x-verdiene
+    print(f"{i}\t {y(i)}\t {y2(i)}") # printer ut x, y(x) og y2(x) med tabulator mellom
 
 print('----------------------------------------------------------')
+
+
+
+
 print('Det er tre måter å finne skjæringspunktene på:')
 yi = y(x) # numpy.ndarray som henter fra funksjon y. Y-verdi for alle x-verdier ligger nå i denne
 yi2 = y2(x) # nympy.ndarray som henter fra funksjon y2
@@ -68,8 +73,8 @@ plt.ylabel("y") # aksetittel langs y-aksen
 plt.axhline(y=0, color="black") # legger til en vannrett linje (x-akse)
 plt.axvline(x=0, color="black") # legger til en loddrett linje (y-akse)
 plt.grid() # legger til et rutenett
-plt.xlim(-5, 40) # begrenser x-verdiene vi vil vise
-plt.ylim(-5, 100) # begrenser y-verdiene vi vil vise
+plt.xlim(-5, xrange) # begrenser x-verdiene vi vil vise
+plt.ylim(-5, 60) # begrenser y-verdiene vi vil vise
 # Plot skjæringspunkter med blå sirkel
 plt.scatter(skj_x, skj_y, color="blue", marker="o", label="Skjæringspunkt")
 for x_val, y_val in zip(skj_x, skj_y):
