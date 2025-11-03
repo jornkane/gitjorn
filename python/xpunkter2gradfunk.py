@@ -23,8 +23,9 @@ print(f"Skjæringer med x-aksen: x = {x_skj}")
 print(f"Skjæring med y-aksen: y = {y_skj}")
 print(f"Bunnpunkt/toppunkt: ({x_ekstrem}, {y_ekstrem})")
 
-# Tegn grafen
 x = np.linspace(min(x_skj)-2, max(x_skj)+2, 100)
+
+# Tegn grafen
 plt.plot(x, f(x), label="f(x)")
 plt.axhline(0, color="black")
 plt.axvline(0, color="black")
