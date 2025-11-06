@@ -147,6 +147,26 @@ Kan jeg angre etter å stage den med git add . ?
 <br>
 <br>
 
+<h3 id="sletteFil">Slette en fil lokalt og på GitHub:
+</h3>
+For å slette en fil både lokalt og på GitHub kan du bruke:
+<br>git rm filnavn
+<br>git commit -m "Slettet filnavn"
+<br>git push origin main
+<br>Når vi skriver git push origin main (eller annen branch) vil
+<br>Github oppdatere (synkronisere) remote‑branchen til å matche 
+<br>din lokale branch, og da vil filen forsvinne fra GitHub også.
+<br>
+<br>NB! Pass på hva du laster opp til GitHub, spesielt om du jobber med
+<br>private prosjekter eller sensitive data. En slettet fil kan fortsatt
+<br>være tilgjengelig i commit-historikken, så for fullstendig fjerning må
+<br>du bruke mer avanserte Git-kommandoer som 'git filter-branch' eller
+<br>'BFG Repo-Cleaner'. Vær oppmerksom på at dette kan påvirke hele
+<br>repository-historikken og bør gjøres med forsiktighet.
+<br><a href="#toppen">Tilbake til toppen</a>
+<br>
+<br>
+
 <h3 id="sletteRepo">Slette en repository:
 </h3>
 For å slette et lokalt repository er det nok å slette .git mappa,<br>
