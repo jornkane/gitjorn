@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <title>Jørns kultur</title>
+    <link rel="stylesheet" href="../css/stiler.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+
+  </head>
+
+<body>
+
+<div id="meny"></div>
+<script>
+  fetch('../meny.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('meny').innerHTML = data;
+    });
+</script>
+
+<br>
+
+<div class="brodtekst">
+<h1>Introduksjon til Python</h1>
+<h2>Python er et populært programmeringsspråk</h2>
+Oversikt over temaer vi går gjennom i Python krasjkurs:
+<br>
+<h3>Variabler og print</h3>
+<h3>Operatorer</h3>
+<h3>Brukerinput</h3>
+<pre>
+l = int(input('Lengde: '))
+b = int(input('Bredde: '))
+a = l*b
+print('Arealet er: ',a)
+</pre>
+<h3>Lister og løkker</h3>
+Dette er mye på en gang, men vi setter av tid til å jobbe med emnet
+<pre>
+talliste = ['a','b','c','d'] # lister har alltid []
+print("Lista har", len(talliste), "elementer.")
+for a in range (len(talliste)): # len er lengden av lista
+  print('Element nr',a,'er:',talliste[a])
+print('--------------------------------')
+# Dette er en kommentar, det er bare en huskelapp til meg selv
+# Loopen under legger til 4 tall på lista
+for a in range (len(talliste)):
+  print('Dette er a:',a)
+  talliste.append(a) # legger til bakerst i lista
+print(talliste)
+print(talliste[5]) # printer element nr 5 
+</pre>
+<h3>If, elif, else</h3>
+Også kjent som betingelser
+<pre>
+avstand = 78
+if avstand > 100:
+  print("Du er for langt unna!")
+else:
+  print("Du er nærme nok.")
+
+temperatur = 62
+if temperatur > 100:
+  print("Vannet er damp.")
+elif temperatur > 0:
+  print("Vannet er flytende.")
+else:
+  print("Vannet er is.")
+</pre>
+<h3>Eksterne biblioteter</h3>
+Libraries. Eksempler er random, math, numpy, matplotlib.pyplot og mange fler
+<br>
+<pre>
+
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+</div>
+<br><br>
+<a href="#meny">Get back!</a>
+</body>
+</html>
+
+
