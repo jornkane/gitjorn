@@ -31,7 +31,13 @@
 Oversikt over temaer vi går gjennom i Python krasjkurs:
 <br>
 <h3>Variabler og print</h3>
+<br>
+<br>
+
 <h3>Operatorer</h3>
+<br>
+<br>
+
 <h3>Brukerinput</h3>
 <pre>
 l = int(input('Lengde: '))
@@ -39,6 +45,10 @@ b = int(input('Bredde: '))
 a = l*b
 print('Arealet er: ',a)
 </pre>
+<br>
+<br>
+
+
 <h3>Lister og løkker</h3>
 Dette er mye på en gang, men vi setter av tid til å jobbe med emnet
 <pre>
@@ -55,6 +65,22 @@ for a in range (len(talliste)):
 print(talliste)
 print(talliste[5]) # printer element nr 5 
 </pre>
+While-løkke:
+<pre>
+dividend = int(input("Skriv et tall "))
+divisor =2
+kvotient = []
+print('Dividend=',dividend,',divisor=',divisor)
+print('Kvotient:')
+while dividend > 0.9:
+  dividend = dividend / divisor
+  print(dividend)
+  kvotient.append(dividend)
+print('Liste med kvotientene:',kvotient)
+</pre>
+<br>
+<br>
+
 <h3>If, elif, else</h3>
 Også kjent som betingelser
 <pre>
@@ -72,12 +98,31 @@ elif temperatur > 0:
 else:
   print("Vannet er is.")
 </pre>
+<br>
+<br>
+
 <h3>Eksterne biblioteter</h3>
 Libraries. Eksempler er random, math, numpy, matplotlib.pyplot og mange fler
+<br>Først numpy og tallistevarianten np.array:
 <br>
 <pre>
+import numpy as np
+bakterier = np.zeros(30) # Lager en array med 30 tomme plasser
+bakterier[0] = 3 # vi starter med 3 bakterier
+for i in range(1, 30):
+  bakterier[i] = 2*bakterier[i-1]
+print(bakterier,type(bakterier))
 
+En liste gir derimot en utskrift som er bedre å lese
+bakterier = [3]
+for i in range(29):
+    bakterier.append(2 * bakterier[i])
+print(bakterier)
+print(type(bakterier))
 </pre>
+<br>
+<br>
+
 
 
 
