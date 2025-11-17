@@ -1,5 +1,8 @@
 **Kommandolinje koder:**
 cd er change directory
+pwd sjekker hvilken mappe jeg er i
+om den er over main må jeg bruke
+cd .. helt til jeg er i root folder
 rm er remove og
 rm -rf .git er remove recursive force mappa kobler det til github .git
 Fjerne fil i annen mappe:
