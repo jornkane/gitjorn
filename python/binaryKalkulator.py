@@ -32,7 +32,7 @@ ti = np.zeros(8)
 for n in range(8):
     ti[n] = binary[7-n] *2**n # plass 7-n for å starte bakerst
     print(ti[n])
-print('I titallsystemeter det:',np.sum(ti))
+print('I titallsystemet er det:',np.sum(ti))
 
 '''
 # Denne kan brukes om du ikke vil ha brukerinput
@@ -44,5 +44,5 @@ ti = np.zeros(8)
 for n in range(8):
     ti[n] = bin[7-n] *2**n # plass 7-n for å starte bakerst
     print(ti[n])
-print('I titallsystemeter det:',np.sum(ti))
+print('I titallsystemet er det:',np.sum(ti))
 '''

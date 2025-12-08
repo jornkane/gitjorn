@@ -1,14 +1,45 @@
-import os
-os.system('cls' )
+import os as o
+o.system('cls' ) #De to første linjene er for å rydde terminal+
+# color themes - klikk på tannhjul og velg themes - color theme
+# For å for eksempel fikse kun på kommentarfargen:
+# ctrl+shit+og velg settings json og lim inn denne nederst
+# kommaet er komma du på legge til på slutten av forrige
+'''
+,
+    "editor.tokenColorCustomizations": {
+        "[Tomorrow Night Blue]": {
+            "comments": "#00c524"
+    }
+}
+'''
 
-import numpy as np
-number = input('Tast 8 siffer:')  # Your 8-digit number
-# Create an empty list to store the digits
-binary = []
 
-# Iterate through each character in the string and convert to an integer
-for digit_char in number:
-    binary.append(int(digit_char))
-binary =np.array(binary)
-print(binary)
-print(type(binary))
+'''
+import random as ra
+maxpoeng = ra.randint(1,100) # ra = random, randint= tilfeldig tall
+tall = ra.randint(0,maxpoeng) 
+print('Du har en prøve som gir totalt',maxpoeng,'poeng')
+print('Jeg fikk',tall,'poeng!')
+if tall < 20*maxpoeng/100:
+  print("Karakter: 1")
+elif tall <40*maxpoeng/100:
+  print('Karakter: 2')
+elif tall <60*maxpoeng/100:
+  print('Karakter: 3')
+elif tall<80*maxpoeng/100:
+  print('Karakter: 4')
+elif tall<93*maxpoeng/100:
+  print('Karakter: 5')
+else:
+  print('Gratulerer du fikk karakteren 6!')
+  '''
+
+print('På bygg 7  har vi 4 etasjer.\n'
+      'Hvor høyt er det opp til 4.?')
+trapper = 4
+trinnprtrapp = 19
+trinn = 0.2 # meter
+
+print('Det er:',trapper*trinnprtrapp*trinn)
+
+
