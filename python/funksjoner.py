@@ -1,3 +1,7 @@
+
+import os
+os.system('cls')
+
 def enheter():
   print()
   print('Omgjøring av lengde, areal og volum:')
@@ -42,6 +46,26 @@ def primtall ():
               prim.append(nummer)  # hvis det ikke gir null i rest på noen andre en 1 og seg selv er det et primtall
   print()
   print('Primtallene fra',laveste_verdi,'til',overste_verdi,'er',prim)
+
+def frekvenstabell():
+  import matplotlib.pyplot as plt # python sitt grafverktøy
+  import numpy as np # python sitt avanserte matteverktøy
+  # Oppretter x-verdier og avstanden mellom hver verdi:
+  x = np.array([2.4, 4.2, 4.4, 5.7]) # må skrive np.array for at python skal vite at det er matematiske tall
+  '''
+  x = [] # liste, som kan være tall eller ord eller annet
+  for t in range (10): # løkke kjører 10 ganger
+    x.append(t) # t er først 0, så 1, så 2 osv og det legges til i x
+  x = np.array([x])
+  '''
+  # Definerer funksjonen f:
+  def f(x): # f er navn på pythonfunksjonen og x er den lista med tall vi har over her
+      return 15.3 * x # f(x) = 15.3 * x  her regnes ut y verdiene 
+  for a in range (4): # vi lager fort en verditabell, copyright Jørn Kanestrøm
+    print(a,'-------',f(a))
+  # Tegner grafen:
+  plt.plot(x, f(x))
+  plt.show()
 
 
 

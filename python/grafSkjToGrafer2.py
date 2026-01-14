@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+Created 14.nov 2025. @author: jornkane
+Program for å lage verditabell til funksjon - input for x-verdier
+"""
 import matplotlib.pyplot as plt
 import numpy as np
 import os
@@ -16,27 +21,21 @@ def y2 (eks):
 print("x\t y(x)\t y2(x)") # \t brukes for tabulator
 for i in x: # løkke som går gjennom alle x-verdiene
     print(f"{i}\t {y(i)}\t {y2(i)}") # printer ut x, y(x) og y2(x) med tabulator mellom
-
-print('----------------------------------------------------------')
-
-
-
+print('------------------------------------------------')
 
 print('Det er tre måter å finne skjæringspunktene på:')
 yi = y(x) # numpy.ndarray som henter fra funksjon y. Y-verdi for alle x-verdier ligger nå i denne
 yi2 = y2(x) # nympy.ndarray som henter fra funksjon y2
 print('Den enkleste måten er å bruke np.where:')
 print('y-verdiene her er av typen',type(yi))  # numpy.ndarray
-print()
 idx = np.where(yi == yi2)   #Sette koordinatene i en variabel
 print('idx er',type(idx))  # Dette er en tuple
 # en tuple er en samling som ligner på en liste, men som er uforanderlig (immutable)
 # np.where returnerer en tuple med en array inni som inneholder indeksene der betingelsen er sann
-
 print("Skjæringspunkt:", x[idx], yi[idx]) # Deretter printe koordinatene
 # eller printe alt i en linje:  print('nr 2:', x[np.where(yi == yi2)], yi[np.where(yi == yi2)])
 
-print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('++++++++++++++++++++++++++++++++++++++++++++++++')
 print('Skjæringspunker med zip av to lister:')
 skj_x = []
 skj_y = []
@@ -49,7 +48,7 @@ for xv, yv, y2v in zip(x, yi, yi2):
         skj_y.append(yv)
         print(f"Skjæringspunkt: ({xv}, {yv})")
 
-print('+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+print('++++++++++++++++++++++++++++++++++++++++++++++++')
 print('Skjæringspunkter med enkel løkke:')
 sk_x = []
 sk_y = []
@@ -61,11 +60,11 @@ for xv in x:
         sk_x.append(xv)
         sk_y.append(yv)
         print(f"Skjæringspunkt: ({xv}, {yv})")
-print('----------------------------------------------------------')
+print('------------------------------------------------')
 
 
-plt.plot(x, yi, color="red") # lager grafen og endrer farge
-plt.plot(x, yi2, color="purple") # lager grafen og endrer farge
+plt.plot(x, yi, color="red") # lager grafen og endrer farge. Angir hvor vi tar x og y-verdier fra
+plt.plot(x, yi2, color="purple") # lager grafen og endrer farge. Angir hvor vi tar x og y-verdier fra
 plt.title("Graf for to funksjoner") # tittel på grafen
 #plt.plot(s1, s2, marker="o", color="blue") # markerer skjæringspunktet med en blå prikk
 plt.xlabel("x") # aksetittel langs x-aksen
@@ -77,7 +76,7 @@ plt.xlim(-5, xrange) # begrenser x-verdiene vi vil vise
 plt.ylim(-5, 60) # begrenser y-verdiene vi vil vise
 # Plot skjæringspunkter med blå sirkel
 plt.scatter(skj_x, skj_y, color="blue", marker="o", label="Skjæringspunkt")
-for x_val, y_val in zip(skj_x, skj_y):
-    plt.text(x_val, y_val + 2, f"({x_val}, {y_val})", color="blue", fontsize=10) #+2 for å plassere teksten litt over punktet
+for x_val, y_val in zip(skj_x, skj_y):# henter verdier fra begge 
+    plt.text(x_val, y_val + 2, f"skjæringspunkt-> ({x_val}, {y_val})", color="blue", fontsize=10) #+2 for å plassere teksten litt over punktet
 plt.legend() # viser forklaring på grafen
 plt.show() # viser grafen
