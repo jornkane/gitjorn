@@ -1,0 +1,121 @@
+import Navbar from "../components/UI/Navbar";
+
+const ITPage = () => (
+
+  <div>
+    <Navbar />
+    <div className="brodtekst">
+      <h1>VG2 IT</h1>
+      <img
+      src="/img/storRobot.jpg"
+      width="40%"
+      alt="illustration-of-people-building-a-gigantic-robot-with-ai-on-its-chest-which-then-breaks-loose-and-destroys-the-city-around-it."
+    />
+    <br />
+    Bildekilde:{" "}
+    <a
+      href="https://spectrum.ieee.org/isaac-asimov-robotics"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      spectrum.ieee.org
+    </a>
+    <br />
+    <br />
+    <a href="/oevingJS">Øving JavaScript oop ligger her</a>
+    <div className="brodtekst">
+      Vi har jobbet med målet: "vurdere fordeler og ulemper ved ulike programmeringsspråk og velge og anvende relevante programmeringsspråk og algoritmer i eget arbeid"
+      <br />
+      Og derfor har vi nå holdt på med litt mer avansert programmering, nærmere bestemt objektorientert programmering (oop). Og først er det JavaScript vi undersøker. Link til
+      <a
+        href="https://www.youtube.com/watch?v=GEuS0tfLfEY"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {" "}
+        videoen vi har brukt her
+      </a>
+      <br />
+      Og her er kode jeg har skrevet samtidig som jeg har gått gjennom videoen (legg alt i body-taggen i html-dokumentet ditt og åpne konsoll i browser (med Chrome: fn+f12, Opera: ctrl+shift+c):
+    </div>
+    <pre>
+{`class Person {
+  constructor(name, age, job) {
+    this.name = name
+    this.age = age
+  }
+  getName = () => {
+    return this.name;
+  }
+  getAge = () => {
+    return this.age;
+  }
+  setJob =(job)=> {
+    this.job = job;
+  }
+}
+class House {
+  constructor(adress, price, residents){
+    this.adress = adress;
+    this.price = price;
+    this.residents = residents;
+  }
+  getAdress =()=>{
+    return this.adress
+  }
+  getPrice =()=>{
+    return this.price
+  }
+  getResidents = ()=>{
+    return this.residents
+  }
+  addResident = (resident)=>{
+    this.residents.push(resident)
+  }
+}
+
+let Jornis = new Person("Jornis",40);
+let Balt = new Person("Balthazar",80);
+
+// oppretter hus med jornis og baltazar som residenst
+let house = new House("husnavn",2500000, [Jornis, Balt]) 
+
+let Margot = new Person("Margot",37); // ny person i person-klassen
+Jornis.setJob("Programmeringsekspert")
+house.addResident(Margot); // legges til enklere siden vi har addResident som klassemetode :) 
+
+console.log(Jornis.getName());
+console.log(Jornis.getAge());
+console.log(Balt.getName());
+
+console.log(house.residents) // viser alt som ligger i hus 1
+
+let house2 = new House("kvgs",60000000,[]);
+house2.addResident(new Person("MB",69));
+let Harra = new Person("arra",17)
+Harra.setJob("Elev");
+house2.addResident(Harra);
+console.log(house2.getResidents()); // viser alle som hører til hus 2
+// nå er jeg kommet til 26:28 i videoen https://www.youtube.com/watch?v=GEuS0tfLfEY 
+
+class Programmer extends Person {
+  constructor (name, age, company, salary, language) {
+    super(name,age)
+  this.company = company;
+  this.salary = salary;
+  this.language = language;
+}
+sayHi = () => {ka
+  //her må vi bruke backtic \` istedet for "
+console.log(\`Hello, I am a programmer! My name is \${this.getName()} I work for \${this.company}\`); 
+};
+}
+
+let programmer = new Programmer("Jokane",47,"Kvgs",378000,"JavaScript");
+programmer.sayHi();`}
+    </pre>
+  </div>
+</div>
+);
+
+export default ITPage;

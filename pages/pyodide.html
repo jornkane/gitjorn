@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <title>Kjør Python med Pyodide</title>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background: #222; color: #fff; }
+        textarea { width: 100%; height: 150px; font-size: 1em; }
+        button { margin-top: 10px; padding: 8px 16px; font-size: 1em; }
+        pre { background: #111; color: #0f0; padding: 10px; min-height: 60px; }
+        .container { max-width: 600px; margin: 40px auto; background: #333; padding: 20px; border-radius: 8px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Kjør Python-kode i nettleseren (Pyodide)</h2>
+    <label for="pyodide-lib">Last inn ekstra bibliotek (f.eks. numpy, matplotlib):</label><br>
+    <input type="text" id="pyodide-lib" placeholder="Skriv biblioteknavn, f.eks. numpy">
+    <button onclick="loadLibrary()">Last inn bibliotek</button>
+    <span id="lib-status" style="margin-left:10px;"></span>
+    <br><br>
+    <textarea id="python-code" placeholder="Skriv din Python-kode her..."></textarea><br>
+    <button onclick="runPython()">Kjør kode</button>
+    <h3>Output:</h3>
+    <pre id="output"></pre>
+</div>
+<script>
+    let pyodideReadyPromise = loadPyodide();
+
+    async function loadLibrary() {
+        const libInput = document.getElementById('pyodide-lib');
+        const libStatus = document.getElementById('lib-status');
+        let lib = libInput.value.trim();
+        if (!lib) {
+            libStatus.textContent = 'Skriv inn et biblioteknavn!';
+            libStatus.style.color = 'orange';
+            return;
+        }
+        libStatus.textContent = 'Laster inn...';
+        libStatus.style.color = 'yellow';
+        let pyodide = await pyodideReadyPromise;
+        try {
+            await pyodide.loadPackage(lib);
+            libStatus.textContent = `Biblioteket '${lib}' er klart!`;
+            libStatus.style.color = 'lightgreen';
+        } catch (err) {
+            libStatus.textContent = `Kunne ikke laste '${lib}'.`;
+            libStatus.style.color = 'red';
+        }
+    }
+
+    async function runPython() {
+        const output = document.getElementById('output');
+        output.textContent = 'Kjører...';
+        let pyodide = await pyodideReadyPromise;
+        let code = document.getElementById('python-code').value;
+        try {
+            // Fang opp print-output
+            let stdout = '';
+            let stderr = '';
+            pyodide.setStdout({
+                batched: (s) => { stdout += s; }
+            });
+            pyodide.setStderr({
+                batched: (s) => { stderr += s; }
+            });
+            let result = await pyodide.runPythonAsync(code);
+            let outputText = '';
+            if (stdout.trim()) outputText += stdout;
+            if (result !== undefined && result !== null && result !== '') {
+                if (outputText) outputText += '\n';
+                outputText += result;
+            }
+            if (!outputText.trim()) outputText = '(ingen output)';
+            if (stderr.trim()) outputText += '\nFeil:\n' + stderr;
+            output.textContent = outputText;
+        } catch (err) {
+            output.textContent = err;
+        } finally {
+            // Tilbakestill stdout/stderr
+            pyodide.setStdout({ batched: (s) => { } });
+            pyodide.setStderr({ batched: (s) => { } });
+        }
+    }
+</script>
+</body>
+</html>
