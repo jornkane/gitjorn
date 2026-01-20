@@ -1,0 +1,60 @@
+{
+  "playlist": {
+    "title": "Jørns Spilleliste",
+    "embedUrl": "https://open.spotify.com/embed/playlist/3a3q37pWagCmjW2ovuW8sC?utm_source=generator"
+  },
+  "movies": [
+    {
+      "week": "Uke 3, 2026",
+      "items": [
+        {
+          "title": "Future Man",
+          "description": "Denne serien rakk å komme med 3 sesonger (2017-2020) før jeg oppdaget den. Massevis av action, humor og sci-fi - perfekt for meg. 7,6 på IMDb er et kvalitetsstempel.",
+          "link": "https://www.imdb.com/title/tt4975856/",
+          "linkText": "IMDb"
+        }
+      ]
+    },
+    {
+      "week": "Uke 49, 2025",
+      "items": [
+        {
+          "title": "Love and Monsters (2021)",
+          "description": "Skulle egentlig på kino, men kom på Netflix. Topp film, bra laget, spennende, morsom og god underholdning! Sterk femmer.",
+          "link": "https://www.nrk.no/filmpolitiet/anmeldelse_-_love-and-monsters_-1.17229013",
+          "linkText": "Anmeldelse"
+        },
+        {
+          "title": "The Fall Guy (2024)",
+          "description": "Bra humor og lystig action. En hyllest til stuntmenn. Sterk femmer!",
+          "link": "https://www.nrk.no/filmpolitiet/anmeldelse_-_the-fall-guy_-1.17227928",
+          "linkText": "Anmeldelse"
+        }
+      ]
+    }
+  ],
+  "archive": [
+    { "title": "Fantastic Four: First Steps", "description": "Disney. Gull for tegneserienerder.", "link": "https://www.imdb.com/title/tt10676052/" },
+    { "title": "Death of a Unicorn", "description": "Amazon Prime. Original og annerledes.", "link": "https://www.imdb.com/title/tt28443655/" },
+    { "title": "Flight of the Conchords", "description": "Gammel klassiker. Verdens mest geniale musiker-komikere.", "link": "https://www.imdb.com/title/tt0863046/" },
+    { "title": "Peacemaker", "description": "HBO. Gjennomført bra serie med humor og action.", "link": "https://www.imdb.com/title/tt13146488/" },
+    { "title": "The Last of Us", "description": "HBO. Trenger ingen introduksjon.", "link": "https://www.imdb.com/title/tt3581920/" }
+  ],
+  "music": [
+    {
+      "week": "Uke 3",
+      "description": "Thin Lizzy - En undervurdert klassiker",
+      "embedUrl": "https://open.spotify.com/embed/track/5efHVfQjLfqoVuk22mw1gT?utm_source=generator"
+    },
+    {
+      "week": "Uke 2 (2026)",
+      "description": "En fantastisk låt til å bli glad av",
+      "embedUrl": "https://open.spotify.com/embed/track/0cahtHEywK64NSWqm2SDTi?utm_source=generator"
+    },
+    {
+      "week": "Tidligere",
+      "description": "System of a Down - Gærne og flinke",
+      "embedUrl": "https://open.spotify.com/embed/track/4TRPgtjVmqg7EAWZe1T94E?utm_source=generator"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "id": "it-oop",
+    "title": "VG2 IT - Objektorientert Programmering",
+    "description": "Lær objektorientert programmering med TypeScript, inkludert klasser, objekter og arv.",
+    "image": "/img/storRobot.jpg",
+    "imageAlt": "illustration-of-people-building-a-gigantic-robot-with-ai-on-its-chest-which-then-breaks-loose-and-destroys-the-city-around-it",
+    "imageSource": "spectrum.ieee.org",
+    "imageSourceUrl": "https://spectrum.ieee.org/isaac-asimov-robotics"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "type": "text",
+          "content": "Vi har jobbet med målet: 'vurdere fordeler og ulemper ved ulike programmeringsspråk og velge og anvende relevante programmeringsspråk og algoritmer i eget arbeid'"
+        },
+        {
+          "type": "text",
+          "content": "Og derfor har vi nå holdt på med litt mer avansert programmering, nærmere bestemt objektorientert programmering (oop). Og først er det JavaScript vi undersøker."
+        },
+        {
+          "type": "link",
+          "text": "Videoen vi har brukt her",
+          "url": "https://www.youtube.com/watch?v=GEuS0tfLfEY",
+          "external": true
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "TypeScript Klasser"
+        },
+        {
+          "type": "text",
+          "content": "Her er kode som demonstrerer objektorientert programmering i TypeScript:"
+        },
+        {
+          "type": "code",
+          "language": "typescript",
+          "code": "class Person {\n  name: string;\n  age: number;\n  job?: string;\n\n  constructor(name: string, age: number) {\n    this.name = name;\n    this.age = age;\n  }\n\n  getName = (): string => {\n    return this.name;\n  };\n\n  getAge = (): number => {\n    return this.age;\n  };\n\n  setJob = (job: string): void => {\n    this.job = job;\n  };\n}\n\nclass House {\n  adress: string;\n  price: number;\n  residents: Person[];\n\n  constructor(adress: string, price: number, residents: Person[]) {\n    this.adress = adress;\n    this.price = price;\n    this.residents = residents;\n  }\n\n  addResident = (resident: Person): void => {\n    this.residents.push(resident);\n  };\n}\n\nclass Programmer extends Person {\n  company: string;\n  salary: number;\n  language: string;\n\n  constructor(\n    name: string,\n    age: number,\n    company: string,\n    salary: number,\n    language: string\n  ) {\n    super(name, age);\n    this.company = company;\n    this.salary = salary;\n    this.language = language;\n  }\n\n  sayHi = (): void => {\n    console.log(\n      `Hello, I am a programmer! My name is ${this.getName()} I work for ${this.company}`\n    );\n  };\n}"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "id": "python-graphs",
+    "title": "Matematiske funksjoner og plotting",
+    "description": "Lær å plotte grafer, lage verditabeller og visualisere data med Matplotlib og NumPy.",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Created_with_Matplotlib-logo.svg/2048px-Created_with_Matplotlib-logo.svg.png",
+    "imageAlt": "Matplotlib logo"
+  },
+  "sections": [
+    {
+      "title": "Introduksjon",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Kurs i plotting av grafer"
+        },
+        {
+          "type": "text",
+          "content": "Her skal vi se på hvordan vi bruker bibliotekene **matplotlib** og **numpy** for å visualisere matematikk."
+        }
+      ]
+    },
+    {
+      "title": "Grunnleggende plotting",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Graf med rutenett og aksetitler"
+        },
+        {
+          "type": "text",
+          "content": "Her er et eksempel på en graf med rutenett, titler på aksene, og definerte grenser for x- og y-aksen."
+        },
+        {
+          "type": "python-runner",
+          "title": "Eksempel: Pyntet graf",
+          "defaultLibraries": ["matplotlib", "numpy"],
+          "initialCode": "import matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(-5, 5, 100)\ny = x**2 - 2*x\n\nplt.figure()\nplt.plot(x, y, label='f(x) = x² - 2x', color='blue')\n\n# Pynting av grafen\nplt.title('Min første fine graf')\nplt.xlabel('x-verdier')\nplt.ylabel('y-verdier')\nplt.grid(True)\nplt.axhline(0, color='black', linewidth=0.8)\nplt.axvline(0, color='black', linewidth=0.8)\nplt.legend()\nplt.show()"
+        }
+      ]
+    },
+    {
+      "title": "Verditabeller",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lage verditabell"
+        },
+        {
+          "type": "text",
+          "content": "Det er ofte nyttig å kunne skrive ut en verditabell før man plotter."
+        },
+        {
+          "type": "python-runner",
+          "title": "Eksempel: Verditabell",
+          "initialCode": "def f(x):\n    return 2*x + 1\n\nprint(f\"{'x':<5} | {'f(x)':<5}\")\nprint(\"-\" * 15)\n\nstart = int(input(\"Startverdi for x: \") or -5)\nslutt = int(input(\"Sluttverdi for x: \") or 5)\n\nfor x in range(start, slutt + 1):\n    y = f(x)\n    print(f\"{x:<5} | {y:<5}\")"
+        }
+      ]
+    },
+    {
+      "title": "Nullpunkter og ekstremalpunkter",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Analysere grafen"
+        },
+        {
+          "type": "text",
+          "content": "Her plotter vi en graf og markerer spesielle punkter."
+        },
+        {
+          "type": "python-runner",
+          "title": "Nullpunkter og bunnpunkt",
+          "defaultLibraries": ["matplotlib", "numpy"],
+          "initialCode": "import matplotlib.pyplot as plt\nimport numpy as np\n\ndef f(x):\n    return x**2 - 4\n\nx = np.linspace(-4, 4, 100)\ny = f(x)\n\nplt.plot(x, y)\nplt.grid()\nplt.axhline(0, color='black')\nplt.axvline(0, color='black')\n\n# Marker nullpunkter (x = -2 og x = 2)\nplt.plot([-2, 2], [0, 0], 'ro', label='Nullpunkter')\n\n# Marker bunnpunkt (0, -4)\nplt.plot(0, -4, 'go', label='Bunnpunkt')\n\nplt.legend()\nplt.title(\"f(x) = x² - 4\")\nplt.show()"
+        }
+      ]
+    },
+    {
+      "title": "Andre graftyper",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Scatter-plot"
+        },
+        {
+          "type": "text",
+          "content": "Scatter-plot (spredningsplott) lager punkter i stedet for streker."
+        },
+        {
+          "type": "python-runner",
+          "title": "Scatter Example",
+          "defaultLibraries": ["matplotlib", "numpy"],
+          "initialCode": "import matplotlib.pyplot as plt\nimport numpy as np\n\nn = 50\nx = np.random.rand(n)\ny = np.random.rand(n)\nfarger = np.random.rand(n)\nstorrelse = 1000 * np.random.rand(n)\n\nplt.scatter(x, y, c=farger, s=storrelse, alpha=0.5)\nplt.title(\"Moderne kunst eller statistikk?\")\nplt.show()"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Stolpediagram"
+        },
+        {
+          "type": "python-runner",
+          "title": "Stolpediagram",
+          "defaultLibraries": ["matplotlib"],
+          "initialCode": "import matplotlib.pyplot as plt\n\nfag = ['R1', 'R2', 'Fysikk', 'IT', 'Kjemi']\nelever = [25, 15, 20, 30, 12]\n\nplt.bar(fag, elever, color=['red', 'blue', 'green', 'purple', 'orange'])\nplt.title(\"Antall elever i realfag\")\nplt.ylabel(\"Antall\")\nplt.show()"
+        }
+      ]
+    },
+    {
+      "title": "Avansert plotting",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "To grafer og skjæringspunkt"
+        },
+        {
+          "type": "text",
+          "content": "Plotte to funksjoner i samme system for å se hvor de krysser hverandre."
+        },
+        {
+          "type": "python-runner",
+          "title": "Skjæringspunkt",
+          "defaultLibraries": ["matplotlib", "numpy"],
+          "initialCode": "import matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\n\n# To funksjoner\ny1 = np.sin(x)\ny2 = np.cos(x)\n\nplt.plot(x, y1, label='sin(x)')\nplt.plot(x, y2, label='cos(x)')\n\n# Fyll i mellom for effekt\nplt.fill_between(x, y1, y2, where=(y1 > y2), color='green', alpha=0.1)\n\nplt.legend()\nplt.grid()\nplt.title(\"Sinus vs Cosinus\")\nplt.show()"
+        }
+      ]
+    }
+  ]
+}

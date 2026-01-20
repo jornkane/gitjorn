@@ -1,82 +1,16 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-    <meta name="keywords" content="Informasjonsteknologi og medieproduksjon Kristiansund videregående skole Jørn Kanestrøm 
-    jørndatamaskinist html css på opplæring javascript tilpasset elever på videregående skole"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="description"
-      content="Webdesign på Kristiansund videregående skole. Klasse 1IM1 og 2IT1. Lærer Jørn Kanestrøm"
-    />
-    <meta name="author" content="Jørn Kanestrøm" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- mer om head her https://www.w3schools.com/html/html_head.asp -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-
-    <title>Kane Computing Jørn Kanestrøm</title>
-
-    <link rel="stylesheet" href="./css/stiler.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-    <meta name="keywords" content="Jørn Kanestrøm, skolehjemmeside, informasjonsteknologi, medieproduksjon, webutvikling, programmering, HTML, CSS, JavaScript, Python, SQL, Kristiansund videregående skole, tutorials, vg1, vg2">
-</head>
-
-<body id="bgbilde">
-
-<div id="meny"></div>
-<script>
-  fetch('meny.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('meny').innerHTML = data;
-    });
-</script>
-
-<div>
-<h1>Velkommen til Jørn Kanestrøms Skolehjemmeside</h1>
-<div class="intro-container">
-    <img src="./img/jornkane3.jpg" alt="Jørn Kanestrøm" width="200px" class="intro-bilde"> 
-
-    <div class="brodtekst">Velg klasse og fag i menyen over og se om du finner det du leter etter
-    <br>Tips og linker til tutorials som inngår i faget utvikling på vg1 og vg2 informasjonsteknologi og medieproduksjon blir å finne her. 
-    <br>Programmering og webutvikling:
-    <br>Web: Html, css og litt JavaScript. Programmering: først og fremst Python, en del JavaScript og eventuelt C# eller C++. 
-    <br>Det kan hende det kommer litt stoff om databaser også -> SQL og MsAccess
-    <br>Siden oppdateres etter behov (eller når Jørn tester ut ting)
-    <br>
-    <br><b>Sist oppdatert:</b>
-    <h3>08.12.25</h3>
-    Filmer kultur.html
-</div>
-</div>
-
-<br><br>
-<div class="brodtekst">
-La til ny og forbedret brukerundersøkelse om AI:<br>
-<iframe width="640px" height="480px" src="https://forms.office.com/e/gsiGNct7pK?embed=true" frameborder="0" marginwidth="0" marginheight="0" style="border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
-
-<br><br>
-Jeg  ønsker å ha hvit tekst, og skygge på teksten slik at den vises mot bakgrunnen, men bakgrunnsbildet (selv om det er fint) ble for fremtredende. Derfor har jeg nå endret koden til å bruke en linear-gradient med RGBA verdier som legger et halvgjennomsiktig hvitt lag over bakgrunnsbildet. Dette vil kun påvirke bakgrunnsbildet og ikke teksten i elementet.
-Hvis du ønsker en annen type gjennomsiktighet eller farge, kan vi justere RGBA-verdiene. For eksempel:<br>
-For mørkere overlay: rgba(0, 0, 0, 0.5)<br>
-For lysere overlay: rgba(255, 255, 255, 0.5)<br>
-For mer eller mindre gjennomsiktighet, juster den siste verdien (0.5) opp eller ned (0 er helt gjennomsiktig, 1 er helt ugjennomsiktig) <br>
-<br><br>
-P.S. for de som ønsker å lære programmering er det faktisk nødvendig å skru av AI i VS-Code. 
-<br>Den har nå blitt så påtrengende at den hele tia fullfører nye setninger for deg, det blir for meget.
-<br>
-<img src="./img/disableAI.jpg" width="700">
-<br>
-
-<ul class="uliste">
-<li>Bakgrunnsbilde er Ai-generert. Futuristisk steam punk by, laget med bildeskaper i Bing, levert av Dall E 3</li>
-<li><a href="https://www.bing.com/images/create?FORM=IRPGEN" target="_blank">Bildeskaper</a></li></ul>
-
-<footer>
-    <p>Version 1.5<br>
-        Copyright 2025 Jørn Kanestrøm, Kane Computing. Alle rettigheter reservert.
-    </p>
-</footer>
-</div>
-</body>
+    <title>vite-project</title>
+    <!-- Pyodide CDN for in-browser Python -->
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.0/full/pyodide.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
 

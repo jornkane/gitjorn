@@ -1,0 +1,123 @@
+{
+  "metadata": {
+    "id": "python-programs",
+    "title": "Små og nyttige Python-programmer",
+    "description": "En samling av morsomme og nyttige programmer: Spill, verktøy og datohåndtering.",
+    "image": "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+    "imageAlt": "Python code on screen"
+  },
+  "sections": [
+    {
+      "title": "Tilfeldighet og Lister",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Trekke tilfeldige navn"
+        },
+        {
+          "type": "text",
+          "content": "Her lager vi en liste med navn og trekker dem i tilfeldig rekkefølge. Perfekt for å bestemme rekkefølge på presentasjoner!"
+        },
+        {
+          "type": "python-runner",
+          "title": "Navnettrekker",
+          "initialCode": "import random\n\nnavn_liste = [\"Ola\", \"Kari\", \"Per\", \"Pål\", \"Espen\", \"Anne\"]\n\nprint(\"Deltakere:\", navn_liste)\nprint(\"\\n--- Trekning ---\\n\")\n\nrandom.shuffle(navn_liste)\n\nfor i, navn in enumerate(navn_liste, 1):\n    print(f\"{i}. plass: {navn}\")"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Trekke film til avslutning"
+        },
+        {
+          "type": "python-runner",
+          "title": "Filmvelger",
+          "initialCode": "import random\n\nfilmer = [\n    \"Flåklypa Grand Prix\",\n    \"Shrek\",\n    \"Istid\",\n    \"Harry Potter\",\n    \"Ringenes Herre\"\n]\n\nvalgt_film = random.choice(filmer)\nprint(f\"Og vinneren er... 🥁\")\nprint(f\"✨ {valgt_film} ✨\")"
+        }
+      ]
+    },
+    {
+      "title": "Dato og Tid",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Jobbe med tid"
+        },
+        {
+          "type": "text",
+          "content": "Python har et innebygd bibliotek som heter `datetime` for å jobbe med datoer."
+        },
+        {
+          "type": "python-runner",
+          "title": "Hvilken dag er det?",
+          "initialCode": "import datetime\n\ndager = [\"Mandag\", \"Tirsdag\", \"Onsdag\", \"Torsdag\", \"Fredag\", \"Lørdag\", \"Søndag\"]\n\nnå = datetime.datetime.now()\nukedag_nr = nå.weekday()\n\nprint(f\"I dag er det dato: {nå.day}.{nå.month}.{nå.year}\")\nprint(f\"Det betyr at det er {dager[ukedag_nr]}!\")"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Nedtelling til en dato"
+        },
+        {
+          "type": "python-runner",
+          "title": "Nedtelling",
+          "initialCode": "from datetime import datetime\n\n# Sett datoen vi teller ned til (År, Måned, Dag)\nferie = datetime(2024, 6, 20)\nidag = datetime.now()\n\ntid_igjen = ferie - idag\n\nif tid_igjen.days < 0:\n    print(f\"Datoen har passert for {abs(tid_igjen.days)} dager siden.\")\nelse:\n    print(f\"Det er {tid_igjen.days} dager igjen til sommerferien!\")"
+        }
+      ]
+    },
+    {
+      "title": "Verktøy",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Periodesystemet"
+        },
+        {
+          "type": "text",
+          "content": "Et enkelt søkeprogram for grunnstoffer."
+        },
+        {
+          "type": "python-runner",
+          "title": "Periodesystem-søker",
+          "initialCode": "stoffer = {\n    \"H\": \"Hydrogen\",\n    \"He\": \"Helium\",\n    \"Li\": \"Litium\",\n    \"C\": \"Karbon\",\n    \"O\": \"Oksygen\",\n    \"Au\": \"Gull\",\n    \"Fe\": \"Jern\"\n}\n\nprint(\"Kjente stoffer: \", \", \".join(stoffer.keys()))\nsok = input(\"Skriv inn kjemisk symbol (f.eks H): \")\n\nif sok in stoffer:\n    print(f\"{sok} står for {stoffer[sok]}\")\nelse:\n    print(\"Fant ikke stoffet i min lille liste.\")"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Faktorisering"
+        },
+        {
+          "type": "python-runner",
+          "title": "Faktoriseringsmaskin",
+          "initialCode": "def faktoriser(n):\n    faktorer = []\n    divisor = 2\n    original = n\n    \n    while divisor * divisor <= n:\n        while n % divisor == 0:\n            faktorer.append(divisor)\n            n //= divisor\n        divisor += 1\n    if n > 1:\n        faktorer.append(n)\n    return faktorer\n\ntall = int(input(\"Skriv et tall å faktorisere: \") or 100)\nresultat = faktoriser(tall)\nprint(f\"Faktorer i {tall}: {resultat}\")"
+        }
+      ]
+    },
+    {
+      "title": "Spill og Moro",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Hangman (Hengeren)"
+        },
+        {
+          "type": "python-runner",
+          "title": "Hangman",
+          "initialCode": "import random\n\nordliste = [\"python\", \"koding\", \"skole\", \"sommer\", \"ferie\"]\nhemmelig_ord = random.choice(ordliste)\ngjettet_ord = [\"_\"] * len(hemmelig_ord)\nforsøk_igjen = 6\n\nprint(\"Velkommen til Hangman!\")\n\nwhile forsøk_igjen > 0 and \"_\" in gjettet_ord:\n    print(\"\\nOrd:\", \" \".join(gjettet_ord))\n    print(f\"Forsøk igjen: {forsøk_igjen}\")\n    \n    gjett = input(\"Gjett en bokstav: \").lower()\n    \n    if not gjett or len(gjett) != 1:\n        print(\"Skriv nøyaktig én bokstav.\")\n        continue\n        \n    if gjett in hemmelig_ord:\n        print(\"Riktig!\")\n        for i, bokstav in enumerate(hemmelig_ord):\n            if bokstav == gjett:\n                gjettet_ord[i] = gjett\n    else:\n        print(\"Feil!\")\n        forsøk_igjen -= 1\n\nif \"_\" not in gjettet_ord:\n    print(f\"\\nGratulerer! Du gjettet ordet: {hemmelig_ord}\")\nelse:\n    print(f\"\\nDu tapte! Ordet var: {hemmelig_ord}\")"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Magic 8-Ball"
+        },
+        {
+          "type": "python-runner",
+          "title": "Den allvitende 8-kula",
+          "initialCode": "import random\nimport time\n\nsvar = [\n    \"Det er helt sikkert.\",\n    \"Uten tvil.\",\n    \"Ja, absolutt.\",\n    \"Det ser lyst ut.\",\n    \"Spør igjen senere.\",\n    \"Kan ikke svare nå.\",\n    \"Ikke regn med det.\",\n    \"Mine kilder sier nei.\",\n    \"Veldig tvilsomt.\"\n]\n\nspm = input(\"Hva lurer du på? \")\nif spm:\n    print(\"Tenker...\")\n    # Vi kan ikke bruke time.sleep() bra i nettleseren uten async,\n    # men koden kjører uansett.\n    print(f\"🎱 8-kula svarer: {random.choice(svar)}\")\nelse:\n    print(\"Du må spørre om noe!\")"
+        }
+      ]
+    }
+  ]
+}

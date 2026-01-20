@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "id": "html-css-basics",
+    "title": "1IM - HTML & CSS Grunnleggende",
+    "description": "Lær HTML og CSS grunnleggende, inkludert struktur, styling og layout.",
+    "image": "/img/matrix.jpg",
+    "imageAlt": "Grønne bokstaver skrevet vertikalt fra filmen the Matrix",
+    "imageSource": "indieWire",
+    "imageSourceUrl": "https://www.indiewire.com/features/general/the-matrix-code-digital-rain-meaning-1201891684/"
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "HTML"
+        },
+        {
+          "type": "text",
+          "content": "HTML-filen (index.html) Inneholder strukturen til nettsiden din."
+        },
+        {
+          "type": "text",
+          "content": "Vi bruker <link>-taggen for å koble til det eksterne CSS-dokumentet (styles.css)."
+        },
+        {
+          "type": "text",
+          "content": "CSS-filen (styles.css) inneholder stilene som brukes for å formatere HTML-elementene."
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "CSS Eksempler"
+        },
+        {
+          "type": "text",
+          "content": "Her er eksempler på css-kode du kan bruke:"
+        },
+        {
+          "type": "code",
+          "language": "css",
+          "code": "body {\n    font-family: Arial, sans-serif;\n    margin: 0;\n    padding: 0;\n    background-color: #f4f4f4;\n}\n\nheader {\n    background-color: #333;\n    color: white;\n    padding: 1em 0;\n    text-align: center;\n}\n\nmain {\n    padding: 2em;\n}\n\nfooter {\n    background-color: #333;\n    color: white;\n    text-align: center;\n    padding: 1em 0;\n    position: fixed;\n    width: 100%;\n    bottom: 0;\n}"
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Posisjonering"
+        },
+        {
+          "type": "text",
+          "content": "Slik kan du feste et element på sida med nøyaktige koordinater:"
+        },
+        {
+          "type": "code",
+          "language": "css",
+          "code": "div.fixed {\n    position: fixed;\n    top: 1pt;\n    left: 1pt;\n    width: 60%;\n    border: 3px solid #73AD21;\n}"
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Ressurser"
+        },
+        {
+          "type": "link",
+          "text": "Ukas læringsvideo (Loom)",
+          "url": "https://www.loom.com/share/c7fe372af6a946ddac0de4b9d2be1d5c?sid=35a050c2-3999-4327-bcaf-4d08a4ff6692",
+          "external": true
+        },
+        {
+          "type": "link",
+          "text": "Hvordan fjerne auto closing tags i VSCode",
+          "url": "https://stackoverflow.com/questions/46463820/visual-studio-code-disable-auto-closing-tags",
+          "external": true
+        }
+      ]
+    }
+  ]
+}

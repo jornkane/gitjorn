@@ -1,0 +1,88 @@
+{
+  "metadata": {
+    "id": "python-starter",
+    "title": "Python Grunnkurs",
+    "description": "Lær det grunnleggende i Python-programmering, inkludert variabler, løkker og funksjoner."
+  },
+  "sections": [
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Introduksjon"
+        },
+        {
+          "type": "text",
+          "content": "Python er et kraftig og brukervennlig programmeringsspråk som brukes i alt fra webutvikling til datavitenskap. Dette kurset gir deg en grunnleggende forståelse av Python."
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Innhold"
+        },
+        {
+          "type": "list",
+          "items": [
+            "Hva er Python?",
+            "Installere Python og sette opp miljøet",
+            "Grunnleggende syntaks",
+            "Variabler og datatyper",
+            "Løkker og betingelser",
+            "Funksjoner"
+          ]
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Eksempel"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "# Dette er et eksempel på en enkel Python-kode\nnavn = input(\"Hva heter du? \")\nprint(f\"Hei, {navn}!\")"
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Oppgaver"
+        },
+        {
+          "type": "text",
+          "content": "Prøv å lage et program som spør brukeren om to tall og skriver ut summen av dem."
+        }
+      ]
+    },
+    {
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Prøv Python selv!"
+        },
+        {
+          "type": "text",
+          "content": "Bruk den interaktive Python-editoren under til å prøve ut Python-kode direkte i nettleseren. Klikk på eksemplene for å laste inn ferdig kode, eller skriv din egen!"
+        },
+        {
+          "type": "python-runner",
+          "title": "Min Første Python Kode",
+          "initialCode": "# Prøv å endre denne koden!\nnavn = \"Python-student\"\nprint(f\"Hei, {navn}!\")\n\n# Matematikk er enkelt:\na = 5\nb = 3\nprint(f\"{a} + {b} = {a + b}\")"
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,209 @@
+{
+  "metadata": {
+    "id": "git-intro",
+    "title": "Git Versjonskontroll",
+    "description": "Lær det grunnleggende om Git: Setup, branching, commits og mer.",
+    "image": "https://git-scm.com/images/logo@2x.png",
+    "imageAlt": "Git Logo"
+  },
+  "sections": [
+    {
+      "title": "Oppsett i VS Code",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Tips for VS Code"
+        },
+        {
+          "type": "text",
+          "content": "Anbefaling: Last ned utvidelsen **GitLens**. Den viser hvem som har endret hva i koden din.\n\nTips: Du kan skjule `.git`-mappen i VS Code filutforskeren:\n1. Trykk `Ctrl + ,` for å åpne innstillinger.\n2. Søk etter `exclude`.\n3. Legg til `**/.git`."
+        }
+      ]
+    },
+    {
+      "title": "Ny Repository",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Starte et nytt prosjekt"
+        },
+        {
+          "type": "text",
+          "content": "Finn mappen du skal jobbe med, høyreklikk og velg 'Git Bash here', eller åpne terminalen i VS Code."
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "git init"
+        }
+      ]
+    },
+    {
+      "title": "Main branch",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Sett default branch til main"
+        },
+        {
+          "type": "text",
+          "content": "Det er vanlig å bruke `main` i stedet for `master` nå."
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "git branch -M main\ngit remote add origin <din-repo-url>\ngit push -u origin main"
+        },
+        {
+          "type": "text",
+          "content": "Hvis du har en gammel repo med 'master', kan du bytte navn:"
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "git branch -m master main\n# Push den nye hovedgrenen\ngit push -u origin main\n# Slett den gamle på Github (krever at du endrer default branch i innstillinger på Github først)\ngit push origin --delete master"
+        }
+      ]
+    },
+    {
+      "title": "Daglig bruk",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Staging og Committing"
+        },
+        {
+           "type": "text",
+           "content": "Når du har gjort endringer, må du først 'stage' dem, så 'committe' dem."
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "# Legg til alle endringer\ngit add .\n\n# Lagre endringene med en melding\ngit commit -m \"Beskrivelse av hva jeg gjorde\""
+        },
+        {
+            "type": "text",
+            "content": "Du kan også gjøre begge deler samtidig (for endrede filer, ikke nye):"
+        },
+        {
+            "type": "code",
+            "language": "bash",
+            "code": "git commit -a -m \"Melding\""
+        }
+      ]
+    },
+    {
+      "title": "Branches",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Jobbe med branches"
+        },
+        {
+          "type": "text",
+          "content": "Branches lar deg jobbe parallelt uten å ødelegge hovedkoden."
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "# Lag ny branch\ngit branch nyfeature\n\n# Bytt til branchen\ngit switch nyfeature\n\n# Se oversikt\ngit branch"
+        },
+        {
+            "type": "text",
+            "content": "Når du er ferdig og vil ha koden inn i main:"
+        },
+        {
+            "type": "code",
+            "language": "bash",
+            "code": "git switch main\ngit merge nyfeature\n\n# Slett branchen etterpå hvis du vil\ngit branch -d nyfeature"
+        }
+      ]
+    },
+    {
+      "title": "Angre (Reset/Restore)",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Angre staging"
+        },
+        {
+          "type": "text",
+          "content": "Hvis du kom borti `git add .` med et uhell:"
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "git restore --staged filnavn.txt\n# Eller for alt\ngit restore --staged ."
+        },
+        {
+            "type": "text",
+            "content": "For å slette en fil helt (både fra git og disk):"
+        },
+        {
+            "type": "code",
+            "language": "bash",
+            "code": "git rm filnavn"
+        }
+      ]
+    },
+    {
+        "title": "Sletting og Tags",
+        "content": [
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "Slette repository"
+          },
+          {
+            "type": "text",
+            "content": "Lokalt: Slett `.git`-mappen. På Github: Gå til 'Settings' -> 'Danger Zone'."
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "Tags"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "# Lage v2.0 tag\ngit tag -a v2.0 -m \"Version 2.0 release\"\ngit push origin v2.0\n\n# Slette tag\ngit tag -d v1.0"
+          }
+        ]
+      },
+      {
+        "title": "Log og Status",
+        "content": [
+          {
+            "type": "heading",
+            "level": 2,
+            "text": "Få oversikt"
+          },
+          {
+            "type": "code",
+            "language": "bash",
+            "code": "# Se status\ngit status\n\n# Se endringer i en fil\ngit diff filnavn.txt\n\n# Se historikk (kortversjon)\ngit log --oneline\n\n# Se de siste 10 endringene\ngit log --oneline -n 10"
+          }
+        ]
+      },
+      {
+        "title": "Ressurser",
+        "content": [
+            {
+                "type": "heading",
+                "level": 2,
+                "text": "Video-tutorials"
+            },
+            {
+                "type": "text",
+                "content": "- [Git tutorial for absolute beginners (Dave Gray)](https://youtu.be/CvUiKWv2-C0?si=TvZfXoyXlSh0qzPY)\n- [How to undo git commits (Dave Gray)](https://youtu.be/EGooeHH3hDY?si=wUiQj66d68gHK)"
+            }
+        ]
+      }
+  ]
+}

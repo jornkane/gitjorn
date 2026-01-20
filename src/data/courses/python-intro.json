@@ -1,0 +1,158 @@
+{
+  "metadata": {
+    "id": "python-intro",
+    "title": "Introduksjon til Python",
+    "description": "Et krasjkurs i Python som dekker variabler, løkker, betingelser og biblioteker."
+  },
+  "sections": [
+    {
+      "title": "Introduksjon",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Python er et populært programmeringsspråk"
+        },
+        {
+          "type": "text",
+          "content": "Oversikt over temaer vi går gjennom i Python krasjkurs:"
+        }
+      ]
+    },
+    {
+      "title": "Variabler og print",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Variabler og print"
+        },
+        {
+          "type": "text",
+          "content": "Her lærer du hvordan du lagrer data i variabler og skriver dem ut til skjermen."
+        },
+        {
+           "type": "python-runner",
+           "title": "Prøv selv: Variabler",
+           "initialCode": "navn = \"Jørn\"\nalder = 42\nprint(f\"Hei, jeg heter {navn} og er {alder} år gammel.\")"
+        }
+      ]
+    },
+    {
+      "title": "Operatorer",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Operatorer"
+        },
+        {
+          "type": "text",
+          "content": "Operatorer brukes til å utføre operasjoner på variabler og verdier."
+        },
+        {
+           "type": "python-runner",
+           "title": "Prøv selv: Matematikk",
+           "initialCode": "a = 10\nb = 3\nprint(f\"{a} + {b} = {a + b}\")\nprint(f\"{a} / {b} = {a / b}\")\nprint(f\"{a} // {b} = {a // b} (heltallsdivisjon)\")"
+        }
+      ]
+    },
+    {
+      "title": "Brukerinput",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Brukerinput"
+        },
+        {
+          "type": "text",
+          "content": "Slik kan du hente inn input fra brukeren:"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "l = int(input('Lengde: '))\nb = int(input('Bredde: '))\na = l*b\nprint('Arealet er: ',a)"
+        },
+        {
+           "type": "python-runner",
+           "title": "Prøv selv: Arealberegning",
+           "initialCode": "# NB: I nettleseren vil input() åpne en popup-boks\nl = int(input('Lengde: ') or 5)\nb = int(input('Bredde: ') or 5)\na = l*b\nprint(f'Arealet er: {a}')"
+        }
+      ]
+    },
+    {
+      "title": "Lister og løkker",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Lister og løkker"
+        },
+        {
+          "type": "text",
+          "content": "Dette er mye på en gang, men vi setter av tid til å jobbe med emnet."
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "talliste = ['a','b','c','d'] # lister har alltid []\nprint(\"Lista har\", len(talliste), \"elementer.\")\nfor a in range (len(talliste)): # len er lengden av lista\n  print('Element nr',a,'er:',talliste[a])\nprint('--------------------------------')\n# Dette er en kommentar, det er bare en huskelapp til meg selv\n# Loopen under legger til 4 tall på lista\nfor a in range (len(talliste)):\n  print('Dette er a:',a)\n  talliste.append(a) # legger til bakerst i lista\nprint(talliste)\nprint(talliste[5]) # printer element nr 5"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "While-løkke"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "dividend = int(input(\"Skriv et tall \"))\ndivisor = 2\nkvotient = []\nprint('Dividend=',dividend,',divisor=',divisor)\nprint('Kvotient:')\nwhile dividend > 0.9:\n  dividend = dividend / divisor\n  print(dividend)\n  kvotient.append(dividend)\nprint('Liste med kvotientene:',kvotient)"
+        }
+      ]
+    },
+    {
+      "title": "Betingelser (If, elif, else)",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "If, elif, else"
+        },
+        {
+          "type": "text",
+          "content": "Også kjent som betingelser."
+        },
+        {
+           "type": "python-runner",
+           "title": "Prøv selv: Betingelser",
+           "initialCode": "avstand = 78\nif avstand > 100:\n  print(\"Du er for langt unna!\")\nelse:\n  print(\"Du er nærme nok.\")\n\ntemperatur = 62\nif temperatur > 100:\n  print(\"Vannet er damp.\")\nelif temperatur > 0:\n  print(\"Vannet er flytende.\")\nelse:\n  print(\"Vannet er is.\")"
+        }
+      ]
+    },
+    {
+      "title": "Eksterne biblioteker",
+      "content": [
+        {
+          "type": "heading",
+          "level": 3,
+          "text": "Eksterne biblioteker"
+        },
+        {
+          "type": "text",
+          "content": "Libraries. Eksempler er random, math, numpy, matplotlib.pyplot og mange fler.\n\nFørst numpy og tallistevarianten np.array:"
+        },
+        {
+          "type": "code",
+          "language": "python",
+          "code": "import numpy as np\nbakterier = np.zeros(30) # Lager en array med 30 tomme plasser\nbakterier[0] = 3 # vi starter med 3 bakterier\nfor i in range(1, 30):\n  bakterier[i] = 2*bakterier[i-1]\nprint(bakterier,type(bakterier))\n\n# En liste gir derimot en utskrift som er bedre å lese\nbakterier = [3]\nfor i in range(29):\n    bakterier.append(2 * bakterier[i])\nprint(bakterier)\nprint(type(bakterier))"
+        },
+        {
+           "type": "python-runner",
+           "title": "Prøv selv: NumPy vs Lister",
+           "defaultLibraries": ["numpy"],
+           "initialCode": "import numpy as np\n\n# Med NumPy\nbakterier_np = np.zeros(10)\nbakterier_np[0] = 3\nfor i in range(1, 10):\n  bakterier_np[i] = 2*bakterier_np[i-1]\nprint(\"NumPy array:\")\nprint(bakterier_np)\n\n# Med vanlige lister\nbakterier_list = [3]\nfor i in range(9):\n    bakterier_list.append(2 * bakterier_list[i])\nprint(\"\\nVanlig liste:\")\nprint(bakterier_list)"
+        }
+      ]
+    }
+  ]
+}
