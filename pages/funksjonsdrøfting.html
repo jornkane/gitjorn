@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+      img, canvas {
+        display: block;
+        margin-left: 0;
+        margin-right: auto;
+      }
+      .code-output-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      #code {
+        flex: 0 0 auto;
+        width: 500px;
+      }
+      #output {
+        flex: 0 0 auto;
+        width: 500px;
+        overflow-y: auto;
+        max-height: 600px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      </style>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+
+    <title>Funksjonsdrøfting to grafer og verditabell</title>
+
+    <link rel="stylesheet" href="../css/stiler.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<div id="meny"></div>
+<script>
+  fetch('../meny.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('meny').innerHTML = data;
+    });
+</script>
+
+
+</head>
+<body>
+<div class="brødtekst">
+
+<h1>Funksjonsdrøfting med Python</h1>
+Siden trinket er lagt ned fra juni 2026 må Pythonkoden bygges inn<br>
+Dette gjør vi med hjelp av JavaScript. 
+<br><a href="nullpunkter.html" >nullpunkter med løkke </a>
+<br><a href="funksjonsdrøfting.html" >funksjonsdrøfting med graf og verditabell</a>
+<h3>
+  Funksjonsdrøfting to grafer og verditabell
+</h3>
+<p>
+Endre funksjonen og undersøk:
+<br>• verditabell
+<br>• graf
+</p>
+
+Drag and drop for å forandre på kodefeltets størrelse<br>
+
+<div class="code-output-container">
+  <textarea id="code" rows="10" cols="150">
+import numpy as np
+import matplotlib.pyplot as plt
+x = [-6, -5, -4, -3, -2, -1 ,0, 2, 4, 6]
+antall=len(x)
+y = []
+y2= np.zeros(antall)
+for a in x:
+  y.append(2*a)
+print(x)
+print(y)
+for tall in range(antall):
+  y2[tall]= x[tall]**2-5
+print('Verditabell (x og y verdier)')
+for tall in range(len(x)):
+  print('x=',x[tall],'y=',y[tall])
+plt.axhline(0, color="darkred", linewidth=1.5) # farge på x-aksen
+plt.axvline(0, color="forestgreen", linewidth=1.5) # farge på y-aksen
+plt.plot(x, y, label="y = 2x") # vises etter å ha lagt inn legend
+plt.plot(x, y2, label="y = x² - 5") # vises etter å ha lagt inn legend
+plt.legend() # viser beskrivelse av hver graf 
+plt.title("Graf av f(x) = x² - 4")
+plt.grid() # rutenett
+plt.show()
+</textarea>
+
+  <div id="output"></div>
+</div>
+
+<br><button onclick="runCode()">Kjør kode</button> (output av koden vises under etter noen sekunder...)
+
+
+
+
+<script>
+let pyodideReady = loadPyodide();
+async function runCode() {
+  const pyodide = await pyodideReady;
+  const output = document.getElementById("output");
+  const code = document.getElementById("code").value;
+  // Tøm og sett overskrift
+  output.innerHTML = "<h4>Output - resultater</h4>";
+  await pyodide.loadPackage(["numpy", "matplotlib", "sympy"]); //alle eksterne moduler importeres også i js
+  pyodide.setStdout({
+    batched: (text) => {
+      output.innerHTML += `<pre style="white-space: pre-wrap;">${text}</pre>`;
+    }
+  });
+  await pyodide.runPythonAsync(code);
+}
+</script>
+
+
+</div>
+</body>
+</html>

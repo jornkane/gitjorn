@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+      img, canvas {
+        display: block;
+        margin-left: 0;
+        margin-right: auto;
+      }
+      .code-output-container {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      #code {
+        flex: 0 0 auto;
+        width: 500px;
+      }
+      #output {
+        flex: 0 0 auto;
+        width: 500px;
+        overflow-y: auto;
+        max-height: 600px;
+        border: 1px solid #ccc;
+        padding: 10px;
+      }
+      </style>
+    <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+
+    <title>Finne nullpunkter til funksjon</title>
+
+    <link rel="stylesheet" href="../css/stiler.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+<div id="meny"></div>
+<script>
+  fetch('../meny.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('meny').innerHTML = data;
+    });
+</script>
+
+
+</head>
+<body>
+<div class="brødtekst">
+
+<h1>Funksjonsdrøfting med Python</h1>
+Siden trinket er lagt ned fra juni 2026 må Pythonkoden bygges inn<br>
+Dette gjør vi med hjelp av JavaScript. 
+<br><a href="nullpunkter.html" >nullpunkter med løkke </a>
+<br><a href="funksjonsdrøfting.html" >funksjonsdrøfting med graf og verditabell</a>
+<h3>Finne nullpunkter med if-løkke</h3>
+<p>
+Endre funksjonen og undersøk:
+<br>• bytt ut funksjonen
+<br>• undersøk om du må legge til flere x-verdier
+<br>• se på grafen hvor f(x)=0 skal være
+</p>
+
+Drag and drop for å forandre på kodefeltets størrelse<br>
+
+<div class="code-output-container">
+  <textarea id="code" rows="10" cols="150">
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(-3,3,0.5) # lager matteliste (array)
+
+def f(x):
+  return x**2-1
+
+for tall in x:
+  if f(tall)==0:
+    print('f(x)=0 når x =',tall)
+
+print('--------------------')
+plt.plot(x, f(x)) # velger hva som skal vises i grafikkfeltet
+plt.title('Grafisk framstilling av f(x)=x**2-1') # tittel på grafen
+plt.xlabel('x-akse') # navn på x-aksen
+plt.ylabel('f(x)-akse') # navn på y-aksen
+plt.axhline(0, color="darkred", linewidth=1.5) # farge på x-aksen
+plt.axvline(0, color="forestgreen", linewidth=1.5) # farge på y-aksen
+plt.grid()
+plt.show() # viser den grafiske framstillingen
+
+</textarea>
+
+  <div id="output"></div>
+</div>
+
+<br><button onclick="runCode()">Kjør kode</button> (output av koden vises under etter noen sekunder...)
+
+
+
+
+<script>
+let pyodideReady = loadPyodide();
+async function runCode() {
+  const pyodide = await pyodideReady;
+  const output = document.getElementById("output");
+  const code = document.getElementById("code").value;
+  // Tøm og sett overskrift
+  output.innerHTML = "<h4>Output - resultater</h4>";
+  await pyodide.loadPackage(["numpy", "matplotlib", "sympy"]); //alle eksterne moduler importeres også i js
+  pyodide.setStdout({
+    batched: (text) => {
+      output.innerHTML += `<pre style="white-space: pre-wrap;">${text}</pre>`;
+    }
+  });
+  await pyodide.runPythonAsync(code);
+}
+</script>
+
+
+</div>
+</body>
+</html>
