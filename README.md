@@ -1,13 +1,6 @@
-## 📚 Kurssystem
-
-Dette prosjektet bruker et JSON-basert kurssystem som gjør det enkelt å legge til nye kurs uten å skrive React-kode!
-
-**📖 [Se hvordan du lager nye kurs →](src/data/courses/HowToMakeACourse.md)**
-
 ## gitjorn
 
 Min offisielle programmeringshjemmeside. Dette er et pågående prosjekt som stadig skal oppdateres; filer legges til og slettes unna... Jobber med dette sammen med elevene på vg1 IM og vg2 IT.
-
 ---
 
 ## Skrivestandarder:
@@ -27,3 +20,12 @@ Min offisielle programmeringshjemmeside. Dette er et pågående prosjekt som sta
   ```bash
   git config --global http.sslVerify true
   ```
+
+---
+
+## 📚 Kurssystem
+
+Dette prosjektet bruker et JSON-basert kurssystem som gjør det enkelt å legge til nye kurs uten å skrive React-kode!
+
+**📖 [Se hvordan du lager nye kurs →](src/data/courses/HowToMakeACourse.md)**
+
