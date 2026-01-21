@@ -1,6 +1,6 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 
 const Page1AO8: React.FC = () => {
   return (
@@ -28,7 +28,7 @@ const Page1AO8: React.FC = () => {
               className="w-full md:w-2/3 rounded-lg shadow-lg border border-white/20 hover:scale-[1.01] transition-transform duration-300"
             />
             <figcaption className="text-sm text-gray-400 mt-2 italic">
-              Bildekilde:{' '}
+              Bildekilde:{" "}
               <a
                 href="https://leonardmaltin.com/blade-runner-2049-not-worth-the-wait/"
                 target="_blank"

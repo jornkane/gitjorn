@@ -1,7 +1,7 @@
-import Navbar from '../Navbar';
-import Footer from '../footer';
-import PythonRunner from '../PythonRunner';
-import type { CourseData, CourseContent } from '../../types/CourseData';
+import Navbar from "../Navbar";
+import Footer from "../footer";
+import PythonRunner from "../PythonRunner";
+import type { CourseData, CourseContent } from "../../types/CourseData";
 
 interface CourseTemplateProps {
   courseData: CourseData;
@@ -12,11 +12,11 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
 
   const renderContent = (content: CourseContent, index: number) => {
     switch (content.type) {
-      case 'heading':
+      case "heading":
         const headingClasses = {
-          2: 'text-3xl font-bold mb-4 mt-6',
-          3: 'text-2xl font-semibold mb-3 mt-4',
-          4: 'text-xl font-semibold mb-2 mt-3',
+          2: "text-3xl font-bold mb-4 mt-6",
+          3: "text-2xl font-semibold mb-3 mt-4",
+          4: "text-xl font-semibold mb-2 mt-3",
         };
         if (content.level === 2) {
           return (
@@ -38,14 +38,14 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           );
         }
 
-      case 'text':
+      case "text":
         return (
           <p key={index} className="mb-4">
             {content.content}
           </p>
         );
 
-      case 'list':
+      case "list":
         return (
           <ul key={index} className="list-disc pl-5 mb-4">
             {content.items.map((item, i) => (
@@ -54,7 +54,7 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </ul>
         );
 
-      case 'code':
+      case "code":
         return (
           <pre
             key={index}
@@ -64,14 +64,14 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </pre>
         );
 
-      case 'image':
+      case "image":
         return (
           <div key={index} className="mb-4">
             <img
               src={content.src}
               alt={content.alt}
               className="rounded-lg shadow-lg"
-              style={{ width: content.width || 'auto' }}
+              style={{ width: content.width || "auto" }}
             />
             {content.caption && (
               <p className="text-sm mt-2 text-gray-300">{content.caption}</p>
@@ -79,7 +79,7 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </div>
         );
 
-      case 'video':
+      case "video":
         const getYouTubeEmbedUrl = (url: string) => {
           const regExp =
             /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
@@ -96,7 +96,7 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
                 width="100%"
                 height="400"
                 src={`https://www.youtube.com/embed/${youtubeId}`}
-                title={content.caption || 'YouTube video player'}
+                title={content.caption || "YouTube video player"}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
@@ -120,7 +120,7 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
               {content.thumbnail && (
                 <img
                   src={content.thumbnail}
-                  alt={content.caption || 'Video'}
+                  alt={content.caption || "Video"}
                   className="rounded-lg shadow-lg hover:opacity-80 transition-opacity"
                 />
               )}
@@ -139,15 +139,15 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </div>
         );
 
-      case 'iframe':
+      case "iframe":
         return (
           <div key={index} className="mb-4">
             <iframe
               src={content.src}
               className="rounded-lg shadow-lg"
               style={{
-                width: content.width || '100%',
-                height: content.height || '400px',
+                width: content.width || "100%",
+                height: content.height || "400px",
                 border: 0,
               }}
             />
@@ -157,13 +157,13 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </div>
         );
 
-      case 'link':
+      case "link":
         return (
           <p key={index} className="mb-2">
             <a
               href={content.url}
-              target={content.external ? '_blank' : undefined}
-              rel={content.external ? 'noopener noreferrer' : undefined}
+              target={content.external ? "_blank" : undefined}
+              rel={content.external ? "noopener noreferrer" : undefined}
               className="text-blue-300 hover:text-blue-100 underline"
             >
               {content.text}
@@ -171,7 +171,7 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </p>
         );
 
-      case 'popup':
+      case "popup":
         // For now, just render as text with the trigger
         return (
           <p key={index} className="mb-4">
@@ -179,7 +179,7 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </p>
         );
 
-      case 'python-runner':
+      case "python-runner":
         return (
           <div key={index} className="mb-6">
             <PythonRunner
@@ -190,14 +190,14 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
           </div>
         );
 
-      case 'alert':
+      case "alert":
         const alertStyles = {
-          info: 'bg-blue-900/30 border-blue-500 text-blue-200',
-          warning: 'bg-yellow-900/30 border-yellow-500 text-yellow-200',
-          tip: 'bg-green-900/30 border-green-500 text-green-200',
-          danger: 'bg-red-900/30 border-red-500 text-red-200',
+          info: "bg-blue-900/30 border-blue-500 text-blue-200",
+          warning: "bg-yellow-900/30 border-yellow-500 text-yellow-200",
+          tip: "bg-green-900/30 border-green-500 text-green-200",
+          danger: "bg-red-900/30 border-red-500 text-red-200",
         };
-        const defaultStyle = 'bg-gray-800 border-gray-500';
+        const defaultStyle = "bg-gray-800 border-gray-500";
         return (
           <div
             key={index}
@@ -235,7 +235,7 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
             />
             {metadata.imageSource && (
               <p className="text-sm mt-2">
-                Bildekilde:{' '}
+                Bildekilde:{" "}
                 {metadata.imageSourceUrl ? (
                   <a
                     href={metadata.imageSourceUrl}

@@ -1,7 +1,7 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
-import { Link } from 'react-router-dom';
-import { getAllCourses } from '../utils/courseLoader';
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
+import { Link } from "react-router-dom";
+import { getAllCourses } from "../utils/courseLoader";
 
 const CoursesPage = () => {
   const courses = getAllCourses();

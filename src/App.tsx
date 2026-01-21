@@ -1,15 +1,15 @@
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './pages/HomePage';
-import CoursesPage from './pages/CoursesPage';
-import DynamicCoursePage from './components/templates/DynamicCoursePage';
-import ITPage from './pages/ITPage';
-import IMPage from './pages/IMPage';
-import LinksPage from './pages/Links';
-import PythonPage from './pages/PythonPage';
-import WordListsPage from './pages/WordListsPage';
-import CulturePage from './pages/CulturePage';
-import Page1AO8 from './pages/Page1AO8';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import CoursesPage from "./pages/CoursesPage";
+import DynamicCoursePage from "./components/templates/DynamicCoursePage";
+import ITPage from "./pages/ITPage";
+import IMPage from "./pages/IMPage";
+import LinksPage from "./pages/Links";
+import PythonPage from "./pages/PythonPage";
+import WordListsPage from "./pages/WordListsPage";
+import CulturePage from "./pages/CulturePage";
+import Page1AO8 from "./pages/Page1AO8";
+import "./App.css";
 
 function App() {
   return (

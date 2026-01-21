@@ -4,7 +4,7 @@ import React, {
   useEffect,
   useState,
   useRef,
-} from 'react';
+} from "react";
 
 declare const loadPyodide: any;
 
@@ -49,9 +49,9 @@ export const PythonProvider: React.FC<{ children: React.ReactNode }> = ({
 
     const initializePyodide = async () => {
       try {
-        console.log('Initializing Pyodide...');
-        if (typeof loadPyodide === 'undefined') {
-          throw new Error('Pyodide CDN ikke lastet.');
+        console.log("Initializing Pyodide...");
+        if (typeof loadPyodide === "undefined") {
+          throw new Error("Pyodide CDN ikke lastet.");
         }
 
         const pyInstance = await loadPyodide();
@@ -82,9 +82,9 @@ except ImportError:
 
         setPyodide(pyInstance);
         setIsLoading(false);
-        console.log('Pyodide ready.');
+        console.log("Pyodide ready.");
       } catch (error) {
-        console.error('Failed to load Pyodide:', error);
+        console.error("Failed to load Pyodide:", error);
         setIsLoading(false);
       }
     };
@@ -113,7 +113,7 @@ except ImportError:
   };
 
   const runPython = async (code: string, onStdout: (text: string) => void) => {
-    if (!pyodide) return { result: null, error: 'Python er ikke lastet ennå.' };
+    if (!pyodide) return { result: null, error: "Python er ikke lastet ennå." };
 
     try {
       pyodide.setStdout({
@@ -124,10 +124,10 @@ except ImportError:
 
       // Special handling for plotting if matplotlib is active
       const hasPlotting =
-        activeLibraries.has('matplotlib') ||
-        activeLibraries.has('seaborn') ||
-        code.includes('plt.') ||
-        code.includes('matplotlib');
+        activeLibraries.has("matplotlib") ||
+        activeLibraries.has("seaborn") ||
+        code.includes("plt.") ||
+        code.includes("matplotlib");
 
       const result = await pyodide.runPythonAsync(code);
 
@@ -182,7 +182,7 @@ _get_plot_img()
 export const usePython = () => {
   const context = useContext(PythonContext);
   if (context === undefined) {
-    throw new Error('usePython must be used within a PythonProvider');
+    throw new Error("usePython must be used within a PythonProvider");
   }
   return context;
 };

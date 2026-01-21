@@ -1,7 +1,7 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
-import cultureData from '../data/culture.json';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
+import cultureData from "../data/culture.json";
 
 const CulturePage: React.FC = () => {
   return (
@@ -48,7 +48,7 @@ const CulturePage: React.FC = () => {
                           rel="noopener noreferrer"
                           className="inline-block bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-bold hover:bg-yellow-400 transition-colors"
                         >
-                          {item.linkText || 'Les mer'}
+                          {item.linkText || "Les mer"}
                         </a>
                       )}
                     </div>
@@ -97,7 +97,7 @@ const CulturePage: React.FC = () => {
                   {cultureData.playlist.title}
                 </h3>
                 <iframe
-                  style={{ borderRadius: '12px' }}
+                  style={{ borderRadius: "12px" }}
                   src={cultureData.playlist.embedUrl}
                   width="100%"
                   height="380"
@@ -127,7 +127,7 @@ const CulturePage: React.FC = () => {
                       {item.description}
                     </p>
                     <iframe
-                      style={{ borderRadius: '12px' }}
+                      style={{ borderRadius: "12px" }}
                       src={item.embedUrl}
                       width="100%"
                       height="80"
@@ -153,9 +153,9 @@ const CulturePage: React.FC = () => {
             height="480px"
             src="https://forms.office.com/Pages/ResponsePage.aspx?id=5-wyud-clE20wRUlbkPH6nHQ7F2pSedAgDVSQsmPtRJURUhTMThQRDFINldQQ1ZMWkdQWUtVOFVEVi4u&embed=true"
             frameBorder="0"
-            style={{ maxWidth: '100%', border: 'none' }}
+            style={{ maxWidth: "100%", border: "none" }}
           >
-            {' '}
+            {" "}
           </iframe>
         </div>
       </main>

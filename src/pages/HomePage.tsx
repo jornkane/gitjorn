@@ -1,5 +1,5 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 
 const HomePage = () => {
   return (
@@ -31,7 +31,7 @@ const HomePage = () => {
               </div>
 
               <p className="text-gray-100">
-                Her finner du tips, linker og tutorials for{' '}
+                Her finner du tips, linker og tutorials for{" "}
                 <strong>utvikling</strong> på vg1 og vg2 informasjonsteknologi
                 og medieproduksjon.
               </p>

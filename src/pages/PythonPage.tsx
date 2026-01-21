@@ -1,7 +1,7 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
-import PythonRunner from '../components/PythonRunner';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
+import PythonRunner from "../components/PythonRunner";
 
 const PythonPage: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
+import React, { useState } from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 
 const WordListsPage: React.FC = () => {
   const [showNynorsk, setShowNynorsk] = useState(false);
@@ -43,7 +43,7 @@ const WordListsPage: React.FC = () => {
                 Nynorsk-ordliste
               </h2>
               <span
-                className={`transform transition-transform ${showNynorsk ? 'rotate-180' : ''}`}
+                className={`transform transition-transform ${showNynorsk ? "rotate-180" : ""}`}
               >
                 ▼
               </span>
@@ -60,13 +60,13 @@ const WordListsPage: React.FC = () => {
                     uenighet
                   </li>
                   <li>
-                    <span className="text-green-400 font-bold">Vonbroten</span>{' '}
+                    <span className="text-green-400 font-bold">Vonbroten</span>{" "}
                     - skuffet, desillusjonert
                   </li>
                   <li>
                     <span className="text-green-400 font-bold">
                       Rørslehemma
-                    </span>{' '}
+                    </span>{" "}
                     - bevegelseshemmet
                   </li>
                   <li>
@@ -113,13 +113,13 @@ const WordListsPage: React.FC = () => {
                     fordi(?)
                   </li>
                   <li>
-                    <span className="text-green-400 font-bold">Avgjersla</span>{' '}
+                    <span className="text-green-400 font-bold">Avgjersla</span>{" "}
                     - avgjørelsen
                   </li>
                   <li>
                     <span className="text-green-400 font-bold">
                       Lauspengeangrep
-                    </span>{' '}
+                    </span>{" "}
                     - løsepengeangrep
                   </li>
                   <li>
@@ -137,7 +137,7 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="text-green-400 font-bold">
                       Skodespelar
-                    </span>{' '}
+                    </span>{" "}
                     - skuespiller
                   </li>
                   <li>
@@ -155,7 +155,7 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="text-green-400 font-bold">
                       Føreseieleg
-                    </span>{' '}
+                    </span>{" "}
                     - forutsigbart
                   </li>
                   <li>
@@ -172,7 +172,7 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="text-green-400 font-bold">
                       Medvitslaus
-                    </span>{' '}
+                    </span>{" "}
                     - bevisstløs
                   </li>
                 </ul>
@@ -190,7 +190,7 @@ const WordListsPage: React.FC = () => {
                 Snedige ord på dialekt
               </h2>
               <span
-                className={`transform transition-transform ${showDialekt ? 'rotate-180' : ''}`}
+                className={`transform transition-transform ${showDialekt ? "rotate-180" : ""}`}
               >
                 ▼
               </span>
@@ -203,17 +203,17 @@ const WordListsPage: React.FC = () => {
                 </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm font-mono">
                   <li>
-                    <span className="text-purple-400 font-bold">Annjsannj</span>{' '}
+                    <span className="text-purple-400 font-bold">Annjsannj</span>{" "}
                     - om det er annerledes eller ikke
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Dælje te</span>{' '}
+                    <span className="text-purple-400 font-bold">Dælje te</span>{" "}
                     - slå til
                   </li>
                   <li>
                     <span className="text-purple-400 font-bold">
                       Karravorrinj
-                    </span>{' '}
+                    </span>{" "}
                     - tøff i trynet
                   </li>
                   <li>
@@ -225,11 +225,11 @@ const WordListsPage: React.FC = () => {
                     veps
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Snytskaft</span>{' '}
+                    <span className="text-purple-400 font-bold">Snytskaft</span>{" "}
                     - nese
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Innkvart</span>{' '}
+                    <span className="text-purple-400 font-bold">Innkvart</span>{" "}
                     - noe, litt
                   </li>
                   <li>
@@ -241,7 +241,7 @@ const WordListsPage: React.FC = () => {
                     jeans
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Punnjbrok</span>{' '}
+                    <span className="text-purple-400 font-bold">Punnjbrok</span>{" "}
                     - truse
                   </li>
                   <li>
@@ -249,7 +249,7 @@ const WordListsPage: React.FC = () => {
                     gjørme
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Mennjanj</span>{' '}
+                    <span className="text-purple-400 font-bold">Mennjanj</span>{" "}
                     - morgenene
                   </li>
                   <li>
@@ -267,7 +267,7 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="text-purple-400 font-bold">
                       Dærståkkjen
-                    </span>{' '}
+                    </span>{" "}
                     - dørterskelen
                   </li>
                   <li>
@@ -299,7 +299,7 @@ const WordListsPage: React.FC = () => {
                     sokker
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Svoltinj</span>{' '}
+                    <span className="text-purple-400 font-bold">Svoltinj</span>{" "}
                     - sulten
                   </li>
                   <li>
@@ -321,13 +321,13 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="text-purple-400 font-bold">
                       Obsternasig
-                    </span>{' '}
+                    </span>{" "}
                     - tverr/vanskelig
                   </li>
                   <li>
                     <span className="text-purple-400 font-bold">
                       Svettebrøt
-                    </span>{' '}
+                    </span>{" "}
                     - svetteanfall
                   </li>
                   <li>
@@ -339,7 +339,7 @@ const WordListsPage: React.FC = () => {
                     skråning
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Tærgaddj</span>{' '}
+                    <span className="text-purple-400 font-bold">Tærgaddj</span>{" "}
                     - tørr vedkubbe
                   </li>
                   <li>
@@ -349,7 +349,7 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="text-purple-400 font-bold">
                       Enkjemannjstarschjen
-                    </span>{' '}
+                    </span>{" "}
                     - albue-nerve
                   </li>
                   <li>
@@ -361,11 +361,11 @@ const WordListsPage: React.FC = () => {
                     skjelve
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Blokkflæt</span>{' '}
+                    <span className="text-purple-400 font-bold">Blokkflæt</span>{" "}
                     - blokkfløyte
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Kvætmmjøl</span>{' '}
+                    <span className="text-purple-400 font-bold">Kvætmmjøl</span>{" "}
                     - hvetemel
                   </li>
                   <li>
@@ -375,17 +375,17 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="text-purple-400 font-bold">
                       Krongelkjærr
-                    </span>{' '}
+                    </span>{" "}
                     - piggete busker
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Vassbøtt</span>{' '}
+                    <span className="text-purple-400 font-bold">Vassbøtt</span>{" "}
                     - vannbøtte
                   </li>
                   <li>
                     <span className="text-purple-400 font-bold">
                       Bellet i ram
-                    </span>{' '}
+                    </span>{" "}
                     - bilde i ramme
                   </li>
                   <li>
@@ -432,7 +432,7 @@ const WordListsPage: React.FC = () => {
                     eple
                   </li>
                   <li>
-                    <span className="text-purple-400 font-bold">Æppelshin</span>{' '}
+                    <span className="text-purple-400 font-bold">Æppelshin</span>{" "}
                     - appelsin
                   </li>
                   <li>
@@ -453,7 +453,7 @@ const WordListsPage: React.FC = () => {
                 Kjente og ukjente ordtak
               </h2>
               <span
-                className={`transform transition-transform ${showOrdtak ? 'rotate-180' : ''}`}
+                className={`transform transition-transform ${showOrdtak ? "rotate-180" : ""}`}
               >
                 ▼
               </span>
@@ -493,7 +493,7 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="font-bold text-blue-300">
                       Å bli uglesett
-                    </span>{' '}
+                    </span>{" "}
                     (kommer av dansk og det var opprinnelig ulvesett)
                   </li>
                   <li>
@@ -519,13 +519,13 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="font-bold text-blue-300">
                       Lediggang er roten til alt ondt
-                    </span>{' '}
+                    </span>{" "}
                     (idle hands are the devils tools)
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       Når man snakker om sola
-                    </span>{' '}
+                    </span>{" "}
                     (speak of the devil)
                   </li>
                   <li>
@@ -546,25 +546,25 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="font-bold text-blue-300">
                       Å ha svin på skogen
-                    </span>{' '}
+                    </span>{" "}
                     (betyr å unnlate verdier eller å ha hemmeligheter)
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       Å stå skolerett
-                    </span>{' '}
+                    </span>{" "}
                     - å forklare seg og bli irettesatt
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       Å skille klinten fra hveten
-                    </span>{' '}
+                    </span>{" "}
                     - Klinte er en giftig, men så og si utryddet plante
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       Det dunkelt sagte er det dunkelt tenkte.
-                    </span>{' '}
+                    </span>{" "}
                     – Man pakker det man sier inn i mange vanskelige eller
                     uspesifikke ord.
                   </li>
@@ -577,31 +577,31 @@ const WordListsPage: React.FC = () => {
                   <li>
                     <span className="font-bold text-blue-300">
                       Fryd og gammen.
-                    </span>{' '}
+                    </span>{" "}
                     – Glede og fornøyelse.
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       For fulle mugger.
-                    </span>{' '}
+                    </span>{" "}
                     – Gjøre noe for fullt, med toppfart eller med all sin kraft.
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       Gå i bresjen.
-                    </span>{' '}
+                    </span>{" "}
                     – Gå foran, ta ledelsen.
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       Gå på limpinnen.
-                    </span>{' '}
+                    </span>{" "}
                     – Bli lurt eller narret.
                   </li>
                   <li>
                     <span className="font-bold text-blue-300">
                       Å gjøre sine hoser grønne
-                    </span>{' '}
+                    </span>{" "}
                     - å innynde seg hos en kvinne
                   </li>
                 </ul>

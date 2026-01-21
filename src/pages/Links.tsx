@@ -1,6 +1,6 @@
-import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/footer';
+import React from "react";
+import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 
 const LinksPage: React.FC = () => {
   return (

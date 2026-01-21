@@ -4,20 +4,26 @@ Dette prosjektet bruker et JSON-basert kurssystem som gjør det enkelt å legge 
 
 **📖 [Se hvordan du lager nye kurs →](src/data/courses/HowToMakeACourse.md)**
 
-# gitjorn
+## gitjorn
 
-Min offisielle programmeringshjemmeside.
-Dette er et pågående prosjekt som stadig skal oppdateres, filer legges til og slettes unna...
-Jobber med dette sammen med elevene på vg1 IM og vg2 IT.
+Min offisielle programmeringshjemmeside. Dette er et pågående prosjekt som stadig skal oppdateres; filer legges til og slettes unna... Jobber med dette sammen med elevene på vg1 IM og vg2 IT.
+
+---
 
 ## Skrivestandarder:
 
-Ikke bruk åpenrom (space) mellom ord i filnavn eller lenker. Bruk helst camelCase
-Tekst i dokumentet er hovedsakling på norsk, men vi oversetter ikke fagspråk som oftest.
-Det vil si ord som f.eks. branch - når vi snakker om branch snakker vi om en branch i Git.
-Hvis vi oversetter til grein kan man komme til å tenke på en grein fra et vanlig tre.
+- **Filnavn og Lenker**: Ikke bruk åpenrom (space) mellom ord i filnavn eller lenker. Bruk helst camelCase. og fil navn skal være på engelsk. Eksempel:
+    - Korrekt: `HomePage.tsx`
+    - Feil: `HjemmeSide.tsx`
+- **Bilder**: Alle bilder skal ligge i mappen `src/public/img/`. Bruk beskrivende filnavn uten mellomrom, f.eks. `myImageFile.png`.
+- **Kursfiler**: Alle kursfiler skal ligge i mappen `src/data/courses/`. Bruk beskrivende filnavn uten mellomrom, f.eks. `myCourseFile.json`.
 
-Her er linken til selve hjemmesia for prosjektet:
-https://jornkane.github.io/gitjorn/
+  
+- **Språkbruk**: Tekst i dokumentet er hovedsakelig på norsk, men vi oversetter ikke fagspråk som oftest. Det vil si ord som f.eks. "branch" – når vi snakker om "branch", snakker vi om en branch i Git. Hvis vi oversetter til "grein", kan man komme til å tenke på en grein fra et vanlig tre.
 
-husk aktivering av ssl: "git config --global http.sslVerify true"
+- **Hjemmeside**: Her er linken til selve hjemmesiden for prosjektet: [Gitjorn Hjemmeside](https://jornkane.github.io/gitjorn/).
+
+- **SSL Aktivering**: Husk aktivering av SSL:
+  ```bash
+  git config --global http.sslVerify true
+  ```

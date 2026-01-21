@@ -11,23 +11,23 @@ export interface CourseMetadata {
 }
 
 export interface TextContent {
-  type: 'text';
+  type: "text";
   content: string;
 }
 
 export interface ListContent {
-  type: 'list';
+  type: "list";
   items: string[];
 }
 
 export interface CodeContent {
-  type: 'code';
+  type: "code";
   language: string;
   code: string;
 }
 
 export interface ImageContent {
-  type: 'image';
+  type: "image";
   src: string;
   alt: string;
   width?: string;
@@ -35,14 +35,14 @@ export interface ImageContent {
 }
 
 export interface VideoContent {
-  type: 'video';
+  type: "video";
   url: string;
   thumbnail?: string;
   caption?: string;
 }
 
 export interface IframeContent {
-  type: 'iframe';
+  type: "iframe";
   src: string;
   width?: string;
   height?: string;
@@ -50,34 +50,34 @@ export interface IframeContent {
 }
 
 export interface PopupContent {
-  type: 'popup';
+  type: "popup";
   trigger: string;
   content: string;
 }
 
 export interface LinkContent {
-  type: 'link';
+  type: "link";
   text: string;
   url: string;
   external?: boolean;
 }
 
 export interface HeadingContent {
-  type: 'heading';
+  type: "heading";
   level: 2 | 3 | 4;
   text: string;
 }
 
 export interface PythonRunnerContent {
-  type: 'python-runner';
+  type: "python-runner";
   initialCode?: string;
   title?: string;
   defaultLibraries?: string[];
 }
 
 export interface AlertContent {
-  type: 'alert';
-  variant: 'info' | 'warning' | 'tip' | 'danger';
+  type: "alert";
+  variant: "info" | "warning" | "tip" | "danger";
   title?: string;
   content: string;
 }

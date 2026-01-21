@@ -1,5 +1,5 @@
-import Navbar from '../components/Navbar';
-import { useEffect } from 'react';
+import Navbar from "../components/Navbar";
+import { useEffect } from "react";
 
 // TypeScript klasser for objektorientert programmering
 
@@ -85,14 +85,14 @@ const ITPage = () => {
   useEffect(() => {
     // Kjør TypeScript kode når komponenten lastes
     const runTypeScriptDemo = () => {
-      const Jornis = new Person('Jornis', 40);
-      const Balt = new Person('Balthazar', 80);
+      const Jornis = new Person("Jornis", 40);
+      const Balt = new Person("Balthazar", 80);
 
       // oppretter hus med jornis og baltazar som residents
-      const house = new House('husnavn', 2500000, [Jornis, Balt]);
+      const house = new House("husnavn", 2500000, [Jornis, Balt]);
 
-      const Margot = new Person('Margot', 37); // ny person i person-klassen
-      Jornis.setJob('Programmeringsekspert');
+      const Margot = new Person("Margot", 37); // ny person i person-klassen
+      Jornis.setJob("Programmeringsekspert");
       house.addResident(Margot); // legges til enklere siden vi har addResident som klassemetode :)
 
       console.log(Jornis.getName());
@@ -101,19 +101,19 @@ const ITPage = () => {
 
       console.log(house.residents); // viser alt som ligger i hus 1
 
-      const house2 = new House('kvgs', 60000000, []);
-      house2.addResident(new Person('MB', 69));
-      const Harra = new Person('arra', 17);
-      Harra.setJob('Elev');
+      const house2 = new House("kvgs", 60000000, []);
+      house2.addResident(new Person("MB", 69));
+      const Harra = new Person("arra", 17);
+      Harra.setJob("Elev");
       house2.addResident(Harra);
       console.log(house2.getResidents()); // viser alle som hører til hus 2
 
       const programmer = new Programmer(
-        'Jokane',
+        "Jokane",
         47,
-        'Kvgs',
+        "Kvgs",
         378000,
-        'JavaScript'
+        "JavaScript"
       );
       programmer.sayHi();
     };
@@ -134,7 +134,7 @@ const ITPage = () => {
             alt="illustration-of-people-building-a-gigantic-robot-with-ai-on-its-chest-which-then-breaks-loose-and-destroys-the-city-around-it"
           />
           <p className="text-sm mt-2">
-            Bildekilde:{' '}
+            Bildekilde:{" "}
             <a
               href="https://spectrum.ieee.org/isaac-asimov-robotics"
               target="_blank"
