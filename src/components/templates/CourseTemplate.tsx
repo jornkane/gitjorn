@@ -129,7 +129,6 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
                   {content.caption}
                 </p>
               )}
-              {/* Fallback text if no thumbnail */}
               {!content.thumbnail && (
                 <div className="p-4 bg-gray-800 rounded-lg text-blue-300 underline">
                   Watch Video: {content.caption || content.url}
@@ -172,7 +171,6 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
         );
 
       case "popup":
-        // For now, just render as text with the trigger
         return (
           <p key={index} className="mb-4">
             {content.trigger}: {content.content}

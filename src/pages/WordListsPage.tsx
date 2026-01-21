@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
-const WordListsPage: React.FC = () => {
+const WordListsPage = () => {
   const [showNynorsk, setShowNynorsk] = useState(false);
   const [showDialekt, setShowDialekt] = useState(false);
   const [showOrdtak, setShowOrdtak] = useState(false);
@@ -32,8 +32,6 @@ const WordListsPage: React.FC = () => {
               blir laget).
             </p>
           </div>
-
-          {/* Nynorsk Section */}
           <div className="bg-gray-800/50 rounded-lg overflow-hidden border border-gray-700">
             <button
               onClick={() => setShowNynorsk(!showNynorsk)}
@@ -180,7 +178,6 @@ const WordListsPage: React.FC = () => {
             )}
           </div>
 
-          {/* Dialekt Section */}
           <div className="bg-gray-800/50 rounded-lg overflow-hidden border border-gray-700">
             <button
               onClick={() => setShowDialekt(!showDialekt)}
@@ -443,7 +440,6 @@ const WordListsPage: React.FC = () => {
             )}
           </div>
 
-          {/* Ordtak Section */}
           <div className="bg-gray-800/50 rounded-lg overflow-hidden border border-gray-700">
             <button
               onClick={() => setShowOrdtak(!showOrdtak)}

@@ -1,8 +1,7 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 
-const Page1AO8: React.FC = () => {
+const Page1AO8 = () => {
   return (
     <div className="bg-linear-to-r from-cyan-900 to-blue-900 text-white font-sans text-lg overflow-x-hidden min-h-screen flex flex-col">
       <Navbar />

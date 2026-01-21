@@ -19,7 +19,7 @@ const Footer = () => {
             GitHub
           </a>
           <a
-            href="mailto:jorn.kane@example.com"
+            href="mailto:jorn.kanestrom@mrfylke.no"
             className="text-gray-400 hover:text-yellow-300 transition"
           >
             Kontakt

@@ -1,5 +1,4 @@
-// TypeScript interfaces for JSON-based course system
-
+// Denne filen definerer typene som brukes for kursdata i applikasjonen.
 export interface CourseMetadata {
   id: string;
   title: string;

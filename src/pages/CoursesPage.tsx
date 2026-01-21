@@ -3,6 +3,7 @@ import Footer from "../components/footer";
 import { Link } from "react-router-dom";
 import { getAllCourses } from "../utils/courseLoader";
 
+// Komponent for kursoversiktssiden som viser en liste over tilgjengelige kurs. trenger ikke å endre denne filen. vist du skal legge til nye kurs, gjør det i kursdatafilene i stedet.
 const CoursesPage = () => {
   const courses = getAllCourses();
 

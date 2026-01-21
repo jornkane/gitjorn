@@ -1,10 +1,32 @@
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
+import { useEffect, useState } from "react";
+import EasterEgg from "../components/EasterEgg";
+
 
 const HomePage = () => {
+  const [showEasterEgg, setShowEasterEgg] = useState(false);
+
+  useEffect(() => {
+    let buffer = "";
+    const handler = (e: KeyboardEvent) => {
+      buffer += e.key;
+      if (buffer.length > 10) buffer = buffer.slice(-10);
+      if (/david/i.test(buffer)) {
+        setShowEasterEgg(true);
+        setTimeout(() => setShowEasterEgg(false), 4000);
+        buffer = "";
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
   return (
     <div className="bg-linear-to-r from-[#00735c] to-[rgba(177,245,6,0.5)] text-white font-sans text-lg overflow-x-hidden">
       <Navbar />
+      <EasterEgg show={showEasterEgg} />
       <main className="p-4">
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-shadow-lg mt-4 mb-2">

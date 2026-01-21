@@ -7,12 +7,10 @@
 ## Skrivestandarder:
 
 - **Filnavn og Lenker**: Ikke bruk åpenrom (space) mellom ord i filnavn eller lenker. Bruk helst camelCase. og fil navn skal være på engelsk. Eksempel:
-    - Korrekt: `HomePage.tsx`
-    - Feil: `HjemmeSide.tsx`
+  - Korrekt: `HomePage.tsx`
+  - Feil: `HjemmeSide.tsx`
 - **Bilder**: Alle bilder skal ligge i mappen `src/public/img/`. Bruk beskrivende filnavn uten mellomrom, f.eks. `myImageFile.png`.
 - **Kursfiler**: Alle kursfiler skal ligge i mappen `src/data/courses/`. Bruk beskrivende filnavn uten mellomrom, f.eks. `myCourseFile.json`.
-
-  
 - **Språkbruk**: Tekst i dokumentet er hovedsakelig på norsk, men vi oversetter ikke fagspråk som oftest. Det vil si ord som f.eks. "branch" – når vi snakker om "branch", snakker vi om en branch i Git. Hvis vi oversetter til "grein", kan man komme til å tenke på en grein fra et vanlig tre.
 
 - **Hjemmeside**: Her er linken til selve hjemmesiden for prosjektet: [Gitjorn Hjemmeside](https://jornkane.github.io/gitjorn/).
@@ -29,4 +27,3 @@
 Dette prosjektet bruker et JSON-basert kurssystem som gjør det enkelt å legge til nye kurs uten å skrive React-kode!
 
 **📖 [Se hvordan du lager nye kurs →](src/data/courses/HowToMakeACourse.md)**
-

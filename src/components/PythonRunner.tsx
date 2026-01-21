@@ -2,11 +2,9 @@ import { useState, useEffect } from "react";
 import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs";
 import "prismjs/components/prism-python";
-import "prismjs/themes/prism-tomorrow.css"; // Using 'tomorrow' (dark) theme
+import "prismjs/themes/prism-tomorrow.css";
 
 import { usePython } from "../context/PythonContext";
-
-// Remove PyodideInterface as it's now internal to context
 
 interface PythonRunnerProps {
   initialCode?: string;
@@ -51,8 +49,6 @@ const PythonRunner: React.FC<PythonRunnerProps> = ({
   const [output, setOutput] = useState("");
   const [plotImage, setPlotImage] = useState<string | null>(null);
   const [running, setRunning] = useState(false);
-
-  // Auto-load default libraries
   useEffect(() => {
     const loadDefaults = async () => {
       for (const lib of defaultLibraries) {
@@ -66,17 +62,14 @@ const PythonRunner: React.FC<PythonRunnerProps> = ({
     }
   }, [engineLoading, defaultLibraries, activeLibraries, loadLibrary]);
 
-  // Code update effect remains the same
   useEffect(() => {
     if (initialCode) {
       setCode(initialCode);
     }
   }, [initialCode]);
 
-  // Removed local Pyodide loading logic
-
   const toggleLibrary = async (libId: string) => {
-    if (activeLibraries.has(libId)) return; // Already active
+    if (activeLibraries.has(libId)) return;
 
     try {
       setOutput(`Laster bibliotek: ${libId}...`);
@@ -350,6 +343,7 @@ print("Stokket kortstokk:", kort)`,
           </div>
         </div>
         <div className="lg:col-span-3">
+  
           {/* Kode editor */}
           <div className="rounded-lg overflow-hidden border border-gray-700 shadow-inner mb-4 relative bg-[#2d2d2d] min-h-[500px]">
             <Editor

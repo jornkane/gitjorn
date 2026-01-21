@@ -1,9 +1,8 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import PythonRunner from "../components/PythonRunner";
 
-const PythonPage: React.FC = () => {
+const PythonPage = () => {
   return (
     <div className="bg-linear-to-r from-[#00735c] to-[rgba(177,245,6,0.5)] text-white font-sans text-lg overflow-x-hidden min-h-screen flex flex-col">
       <Navbar />

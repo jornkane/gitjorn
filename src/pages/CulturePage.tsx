@@ -1,9 +1,8 @@
-import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/footer";
 import cultureData from "../data/culture.json";
 
-const CulturePage: React.FC = () => {
+const CulturePage = () => {
   return (
     <div className="bg-linear-to-r from-purple-900 to-indigo-900 text-white font-sans text-lg overflow-x-hidden min-h-screen flex flex-col">
       <Navbar />
@@ -19,13 +18,10 @@ const CulturePage: React.FC = () => {
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Fim & Serier Column */}
           <div className="space-y-8">
             <h2 className="text-4xl font-bold border-b-2 border-pink-500 pb-2 mb-6 flex items-center gap-2">
               🎬 Film & Serier
             </h2>
-
-            {/* Movies from JSON */}
             {cultureData.movies.map((entry, index) => (
               <article
                 key={index}
@@ -57,7 +53,6 @@ const CulturePage: React.FC = () => {
               </article>
             ))}
 
-            {/* Archive Section */}
             {cultureData.archive && cultureData.archive.length > 0 && (
               <article className="bg-white/10 p-6 rounded-xl hover:bg-white/15 transition-colors">
                 <h3 className="text-2xl font-bold mb-4">
@@ -84,13 +79,11 @@ const CulturePage: React.FC = () => {
             )}
           </div>
 
-          {/* Musikk Column */}
           <div className="space-y-8">
             <h2 className="text-4xl font-bold border-b-2 border-green-500 pb-2 mb-6 flex items-center gap-2">
               🎵 Musikk
             </h2>
 
-            {/* Playlist */}
             {cultureData.playlist && (
               <div className="bg-black/40 p-6 rounded-xl border border-gray-700">
                 <h3 className="text-xl font-bold mb-4 text-green-400">
@@ -109,7 +102,6 @@ const CulturePage: React.FC = () => {
               </div>
             )}
 
-            {/* Music Recommendations */}
             <article className="bg-white/10 p-6 rounded-xl">
               <h3 className="text-2xl font-bold mb-4 text-yellow-300">
                 Ukens utvalgte

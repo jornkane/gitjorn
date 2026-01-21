@@ -22,9 +22,6 @@ const Navbar: React.FC = () => {
       <Link to="/linker" className="mr-4 text-lg">
         Links
       </Link>
-      <Link to="/ordlister" className="mr-4 text-lg">
-        Ordlister
-      </Link>
       <Link to="/kultur" className="mr-4 text-lg">
         Kultur
       </Link>

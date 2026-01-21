@@ -1,0 +1,58 @@
+[
+  {
+    "type": "external",
+    "title": "Keep It Simple, Stupid! (KISS)",
+    "description": "Det enkleste er ofte det beste (ikke alltid) også kjent som Occams barberhøvel.",
+    "url": "https://www.newscientist.com/definition/occams-razor/"
+  },
+  {
+    "type": "internal",
+    "title": "Python-programmer (Trinket/Runner)",
+    "description": "Prøv Python-programmering direkte i nettleseren vår.",
+    "url": "/python"
+  },
+  {
+    "type": "external",
+    "title": "Object Oriented Programming i JS med Pedro",
+    "description": "Lær OOP konsepter i JavaScript.",
+    "url": "https://www.youtube.com/watch?v=GEuS0tfLfEY"
+  },
+  {
+    "type": "internal",
+    "title": "Jørns testside (IM Page)",
+    "description": "Informasjonsteknologi og medieproduksjon side.",
+    "url": "/test"
+  },
+  {
+    "type": "external",
+    "title": "Personvernsregler",
+    "description": "Dette bør alle være obs på. Viktig informasjon fra Datatilsynet om bilder på nett.",
+    "url": "https://www.datatilsynet.no/personvern-pa-ulike-omrader/internett-og-apper/bilder-pa-nett/"
+  },
+  {
+    "type": "internal",
+    "title": "Ordlister og Ordtak",
+    "description": "Nynorsk, dialektord og kjente ordtak (samlet av Jørn).",
+    "url": "/ordlister"
+  },
+  {
+    "type": "section",
+    "title": "Kunstig Intelligens (AI)"
+  },
+  {
+    "type": "external",
+    "title": "Forklaring på hva AI (KI) faktisk er for noe",
+    "description": "Litt om kunstig intelligens (AI på internasjonalt eller KI på norsk):",
+    "url": "https://ndla.no/r/mediesamfunnet-1/kunstig-intelligens-ai/aecd110b6f/13561"
+  },
+  {
+    "type": "section",
+    "title": "Elevsider"
+  },
+  {
+    "type": "external",
+    "title": "Hjemmesiden til Teknisk-sett (23/24)",
+    "description": "Spennende site laget av dyktige IM-elever!",
+    "url": "https://teknisk-sett.github.io/"
+  }
+]

@@ -103,8 +103,6 @@ const IMPage = () => {
             </a>
           </div>
         </div>
-
-        {/* Popup Example */}
         <div className="mb-6">
           <div className="relative inline-block">
             <span
@@ -132,7 +130,6 @@ const IMPage = () => {
           </p>
         </div>
 
-        {/* Video Section */}
         <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4">
             <a
@@ -169,7 +166,6 @@ const IMPage = () => {
           </p>
         </div>
 
-        {/* CSS Examples */}
         <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-6 shadow-xl">
           <p className="mb-4">Her er eksempler på css-kode du kan bruke:</p>
           <p className="mb-2">
