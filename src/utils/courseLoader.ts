@@ -1,14 +1,13 @@
-import type { CourseData } from "../types/CourseData";
-
+import type { CourseData } from '../types/CourseData';
 
 // Import all course JSON files
-import pythonStarter from "../data/courses/python-starter.json";
-import itOop from "../data/courses/it-oop.json";
-import htmlCssBasics from "../data/courses/html-css-basics.json";
-import pythonIntro from "../data/courses/python-intro.json";
-import pythonGraphs from "../data/courses/python-graphs.json";
-import pythonPrograms from "../data/courses/python-programs.json";
-import gitIntro from "../data/courses/git-intro.json";
+import pythonStarter from '../data/courses/python-starter.json';
+import itOop from '../data/courses/it-oop.json';
+import htmlCssBasics from '../data/courses/html-css-basics.json';
+import pythonIntro from '../data/courses/python-intro.json';
+import pythonGraphs from '../data/courses/python-graphs.json';
+import pythonPrograms from '../data/courses/python-programs.json';
+import gitIntro from '../data/courses/git-intro.json';
 
 const allCourses: CourseData[] = [
   pythonStarter as CourseData,

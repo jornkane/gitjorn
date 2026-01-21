@@ -1,6 +1,6 @@
-import { useParams } from "react-router-dom";
-import CourseTemplate from "./CourseTemplate";
-import { getCourseById } from "../../utils/courseLoader";
+import { useParams } from 'react-router-dom';
+import CourseTemplate from './CourseTemplate';
+import { getCourseById } from '../../utils/courseLoader';
 
 const DynamicCoursePage = () => {
   const { courseId } = useParams<{ courseId: string }>();

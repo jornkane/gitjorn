@@ -5,11 +5,10 @@ const Footer = () => {
         <p className="text-sm">
           Version 2.0
           <br />
-          &copy; 2025 Jørn Kanestrøm, Kane Computing. Alle rettigheter reservert.
+          &copy; 2025 Jørn Kanestrøm, Kane Computing. Alle rettigheter
+          reservert.
         </p>
-        <p className="text-sm">
-          Utviklet av Jørn Kanestrøm og David 2IT1 2026
-        </p>
+        <p className="text-sm">Utviklet av Jørn Kanestrøm og David 2IT1 2026</p>
         <div className="flex justify-center space-x-6 mt-4">
           <a
             href="https://github.com/jornkane"

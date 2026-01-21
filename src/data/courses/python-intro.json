@@ -32,9 +32,9 @@
           "content": "Her lærer du hvordan du lagrer data i variabler og skriver dem ut til skjermen."
         },
         {
-           "type": "python-runner",
-           "title": "Prøv selv: Variabler",
-           "initialCode": "navn = \"Jørn\"\nalder = 42\nprint(f\"Hei, jeg heter {navn} og er {alder} år gammel.\")"
+          "type": "python-runner",
+          "title": "Prøv selv: Variabler",
+          "initialCode": "navn = \"Jørn\"\nalder = 42\nprint(f\"Hei, jeg heter {navn} og er {alder} år gammel.\")"
         }
       ]
     },
@@ -51,9 +51,9 @@
           "content": "Operatorer brukes til å utføre operasjoner på variabler og verdier."
         },
         {
-           "type": "python-runner",
-           "title": "Prøv selv: Matematikk",
-           "initialCode": "a = 10\nb = 3\nprint(f\"{a} + {b} = {a + b}\")\nprint(f\"{a} / {b} = {a / b}\")\nprint(f\"{a} // {b} = {a // b} (heltallsdivisjon)\")"
+          "type": "python-runner",
+          "title": "Prøv selv: Matematikk",
+          "initialCode": "a = 10\nb = 3\nprint(f\"{a} + {b} = {a + b}\")\nprint(f\"{a} / {b} = {a / b}\")\nprint(f\"{a} // {b} = {a // b} (heltallsdivisjon)\")"
         }
       ]
     },
@@ -75,9 +75,9 @@
           "code": "l = int(input('Lengde: '))\nb = int(input('Bredde: '))\na = l*b\nprint('Arealet er: ',a)"
         },
         {
-           "type": "python-runner",
-           "title": "Prøv selv: Arealberegning",
-           "initialCode": "# NB: I nettleseren vil input() åpne en popup-boks\nl = int(input('Lengde: ') or 5)\nb = int(input('Bredde: ') or 5)\na = l*b\nprint(f'Arealet er: {a}')"
+          "type": "python-runner",
+          "title": "Prøv selv: Arealberegning",
+          "initialCode": "# NB: I nettleseren vil input() åpne en popup-boks\nl = int(input('Lengde: ') or 5)\nb = int(input('Bredde: ') or 5)\na = l*b\nprint(f'Arealet er: {a}')"
         }
       ]
     },
@@ -123,9 +123,9 @@
           "content": "Også kjent som betingelser."
         },
         {
-           "type": "python-runner",
-           "title": "Prøv selv: Betingelser",
-           "initialCode": "avstand = 78\nif avstand > 100:\n  print(\"Du er for langt unna!\")\nelse:\n  print(\"Du er nærme nok.\")\n\ntemperatur = 62\nif temperatur > 100:\n  print(\"Vannet er damp.\")\nelif temperatur > 0:\n  print(\"Vannet er flytende.\")\nelse:\n  print(\"Vannet er is.\")"
+          "type": "python-runner",
+          "title": "Prøv selv: Betingelser",
+          "initialCode": "avstand = 78\nif avstand > 100:\n  print(\"Du er for langt unna!\")\nelse:\n  print(\"Du er nærme nok.\")\n\ntemperatur = 62\nif temperatur > 100:\n  print(\"Vannet er damp.\")\nelif temperatur > 0:\n  print(\"Vannet er flytende.\")\nelse:\n  print(\"Vannet er is.\")"
         }
       ]
     },
@@ -147,10 +147,10 @@
           "code": "import numpy as np\nbakterier = np.zeros(30) # Lager en array med 30 tomme plasser\nbakterier[0] = 3 # vi starter med 3 bakterier\nfor i in range(1, 30):\n  bakterier[i] = 2*bakterier[i-1]\nprint(bakterier,type(bakterier))\n\n# En liste gir derimot en utskrift som er bedre å lese\nbakterier = [3]\nfor i in range(29):\n    bakterier.append(2 * bakterier[i])\nprint(bakterier)\nprint(type(bakterier))"
         },
         {
-           "type": "python-runner",
-           "title": "Prøv selv: NumPy vs Lister",
-           "defaultLibraries": ["numpy"],
-           "initialCode": "import numpy as np\n\n# Med NumPy\nbakterier_np = np.zeros(10)\nbakterier_np[0] = 3\nfor i in range(1, 10):\n  bakterier_np[i] = 2*bakterier_np[i-1]\nprint(\"NumPy array:\")\nprint(bakterier_np)\n\n# Med vanlige lister\nbakterier_list = [3]\nfor i in range(9):\n    bakterier_list.append(2 * bakterier_list[i])\nprint(\"\\nVanlig liste:\")\nprint(bakterier_list)"
+          "type": "python-runner",
+          "title": "Prøv selv: NumPy vs Lister",
+          "defaultLibraries": ["numpy"],
+          "initialCode": "import numpy as np\n\n# Med NumPy\nbakterier_np = np.zeros(10)\nbakterier_np[0] = 3\nfor i in range(1, 10):\n  bakterier_np[i] = 2*bakterier_np[i-1]\nprint(\"NumPy array:\")\nprint(bakterier_np)\n\n# Med vanlige lister\nbakterier_list = [3]\nfor i in range(9):\n    bakterier_list.append(2 * bakterier_list[i])\nprint(\"\\nVanlig liste:\")\nprint(bakterier_list)"
         }
       ]
     }

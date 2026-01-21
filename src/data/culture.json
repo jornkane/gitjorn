@@ -34,11 +34,31 @@
     }
   ],
   "archive": [
-    { "title": "Fantastic Four: First Steps", "description": "Disney. Gull for tegneserienerder.", "link": "https://www.imdb.com/title/tt10676052/" },
-    { "title": "Death of a Unicorn", "description": "Amazon Prime. Original og annerledes.", "link": "https://www.imdb.com/title/tt28443655/" },
-    { "title": "Flight of the Conchords", "description": "Gammel klassiker. Verdens mest geniale musiker-komikere.", "link": "https://www.imdb.com/title/tt0863046/" },
-    { "title": "Peacemaker", "description": "HBO. Gjennomført bra serie med humor og action.", "link": "https://www.imdb.com/title/tt13146488/" },
-    { "title": "The Last of Us", "description": "HBO. Trenger ingen introduksjon.", "link": "https://www.imdb.com/title/tt3581920/" }
+    {
+      "title": "Fantastic Four: First Steps",
+      "description": "Disney. Gull for tegneserienerder.",
+      "link": "https://www.imdb.com/title/tt10676052/"
+    },
+    {
+      "title": "Death of a Unicorn",
+      "description": "Amazon Prime. Original og annerledes.",
+      "link": "https://www.imdb.com/title/tt28443655/"
+    },
+    {
+      "title": "Flight of the Conchords",
+      "description": "Gammel klassiker. Verdens mest geniale musiker-komikere.",
+      "link": "https://www.imdb.com/title/tt0863046/"
+    },
+    {
+      "title": "Peacemaker",
+      "description": "HBO. Gjennomført bra serie med humor og action.",
+      "link": "https://www.imdb.com/title/tt13146488/"
+    },
+    {
+      "title": "The Last of Us",
+      "description": "HBO. Trenger ingen introduksjon.",
+      "link": "https://www.imdb.com/title/tt3581920/"
+    }
   ],
   "music": [
     {

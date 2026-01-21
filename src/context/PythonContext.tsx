@@ -1,4 +1,10 @@
-import React, { createContext, useContext, useEffect, useState, useRef } from "react";
+import React, {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useRef,
+} from 'react';
 
 declare const loadPyodide: any;
 
@@ -10,7 +16,10 @@ interface PyodideInterface {
 }
 
 interface PythonContextType {
-  runPython: (code: string, onStdout: (text: string) => void) => Promise<{ result: any; error: string | null }>;
+  runPython: (
+    code: string,
+    onStdout: (text: string) => void
+  ) => Promise<{ result: any; error: string | null }>;
   isLoading: boolean;
   loadLibrary: (libId: string) => Promise<void>;
   activeLibraries: Set<string>;
@@ -19,12 +28,18 @@ interface PythonContextType {
 
 const PythonContext = createContext<PythonContextType | undefined>(undefined);
 
-export const PythonProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const PythonProvider: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   const [pyodide, setPyodide] = useState<PyodideInterface | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeLibraries, setActiveLibraries] = useState<Set<string>>(new Set());
-  const [loadingLibraries, setLoadingLibraries] = useState<Set<string>>(new Set());
-  
+  const [activeLibraries, setActiveLibraries] = useState<Set<string>>(
+    new Set()
+  );
+  const [loadingLibraries, setLoadingLibraries] = useState<Set<string>>(
+    new Set()
+  );
+
   // Ref to track initialization to prevent double-loading in StrictMode
   const initialized = useRef(false);
 
@@ -34,13 +49,13 @@ export const PythonProvider: React.FC<{ children: React.ReactNode }> = ({ childr
 
     const initializePyodide = async () => {
       try {
-        console.log("Initializing Pyodide...");
-        if (typeof loadPyodide === "undefined") {
-          throw new Error("Pyodide CDN ikke lastet.");
+        console.log('Initializing Pyodide...');
+        if (typeof loadPyodide === 'undefined') {
+          throw new Error('Pyodide CDN ikke lastet.');
         }
 
         const pyInstance = await loadPyodide();
-        
+
         // Patch input and basic setup
         await pyInstance.runPythonAsync(`
 import js
@@ -67,9 +82,9 @@ except ImportError:
 
         setPyodide(pyInstance);
         setIsLoading(false);
-        console.log("Pyodide ready.");
+        console.log('Pyodide ready.');
       } catch (error) {
-        console.error("Failed to load Pyodide:", error);
+        console.error('Failed to load Pyodide:', error);
         setIsLoading(false);
       }
     };
@@ -82,14 +97,14 @@ except ImportError:
     if (activeLibraries.has(libId)) return;
 
     try {
-      setLoadingLibraries(prev => new Set(prev).add(libId));
+      setLoadingLibraries((prev) => new Set(prev).add(libId));
       await pyodide.loadPackage([libId]);
-      setActiveLibraries(prev => new Set(prev).add(libId));
+      setActiveLibraries((prev) => new Set(prev).add(libId));
     } catch (error) {
       console.error(`Failed to load ${libId}:`, error);
       throw error;
     } finally {
-      setLoadingLibraries(prev => {
+      setLoadingLibraries((prev) => {
         const next = new Set(prev);
         next.delete(libId);
         return next;
@@ -98,7 +113,7 @@ except ImportError:
   };
 
   const runPython = async (code: string, onStdout: (text: string) => void) => {
-    if (!pyodide) return { result: null, error: "Python er ikke lastet ennå." };
+    if (!pyodide) return { result: null, error: 'Python er ikke lastet ennå.' };
 
     try {
       pyodide.setStdout({
@@ -108,14 +123,18 @@ except ImportError:
       });
 
       // Special handling for plotting if matplotlib is active
-      const hasPlotting = activeLibraries.has('matplotlib') || activeLibraries.has('seaborn') || code.includes('plt.') || code.includes('matplotlib');
-      
+      const hasPlotting =
+        activeLibraries.has('matplotlib') ||
+        activeLibraries.has('seaborn') ||
+        code.includes('plt.') ||
+        code.includes('matplotlib');
+
       const result = await pyodide.runPythonAsync(code);
-      
+
       let plotImage = null;
       if (hasPlotting) {
-           try {
-            const plotCode = `
+        try {
+          const plotCode = `
 import matplotlib.pyplot as plt
 import io, base64
 
@@ -130,13 +149,13 @@ def _get_plot_img():
 
 _get_plot_img()
 `;
-            const plotBase64 = await pyodide.runPythonAsync(plotCode);
-            if (plotBase64) {
-               plotImage = `data:image/png;base64,${plotBase64}`;
-            }
-           } catch (e) { 
-               // Ignore plotting errors if matplotlib misuse
-           }
+          const plotBase64 = await pyodide.runPythonAsync(plotCode);
+          if (plotBase64) {
+            plotImage = `data:image/png;base64,${plotBase64}`;
+          }
+        } catch (e) {
+          // Ignore plotting errors if matplotlib misuse
+        }
       }
 
       return { result, error: null, plotImage };
@@ -146,7 +165,15 @@ _get_plot_img()
   };
 
   return (
-    <PythonContext.Provider value={{ runPython, isLoading, loadLibrary, activeLibraries, loadingLibraries }}>
+    <PythonContext.Provider
+      value={{
+        runPython,
+        isLoading,
+        loadLibrary,
+        activeLibraries,
+        loadingLibraries,
+      }}
+    >
       {children}
     </PythonContext.Provider>
   );
@@ -155,7 +182,7 @@ _get_plot_img()
 export const usePython = () => {
   const context = useContext(PythonContext);
   if (context === undefined) {
-    throw new Error("usePython must be used within a PythonProvider");
+    throw new Error('usePython must be used within a PythonProvider');
   }
   return context;
 };

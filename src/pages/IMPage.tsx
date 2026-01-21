@@ -1,5 +1,5 @@
-import Navbar from "../components/Navbar";
-import { useState } from "react";
+import Navbar from '../components/Navbar';
+import { useState } from 'react';
 
 const IMPage = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -21,7 +21,7 @@ const IMPage = () => {
             alt="Grønne bokstaver skrevet vertikalt fra filmen the Matrix."
           />
           <p className="text-sm mt-2">
-            Bildekilde:{" "}
+            Bildekilde:{' '}
             <a
               href="https://www.indiewire.com/features/general/the-matrix-code-digital-rain-meaning-1201891684/"
               target="_blank"
@@ -59,7 +59,7 @@ const IMPage = () => {
             trenger mer hjelp, bare si ifra!
           </p>
           <p className="text-sm">
-            Kilde:{" "}
+            Kilde:{' '}
             <a
               href="https://copilot.microsoft.com/"
               target="_blank"
@@ -73,7 +73,7 @@ const IMPage = () => {
 
         <div className="mb-6">
           <p className="mb-4">
-            Svar på denne spørreundersøkelsen, og legg merke til at du må klikke{" "}
+            Svar på denne spørreundersøkelsen, og legg merke til at du må klikke{' '}
             <br />
             next et par ganger for å få muligheten til å legge igjen en
             kommentar:
@@ -85,14 +85,14 @@ const IMPage = () => {
             frameBorder="0"
             style={{
               border: 0,
-              background: "transparent",
-              maxWidth: "500px",
-              height: "550px",
+              background: 'transparent',
+              maxWidth: '500px',
+              height: '550px',
             }}
           ></iframe>
 
           <div className="text-sm mt-2">
-            Created with{" "}
+            Created with{' '}
             <a
               href="https://www.supersurvey.com"
               target="_blank"
@@ -120,7 +120,7 @@ const IMPage = () => {
             )}
           </div>
           <p className="text-sm mt-2">
-            Kilde (popup):{" "}
+            Kilde (popup):{' '}
             <a
               href="https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp"
               target="_blank"
@@ -157,7 +157,7 @@ const IMPage = () => {
             />
           </a>
           <p className="text-sm mt-2">
-            Kilde / videoverktøy:{" "}
+            Kilde / videoverktøy:{' '}
             <a
               href="https://www.loom.com/"
               target="_blank"

@@ -79,8 +79,8 @@
           "text": "Staging og Committing"
         },
         {
-           "type": "text",
-           "content": "Når du har gjort endringer, må du først 'stage' dem, så 'committe' dem."
+          "type": "text",
+          "content": "Når du har gjort endringer, må du først 'stage' dem, så 'committe' dem."
         },
         {
           "type": "code",
@@ -88,13 +88,13 @@
           "code": "# Legg til alle endringer\ngit add .\n\n# Lagre endringene med en melding\ngit commit -m \"Beskrivelse av hva jeg gjorde\""
         },
         {
-            "type": "text",
-            "content": "Du kan også gjøre begge deler samtidig (for endrede filer, ikke nye):"
+          "type": "text",
+          "content": "Du kan også gjøre begge deler samtidig (for endrede filer, ikke nye):"
         },
         {
-            "type": "code",
-            "language": "bash",
-            "code": "git commit -a -m \"Melding\""
+          "type": "code",
+          "language": "bash",
+          "code": "git commit -a -m \"Melding\""
         }
       ]
     },
@@ -116,13 +116,13 @@
           "code": "# Lag ny branch\ngit branch nyfeature\n\n# Bytt til branchen\ngit switch nyfeature\n\n# Se oversikt\ngit branch"
         },
         {
-            "type": "text",
-            "content": "Når du er ferdig og vil ha koden inn i main:"
+          "type": "text",
+          "content": "Når du er ferdig og vil ha koden inn i main:"
         },
         {
-            "type": "code",
-            "language": "bash",
-            "code": "git switch main\ngit merge nyfeature\n\n# Slett branchen etterpå hvis du vil\ngit branch -d nyfeature"
+          "type": "code",
+          "language": "bash",
+          "code": "git switch main\ngit merge nyfeature\n\n# Slett branchen etterpå hvis du vil\ngit branch -d nyfeature"
         }
       ]
     },
@@ -144,68 +144,68 @@
           "code": "git restore --staged filnavn.txt\n# Eller for alt\ngit restore --staged ."
         },
         {
-            "type": "text",
-            "content": "For å slette en fil helt (både fra git og disk):"
+          "type": "text",
+          "content": "For å slette en fil helt (både fra git og disk):"
         },
         {
-            "type": "code",
-            "language": "bash",
-            "code": "git rm filnavn"
+          "type": "code",
+          "language": "bash",
+          "code": "git rm filnavn"
         }
       ]
     },
     {
-        "title": "Sletting og Tags",
-        "content": [
-          {
-            "type": "heading",
-            "level": 2,
-            "text": "Slette repository"
-          },
-          {
-            "type": "text",
-            "content": "Lokalt: Slett `.git`-mappen. På Github: Gå til 'Settings' -> 'Danger Zone'."
-          },
-          {
-            "type": "heading",
-            "level": 2,
-            "text": "Tags"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "# Lage v2.0 tag\ngit tag -a v2.0 -m \"Version 2.0 release\"\ngit push origin v2.0\n\n# Slette tag\ngit tag -d v1.0"
-          }
-        ]
-      },
-      {
-        "title": "Log og Status",
-        "content": [
-          {
-            "type": "heading",
-            "level": 2,
-            "text": "Få oversikt"
-          },
-          {
-            "type": "code",
-            "language": "bash",
-            "code": "# Se status\ngit status\n\n# Se endringer i en fil\ngit diff filnavn.txt\n\n# Se historikk (kortversjon)\ngit log --oneline\n\n# Se de siste 10 endringene\ngit log --oneline -n 10"
-          }
-        ]
-      },
-      {
-        "title": "Ressurser",
-        "content": [
-            {
-                "type": "heading",
-                "level": 2,
-                "text": "Video-tutorials"
-            },
-            {
-                "type": "video",
-                "url": "https://www.youtube.com/watch?v=CvUiKWv2-C0"
-            }
-        ]
-      }
+      "title": "Sletting og Tags",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Slette repository"
+        },
+        {
+          "type": "text",
+          "content": "Lokalt: Slett `.git`-mappen. På Github: Gå til 'Settings' -> 'Danger Zone'."
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Tags"
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "# Lage v2.0 tag\ngit tag -a v2.0 -m \"Version 2.0 release\"\ngit push origin v2.0\n\n# Slette tag\ngit tag -d v1.0"
+        }
+      ]
+    },
+    {
+      "title": "Log og Status",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Få oversikt"
+        },
+        {
+          "type": "code",
+          "language": "bash",
+          "code": "# Se status\ngit status\n\n# Se endringer i en fil\ngit diff filnavn.txt\n\n# Se historikk (kortversjon)\ngit log --oneline\n\n# Se de siste 10 endringene\ngit log --oneline -n 10"
+        }
+      ]
+    },
+    {
+      "title": "Ressurser",
+      "content": [
+        {
+          "type": "heading",
+          "level": 2,
+          "text": "Video-tutorials"
+        },
+        {
+          "type": "video",
+          "url": "https://www.youtube.com/watch?v=CvUiKWv2-C0"
+        }
+      ]
+    }
   ]
 }
