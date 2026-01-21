@@ -27,3 +27,38 @@
 Dette prosjektet bruker et JSON-basert kurssystem som gjør det enkelt å legge til nye kurs uten å skrive React-kode!
 
 **📖 [Se hvordan du lager nye kurs →](src/data/courses/HowToMakeACourse.md)**
+
+---
+
+## Kom i gang
+
+1. **Klon repoet:**
+   ```sh
+   git clone <repo-url>
+   cd gitjorn
+   ```
+
+2. **Installer avhengigheter:**
+   - Med pnpm:
+     ```sh
+     pnpm install
+     ```
+   - Eller med npm:
+     ```sh
+     npm install
+     ```
+
+3. **Start utviklingsserver:**
+   - Med pnpm:
+     ```sh
+     pnpm run dev
+     ```
+   - Eller med npm:
+     ```sh
+     npm run dev
+     ```
+
+4. **Åpne nettsiden:**
+   Gå til adressen som vises i terminalen (vanligvis http://localhost:5173 eller lignende).
+
+> Bruk kun én pakkebehandler om gangen for å unngå lockfile-konflikter.
