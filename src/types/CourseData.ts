@@ -75,6 +75,13 @@ export interface PythonRunnerContent {
   defaultLibraries?: string[];
 }
 
+export interface AlertContent {
+  type: "alert";
+  variant: "info" | "warning" | "tip" | "danger";
+  title?: string;
+  content: string;
+}
+
 export type CourseContent =
   | TextContent
   | ListContent
@@ -85,7 +92,8 @@ export type CourseContent =
   | PopupContent
   | LinkContent
   | HeadingContent
-  | PythonRunnerContent;
+  | PythonRunnerContent
+  | AlertContent;
 
 
 export interface CourseSection {

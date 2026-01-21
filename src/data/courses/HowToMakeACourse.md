@@ -98,13 +98,27 @@ Hver kurs JSON-fil skal følge denne strukturen:
 }
 ```
 
+### Varselbokser (Alert)
+
+```json
+{
+  "type": "alert",
+  "variant": "info",
+  "title": "Tittel (valgfri)",
+  "content": "Innholdstekst her"
+}
+```
+
+**Varianter:** `info` (blå), `warning` (gul), `tip` (grønn), `danger` (rød).
+
 ### Video
+
+Støtter direkte lenker til YouTube (embeddes automatisk via iframe). For andre videoer, brukes `url` som en link.
 
 ```json
 {
   "type": "video",
-  "url": "https://video-url.com",
-  "thumbnail": "/img/miniatyrbilde.jpg",
+  "url": "https://www.youtube.com/watch?v=...",
   "caption": "Videobeskrivelse"
 }
 ```

@@ -16,8 +16,10 @@
           "text": "Tips for VS Code"
         },
         {
-          "type": "text",
-          "content": "Anbefaling: Last ned utvidelsen **GitLens**. Den viser hvem som har endret hva i koden din.\n\nTips: Du kan skjule `.git`-mappen i VS Code filutforskeren:\n1. Trykk `Ctrl + ,` for å åpne innstillinger.\n2. Søk etter `exclude`.\n3. Legg til `**/.git`."
+          "type": "alert",
+          "variant": "info",
+          "title": "Anbefaling",
+          "content": "Last ned utvidelsen **GitLens**. Den viser hvem som har endret hva i koden din.\n\nTips: Du kan skjule `.git`-mappen i VS Code filutforskeren:\n1. Trykk `Ctrl + ,` for å åpne innstillinger.\n2. Søk etter `exclude`.\n3. Legg til `**/.git`."
         }
       ]
     },
@@ -200,8 +202,8 @@
                 "text": "Video-tutorials"
             },
             {
-                "type": "text",
-                "content": "- [Git tutorial for absolute beginners (Dave Gray)](https://youtu.be/CvUiKWv2-C0?si=TvZfXoyXlSh0qzPY)\n- [How to undo git commits (Dave Gray)](https://youtu.be/EGooeHH3hDY?si=wUiQj66d68gHK)"
+                "type": "video",
+                "url": "https://www.youtube.com/watch?v=CvUiKWv2-C0"
             }
         ]
       }

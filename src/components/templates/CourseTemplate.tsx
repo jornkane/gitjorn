@@ -82,6 +82,34 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
         );
 
       case "video":
+        const getYouTubeEmbedUrl = (url: string) => {
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[2].length === 11) ? match[2] : null;
+        };
+
+        const youtubeId = getYouTubeEmbedUrl(content.url);
+
+        if (youtubeId) {
+            return (
+                <div key={index} className="mb-4">
+                    <iframe
+                        width="100%"
+                        height="400"
+                        src={`https://www.youtube.com/embed/${youtubeId}`}
+                        title={content.caption || "YouTube video player"}
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="rounded-lg shadow-lg"
+                    ></iframe>
+                    {content.caption && (
+                        <p className="text-sm mt-2 text-gray-300">{content.caption}</p>
+                    )}
+                </div>
+            );
+        }
+
         return (
           <div key={index} className="mb-4">
             <a
@@ -102,6 +130,12 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
                   {content.caption}
                 </p>
               )}
+               {/* Fallback text if no thumbnail */}
+               {!content.thumbnail && (
+                  <div className="p-4 bg-gray-800 rounded-lg text-blue-300 underline">
+                      Watch Video: {content.caption || content.url}
+                  </div>
+               )}
             </a>
           </div>
         );
@@ -154,6 +188,30 @@ const CourseTemplate: React.FC<CourseTemplateProps> = ({ courseData }) => {
               title={content.title}
               defaultLibraries={content.defaultLibraries}
             />
+          </div>
+        );
+
+      case "alert":
+        const alertStyles = {
+          info: "bg-blue-900/30 border-blue-500 text-blue-200",
+          warning: "bg-yellow-900/30 border-yellow-500 text-yellow-200",
+          tip: "bg-green-900/30 border-green-500 text-green-200",
+          danger: "bg-red-900/30 border-red-500 text-red-200",
+        };
+        const defaultStyle = "bg-gray-800 border-gray-500";
+        return (
+          <div
+            key={index}
+            className={`border-l-4 p-4 mb-4 rounded-r-lg ${
+              alertStyles[content.variant] || defaultStyle
+            } backdrop-blur-sm shadow-md`}
+          >
+            {content.title && (
+              <p className="font-bold mb-1">{content.title}</p>
+            )}
+            <div className="text-sm opacity-90 whitespace-pre-line">
+               {content.content}
+            </div>
           </div>
         );
 

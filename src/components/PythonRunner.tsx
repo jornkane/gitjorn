@@ -1,15 +1,12 @@
 import { useState, useEffect } from "react";
-import Editor from "@monaco-editor/react";
+import Editor from "react-simple-code-editor";
+import { highlight, languages } from "prismjs";
+import "prismjs/components/prism-python";
+import "prismjs/themes/prism-tomorrow.css"; // Using 'tomorrow' (dark) theme
 
-// Pyodide is loaded via CDN script tag in index.html
-// @ts-ignore
-declare const loadPyodide: any;
+import { usePython } from "../context/PythonContext";
 
-interface PyodideInterface {
-  runPythonAsync: (code: string) => Promise<any>;
-  setStdout: (options: { batched: (text: string) => void }) => void;
-  loadPackage: (packages: string[]) => Promise<void>;
-}
+// Remove PyodideInterface as it's now internal to context
 
 interface PythonRunnerProps {
   initialCode?: string;
@@ -25,6 +22,16 @@ const AVAILABLE_LIBRARIES = [
   { id: "scikit-learn", name: "Scikit-learn", description: "Maskinlæring" },
   { id: "seaborn", name: "Seaborn", description: "Statistisk visualisering" },
   { id: "sympy", name: "SymPy", description: "Symbolsk matematikk" },
+  { id: "networkx", name: "NetworkX", description: "Nettverksanalyse" },
+  { id: "pillow", name: "Pillow", description: "Bildebehandling" },
+];
+
+const STANDARD_LIBRARIES = [
+  { id: "os", name: "os", description: "Operativsystem-funksjoner" },
+  { id: "random", name: "random", description: "Tilfeldige tall" },
+  { id: "math", name: "math", description: "Matematiske funksjoner" },
+  { id: "datetime", name: "datetime", description: "Dato og tid" },
+  { id: "json", name: "json", description: "JSON-håndtering" },
 ];
 
 const PythonRunner: React.FC<PythonRunnerProps> = ({ 
@@ -32,101 +39,51 @@ const PythonRunner: React.FC<PythonRunnerProps> = ({
   title = "🐍 Python Kodeeditor",
   defaultLibraries = []
 }) => {
+  const { runPython, isLoading: engineLoading, loadLibrary, activeLibraries, loadingLibraries } = usePython();
+  
   const [code, setCode] = useState(initialCode);
   const [output, setOutput] = useState("");
   const [plotImage, setPlotImage] = useState<string | null>(null);
-  const [pyodide, setPyodide] = useState<PyodideInterface | null>(null);
-  const [loading, setLoading] = useState(true);
   const [running, setRunning] = useState(false);
-  const [activeLibraries, setActiveLibraries] = useState<Set<string>>(new Set(defaultLibraries));
-  const [loadingLibraries, setLoadingLibraries] = useState<Set<string>>(new Set());
 
-  // Update code if initialCode changes
+  // Auto-load default libraries
+  useEffect(() => {
+    const loadDefaults = async () => {
+        for (const lib of defaultLibraries) {
+            if (!activeLibraries.has(lib)) {
+                await loadLibrary(lib);
+            }
+        }
+    };
+    if (!engineLoading) {
+        loadDefaults();
+    }
+  }, [engineLoading, defaultLibraries, activeLibraries, loadLibrary]);
+
+  // Code update effect remains the same
   useEffect(() => {
     if (initialCode) {
       setCode(initialCode);
     }
   }, [initialCode]);
 
-  // Load Pyodide on component mount
-  useEffect(() => {
-    const initializePyodide = async () => {
-      try {
-        setOutput("Laster Python-motor...");
-
-        if (typeof loadPyodide === "undefined") {
-          throw new Error("Pyodide CDN ikke lastet.");
-        }
-
-        const pyInstance = await loadPyodide();
-        // Helper function to handle input() via window.prompt
-        await pyInstance.runPythonAsync(`
-import js
-import builtins
-
-def input(prompt=""):
-    val = js.prompt(prompt)
-    if val is None:
-        return ""
-    return str(val)
-
-builtins.input = input
-        `);
-
-        setPyodide(pyInstance);
-        
-        // Load default libraries if any
-        if (defaultLibraries.length > 0) {
-          setOutput(`Laster standardbiblioteker: ${defaultLibraries.join(", ")}...`);
-          await pyInstance.loadPackage(defaultLibraries);
-        }
-
-        setOutput("Python er klar! Velg biblioteker eller skriv kode.");
-        setLoading(false);
-      } catch (error) {
-        setOutput(`Feil ved lasting av Python: ${error}`);
-        setLoading(false);
-      }
-    };
-
-    setTimeout(initializePyodide, 100);
-  }, []);
+  // Removed local Pyodide loading logic
 
   const toggleLibrary = async (libId: string) => {
-    if (!pyodide) return;
-    
-    // If already active, we can't "unload" in Pyodide easily, but we can visually toggle it off
-    // However, for simplicity and correctness, let's keep it "Active" once loaded
-    if (activeLibraries.has(libId)) {
-       // Optional: Allow visual "unchecking" but warn user it's still in memory? 
-       // For now, let's just ignore or allow toggling active state for filter purposes only.
-       // Better UX: Once loaded, it stays loaded.
-       return; 
-    }
+    if (activeLibraries.has(libId)) return; // Already active
 
     try {
-      setLoadingLibraries(prev => new Set(prev).add(libId));
       setOutput(`Laster bibliotek: ${libId}...`);
-      
-      await pyodide.loadPackage([libId]);
-      
-      setActiveLibraries(prev => new Set(prev).add(libId));
+      await loadLibrary(libId);
       setOutput(`Bibliotek '${libId}' lastet og klart!`);
     } catch (error) {
       setOutput(`Feil ved lasting av ${libId}: ${error}`);
-    } finally {
-      setLoadingLibraries(prev => {
-        const next = new Set(prev);
-        next.delete(libId);
-        return next;
-      });
     }
   };
 
-  // Run Python code
   const runCode = async () => {
-    if (!pyodide) {
-      setOutput("Python er ikke lastet ennå.");
+    if (engineLoading) {
+      setOutput("Vent litt, Python starter...");
       return;
     }
 
@@ -139,85 +96,26 @@ builtins.input = input
     setOutput("Kjører...");
     setPlotImage(null);
 
-    try {
-      let outputText = "";
-      pyodide.setStdout({
-        batched: (text: string) => {
-          outputText += text + "\n";
-        },
-      });
+    let currentOutput = "";
+    const handleStdout = (text: string) => {
+        currentOutput += text + "\n";
+    };
 
-      
-      // Patch input() and setup matplotlib backend
-      const setupCode = `
-import js
-import builtins
-import sys
-
-# Patch input
-def input(prompt=""):
-    val = js.prompt(prompt)
-    if val is None:
-        return ""
-    return str(val)
-builtins.input = input
-
-# Patch matplotlib to non-interactive Agg backend to prevent
-# default Pyodide backend from appending to document body
-try:
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-    # Ensure show() does nothing just in case
-    plt.show = lambda *args, **kwargs: None
-except ImportError:
-    pass
-`;
-      const fullCode = setupCode + "\n" + code;
-      const result = await pyodide.runPythonAsync(fullCode);
-
-      // Check for plots (Matplotlib/Seaborn)
-      // Only check if matplotlib is likely used
-      if (activeLibraries.has('matplotlib') || activeLibraries.has('seaborn') || code.includes('plt.') || code.includes('matplotlib')) {
-          try {
-            const plotCode = `
-import matplotlib.pyplot as plt
-import io, base64
-
-def _get_plot_img():
-    if plt.get_fignums():
-        img = io.BytesIO()
-        plt.savefig(img, format='png', bbox_inches='tight')
-        img.seek(0)
-        plt.close('all')
-        return base64.b64encode(img.read()).decode()
-    return None
-
-_get_plot_img()
-`;
-            // We need to make sure activeLibraries actually loaded matplotlib for this to work safely, 
-            // but runPythonAsync might autoload packages if Pyodide is configured that way (it often is NOT by default).
-            // We assume user loaded libraries via buttons.
-            const plotBase64 = await pyodide.runPythonAsync(plotCode);
-            if (plotBase64) {
-              setPlotImage(`data:image/png;base64,${plotBase64}`);
-            }
-          } catch (e) {
-             // Ignore plot errors
-          }
-      }
-
-      let finalOutput = outputText;
-      if (result !== undefined && result !== null) {
-        finalOutput += `\nResultat: ${result}`;
-      }
-
-      setOutput(finalOutput || "(ingen output)");
-    } catch (error: any) {
-      setOutput(`❌ Feil:\n${error.message || error}`);
-    } finally {
-      setRunning(false);
+    const { result, error, plotImage: generatedPlot } = await runPython(code, handleStdout);
+    
+    if (generatedPlot) {
+        setPlotImage(generatedPlot);
     }
+
+    let finalOutput = currentOutput;
+    if (error) {
+        finalOutput += `\n❌ Feil:\n${error}`;
+    } else if (result !== undefined && result !== null) {
+        finalOutput += `\nResultat: ${result}`;
+    }
+
+    setOutput(finalOutput || "(ingen output)");
+    setRunning(false);
   };
 
   const clearAll = () => {
@@ -230,8 +128,6 @@ _get_plot_img()
     setCode(example.code);
     setOutput("Eksempel lastet!");
     setPlotImage(null);
-    
-    // Auto-load required libraries for example
     if (example.requiredLibs) {
       for (const lib of example.requiredLibs) {
         if (!activeLibraries.has(lib)) {
@@ -312,6 +208,40 @@ sns.scatterplot(data=data, x='x', y='y', hue='cat')
 plt.title("Seaborn Scatter")
 plt.show()`,
     },
+    {
+        name: "OS & Filer",
+        requiredLibs: [],
+        code: `import os
+
+print("Nåværende mappe:", os.getcwd())
+print("Filer her:", os.listdir())
+
+# Lage en virtuell fil
+with open("test.txt", "w") as f:
+    f.write("Hei fra en virtuell fil!")
+
+print("Fil laget! Sjekker igjen:", os.listdir())
+
+# Lese filen
+with open("test.txt", "r") as f:
+    print("Innhold:", f.read())`
+    },
+    {
+        name: "Random",
+        requiredLibs: [],
+        code: `import random
+
+print("Tilfeldig tall (0-1):", random.random())
+print("Terningkast:", random.randint(1, 6))
+
+valg = ["Stein", "Saks", "Papir"]
+print("Datamaskinen valgte:", random.choice(valg))
+
+# Shuffle en liste
+kort = ["A", "K", "Q", "J", "10"]
+random.shuffle(kort)
+print("Stokket kortstokk:", kort)`
+    }
   ];
 
   return (
@@ -320,17 +250,13 @@ plt.show()`,
         <h2 className="text-3xl font-bold flex items-center gap-2">
           {title}
         </h2>
-        {loading && (
-          <span className="text-yellow-400 animate-pulse font-mono">Laster Python...</span>
+        {engineLoading && (
+          <span className="text-yellow-400 animate-pulse font-mono">Laster motor...</span>
         )}
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        
-        {/* Left Sidebar: Libraries & Examples */}
         <div className="lg:col-span-1 space-y-6">
-          
-          {/* Libraries Section */}
           <div className="bg-gray-700/50 p-4 rounded-lg">
             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">
               Biblioteker
@@ -362,8 +288,19 @@ plt.show()`,
               Klikk for å aktivere. Kan ikke deaktiveres uten å laste siden på nytt.
             </p>
           </div>
-
-          {/* Examples Section */}
+          <div className="bg-gray-700/50 p-4 rounded-lg">
+             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">
+               Standardbiblioteker
+             </h3>
+             <div className="flex flex-wrap gap-2">
+                {STANDARD_LIBRARIES.map(lib => (
+                    <span key={lib.id} className="text-xs bg-gray-600 text-gray-300 px-2 py-1 rounded border border-gray-500 cursor-help" title={lib.description}>
+                        {lib.name}
+                    </span>
+                ))}
+                <span className="text-xs text-gray-500 px-1 py-1">+ mange flere</span>
+             </div>
+          </div>
            <div className="bg-gray-700/50 p-4 rounded-lg">
             <h3 className="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-3">
               Eksempler
@@ -373,7 +310,7 @@ plt.show()`,
                 <button
                   key={index}
                   onClick={() => loadExample(example)}
-                  disabled={loading}
+                  disabled={engineLoading}
                   className="text-left text-sm px-3 py-2 rounded bg-gray-600 hover:bg-purple-600 transition-colors disabled:opacity-50"
                 >
                   {example.name}
@@ -383,25 +320,23 @@ plt.show()`,
           </div>
 
         </div>
-
-        {/* Right Content: Editor & Output */}
         <div className="lg:col-span-3">
-           {/* Code editor */}
-          <div className="rounded-lg overflow-hidden border border-gray-700 shadow-inner mb-4 relative">
+
+           {/* Kode editor */}
+          <div className="rounded-lg overflow-hidden border border-gray-700 shadow-inner mb-4 relative bg-[#2d2d2d] min-h-[500px]">
             <Editor
-              height="500px"
-              defaultLanguage="python"
-              theme="vs-dark"
               value={code}
-              onChange={(value) => setCode(value || "")}
-              options={{
-                minimap: { enabled: false },
+              onValueChange={(code) => setCode(code)}
+              highlight={(code) => highlight(code, languages.python || languages.extend('python', {}), "python")}
+              padding={16}
+              className="font-mono text-sm"
+              style={{
+                fontFamily: '"Fira Code", "Fira Mono", monospace',
                 fontSize: 14,
-                scrollBeyondLastLine: false,
-                automaticLayout: true,
-                padding: { top: 16, bottom: 16 },
+                backgroundColor: "transparent",
+                minHeight: "500px"
               }}
-              loading={<div className="text-gray-400 p-4">Laster editor...</div>}
+              textareaClassName="focus:outline-none"
             />
             {loadingLibraries.size > 0 && (
                 <div className="absolute bottom-2 right-2 bg-black/80 text-yellow-400 px-3 py-1 rounded-full text-xs animate-pulse">
@@ -413,14 +348,14 @@ plt.show()`,
           <div className="flex gap-2 mb-4">
             <button
               onClick={runCode}
-              disabled={loading || running || loadingLibraries.size > 0}
+              disabled={engineLoading || running || loadingLibraries.size > 0}
               className="bg-green-600 hover:bg-green-700 disabled:bg-gray-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors flex items-center gap-2 shadow-lg"
             >
               {running ? "⏳ Kjører..." : "▶️ Kjør kode"}
             </button>
             <button
               onClick={clearAll}
-              disabled={loading}
+              disabled={engineLoading}
               className="bg-red-600 hover:bg-red-700 disabled:bg-gray-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors shadow-lg"
             >
               🗑️ Tøm
@@ -465,4 +400,3 @@ plt.show()`,
 };
 
 export default PythonRunner;
-
