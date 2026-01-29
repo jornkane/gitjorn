@@ -1,24 +1,33 @@
 Offentlig huskeliste:
 
+MM8
+Potions
+DaMitia - har alt
+Fredrik - mangler accuracy
+Devlin - mangler accuracy speed
+Cauri - mangler accuracy speed 
+Nathaniel - mangler accuracy speed
+
+Skills
+dagger gm - regna
+spirit gm - murmur
+light gm - regna
+dark - regna
+id item master - dagger wound
+meditation master - alvar
+
+
+
+
+
+
+
+
+
 valheim
 freehaven
 
-MM8
-Potions
-DaMitia speed
-Fredrik
-Devlin
-Lamentia
 
-
-
-MM6
-POTIONS
-Alle - Might, accuracy, personality
-Nate - 
-Alexsis -intellect
-Serena - intellect
-Zoltan -
 
 SHRINES
 intellect
